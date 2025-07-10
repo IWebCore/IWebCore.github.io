@@ -1,0 +1,2618 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../Bean/">
+      
+      
+        <link rel="next" href="../IAbort/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>配置模块 - IWebCore</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="IWebCore" class="md-header__button md-logo" aria-label="IWebCore" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            IWebCore
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              配置模块
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="cyan"  aria-label="切换日间模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换日间模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label=""  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="选择当前语言">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="/" hreflang="zh" class="md-select__link">
+              中文
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="/en/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="IWebCore" class="md-nav__button md-logo" aria-label="IWebCore" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    IWebCore
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    ICmd
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            ICmd
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ICmd/ICmd/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ICmd 使用指南
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    ICore
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            ICore
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Abort-FailFast/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    提前失败 Fail-Fast
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Bean/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Bean
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    配置模块
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    配置模块
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      引言
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      配置的类型
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      引用到配置
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="引用到配置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#profile" class="md-nav__link">
+    <span class="md-ellipsis">
+      profile 配置的引用
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="profile 配置的引用">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      简单的标记
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      查询异常
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      使用配置值
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#context" class="md-nav__link">
+    <span class="md-ellipsis">
+      Context 配置的引用
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Context 配置的引用">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#context_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Context 的重定义
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      注册配置
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="注册配置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#context_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Context 配置注册
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Context 配置注册">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#icontexttaskinterface" class="md-nav__link">
+    <span class="md-ellipsis">
+      IContextTaskInterface
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#profile_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Profile 配置注册
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      注意事项
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IAbort/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    IAbort 模块文档
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IApplication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    IApplication 用户文档
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Q_GADGET/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Qt 的 Q_GADGET 反射机制
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Task/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Task 机制
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Test%20%E6%B5%8B%E8%AF%95/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    测试
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%AE%89%E5%85%A8%E7%AD%96%E7%95%A5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    IWebCore的安全策略
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E8%87%AA%E5%AE%9A%E4%B9%89%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%201/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    内置数据类型 基础数据类型
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E8%87%AA%E5%AE%9A%E4%B9%89%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%202/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    IString / IStringView / IStringViewStash
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_12" id="__nav_3_12_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Util
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_12">
+            <span class="md-nav__icon md-icon"></span>
+            Util
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../util/IPacakgeUtil/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Packages
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    IHttpCore
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            IHttpCore
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IHttpCore/IHttpCore%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%A1%86%E6%9E%B6%E7%AE%80%E4%BB%8B/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    IHttpCore 服务器框架简介
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IHttpCore/IHttpCore%E6%A6%82%E8%A7%88/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    IHttpCore 概览
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IHttpCore/IHttp%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    IHttp注意事项
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Advance
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            Advance
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IHttpCore/advance/IHttpAssets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Assets
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IHttpCore/advance/INody/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    INody
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IHttpCore/advance/https/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    IHttps 支持
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IHttpCore/advance/invalid%20handler/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    invalid handler
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Biscuit
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            Biscuit
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IHttpCore/biscuit/IHttpMime/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    IHttpMime
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Controller
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_6">
+            <span class="md-nav__icon md-icon"></span>
+            Controller
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IHttpCore/controller/Controller%E5%AE%9A%E4%B9%89/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Controller定义
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IHttpCore/controller/IHttpCore%20%E8%B7%AF%E7%94%B1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    IHttpCore 路由
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IHttpCore/controller/IHttpCore%20%E8%B7%AF%E7%94%B1%E8%BF%94%E5%9B%9E%E7%B1%BB%E5%9E%8B%20%E5%9F%BA%E7%A1%80%E7%B1%BB%E5%9E%8B/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    IHttpCore 路由返回类型 基础类型
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IHttpCore/controller/IHttpCore%E8%B7%AF%E7%94%B1%E8%BF%94%E5%9B%9E%E7%B1%BB%E5%9E%8B%20Response%E7%B1%BB%E5%9E%8B/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    IHttpCore路由返回类型 Response类型
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IHttpCore/controller/%E5%8F%82%E6%95%B0%E8%BE%93%E5%85%A5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    参数输入 参考示例
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Session
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_7">
+            <span class="md-nav__icon md-icon"></span>
+            Session
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IHttpCore/session/CachedSession/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CachedSession
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IHttpCore/session/Session%20%E6%8E%A5%E5%8F%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Session
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    IMakeCore
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            IMakeCore
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    使用文档
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            使用文档
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IMakeCore/%E4%BD%BF%E7%94%A8%E6%96%87%E6%A1%A3/IMakeCore%E4%BD%BF%E7%94%A8%E6%96%87%E6%A1%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    IMakeCore使用文档
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IMakeCore/%E4%BD%BF%E7%94%A8%E6%96%87%E6%A1%A3/IMakeCore%E6%8F%92%E4%BB%B6%E6%96%87%E6%A1%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    IMakeCore 插件文档
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    设计文档
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            设计文档
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IMakeCore/%E8%AE%BE%E8%AE%A1%E6%96%87%E6%A1%A3/Package%E9%81%97%E7%95%99%E9%97%AE%E9%A2%98/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Package遗留问题
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    IRdbCore
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            IRdbCore
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IRdbCore/IRdbCore%E7%AE%80%E4%BB%8B/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    IRdbCore 简介
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Database
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            Database
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IRdbCore/database/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    数据库
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IRdbCore/database/%E6%95%B0%E6%8D%AE%E5%BA%93_en/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Database
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Entity
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_3">
+            <span class="md-nav__icon md-icon"></span>
+            Entity
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IRdbCore/entity/IRdbValueGeneratorInterface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    IRdbValueGeneratorInterface
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IRdbCore/entity/Table%20%E5%AE%9E%E4%BD%93/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Table 实体
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IRdbCore/entity/View%20%E5%AE%9E%E4%BD%93/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    View 实体
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_4" id="__nav_6_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Model
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_4">
+            <span class="md-nav__icon md-icon"></span>
+            Model
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IRdbCore/model/Table%20Model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Table Model
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IRdbCore/model/View%20Model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    View Model
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Mkdocs
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Mkdocs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mkdocs/mkdocs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    mkdocs 文档
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      引言
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      配置的类型
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      引用到配置
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="引用到配置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#profile" class="md-nav__link">
+    <span class="md-ellipsis">
+      profile 配置的引用
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="profile 配置的引用">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      简单的标记
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      查询异常
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      使用配置值
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#context" class="md-nav__link">
+    <span class="md-ellipsis">
+      Context 配置的引用
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Context 配置的引用">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#context_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Context 的重定义
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      注册配置
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="注册配置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#context_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Context 配置注册
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Context 配置注册">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#icontexttaskinterface" class="md-nav__link">
+    <span class="md-ellipsis">
+      IContextTaskInterface
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#profile_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Profile 配置注册
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      注意事项
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="_1">配置模块<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<div class="toc">
+<ul>
+<li><a href="#_1">配置模块</a><ul>
+<li><a href="#_2">引言</a></li>
+<li><a href="#_3">配置的类型</a></li>
+<li><a href="#_4">引用到配置</a><ul>
+<li><a href="#profile">profile 配置的引用</a><ul>
+<li><a href="#_5">简单的标记</a></li>
+<li><a href="#_6">查询异常</a></li>
+<li><a href="#_7">使用配置值</a></li>
+</ul>
+</li>
+<li><a href="#context">Context 配置的引用</a><ul>
+<li><a href="#context_1">Context 的重定义</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#_8">注册配置</a><ul>
+<li><a href="#context_2">Context 配置注册</a><ul>
+<li><a href="#icontexttaskinterface">IContextTaskInterface</a></li>
+</ul>
+</li>
+<li><a href="#profile_1">Profile 配置注册</a></li>
+</ul>
+</li>
+<li><a href="#_9">注意事项</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<h2 id="_2">引言<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>在ICore 中提供了一套非常好用的配置模块，用户可以简单的添加配置信息，可以很方便的引用到配置信息。举个例子，我们在ICore中使用到的宏注解： <code>$SetAppThreadCount(4)</code>便是向系统写入配置信息:</p>
+<div class="highlight"><pre><span></span><code><span class="n">$SetAppThreadCount</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">main</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">argv</span><span class="p">[])</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">IApplication</span><span class="w"> </span><span class="nf">app</span><span class="p">(</span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="n">argv</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">app</span><span class="p">.</span><span class="n">run</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>而当需要引用这个配置信息的时候，也很简单：</p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">IAsioApplication::run</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">detail</span><span class="o">::</span><span class="n">SignalHandler</span><span class="w"> </span><span class="n">signal_handler</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">m_threadCount</span><span class="p">){</span>
+<span class="w">        </span><span class="k">auto</span><span class="w"> </span><span class="n">defaultCount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="kr">thread</span><span class="o">::</span><span class="n">hardware_concurrency</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="w">        </span><span class="n">$ContextInt</span><span class="w"> </span><span class="n">count</span><span class="p">{</span><span class="s">&quot;/system/threadCount&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">defaultCount</span><span class="p">};</span>
+<span class="w">        </span><span class="n">m_threadCount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">*</span><span class="n">count</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="n">IAsioContext</span><span class="o">::</span><span class="n">instance</span><span class="p">().</span><span class="n">run</span><span class="p">(</span><span class="n">m_threadCount</span><span class="p">);</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>在第7行，我们使用 <code>$ContextInt</code> 类型来构造一个对象，对象的第一个内容是我们的配置信息所在的位置，第二个信息是默认值。</p>
+<p>在实际的执行中，count 对象会在<code>/system/threadCount</code> 这个<code>json_pointer</code> 位置查找有没有json值，有的话，自动转换成 int 类型赋值给 count， 没有的话，则会使用默认值。</p>
+<p>下面我们依次讲解其中的内容。</p>
+<h2 id="_3">配置的类型<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>在ICore中，配置信息被分为两类：</p>
+<ul>
+<li>Context 配置</li>
+<li>profile 配置</li>
+</ul>
+<p>context 配置是系统性的配置，他在程序完全启动之前有效。比如设置是否启动测试，是否屏蔽某一个 task， 设置多少线程以运行程序等等功能。</p>
+<p>profile 是在程序完全启动之后，对功能的一个约束。比如我启动了一个http 服务器，那么接收的http 信息最多可以多长，header 信息有多长，这个取决于 profile 配置，我启动一个 IHttpPythonTest, 它的运行目录在哪里，这个也是取决于 profile 配置。</p>
+<p>这样区分 context配置和 profile 配置可以很好的厘清框架配置和具体的功能配置之间的区别。用户在之后的操作中，更多的是使用 context 配置，而不修改 context 配置；而profile 配置，则会根据自己的需要定义一系列的 profile配置，并引用 profile 配置。</p>
+<h2 id="_4">引用到配置<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>无论是 profile 类型的配置，还是context 类型的配置，他们存储配置的容器时一个 IJson 类型。用户添加配置时往IJson 类型里面添加字段，用户获取配置的时候时尝试查询该 IJson 对象，如果查询到了，会尝试将该对象转换成用户希望的类型，如果转换成功，则用户在 IJson 对象中查询到了配置，上述如果失败，对象会存储查询失败的信息，并尝试使用给定的默认值，如果没有默认值，则会使用默认构造函数构造一个对象出来。</p>
+<h3 id="profile">profile 配置的引用<a class="headerlink" href="#profile" title="Permanent link">&para;</a></h3>
+<p>profile 定义了一个获取引用的类：</p>
+<div class="highlight"><pre><span></span><code><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">IProfileImport</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">IConfigImportInterface</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span>
+<span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+<span class="w">    </span><span class="n">IProfileImport</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">path</span><span class="p">);</span>
+<span class="w">    </span><span class="n">IProfileImport</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">path</span><span class="p">,</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="n">value</span><span class="p">);</span>
+
+<span class="k">public</span><span class="o">:</span>
+<span class="w">    </span><span class="n">IProfileImport</span><span class="o">&amp;</span><span class="w"> </span><span class="k">operator</span><span class="w"> </span><span class="o">=</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">T</span><span class="o">&amp;</span><span class="w"> </span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">delete</span><span class="p">;</span>
+
+<span class="k">protected</span><span class="o">:</span>
+<span class="w">    </span><span class="k">virtual</span><span class="w"> </span><span class="n">IConfigManageInterface</span><span class="o">&amp;</span><span class="w"> </span><span class="n">getConfigManage</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="k">final</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div>
+<p>用户在这里可以传入 std::string 类型的 path 来进行获取数据。path 类型时 nlohmann/json的 json pointer 类型。用户也可以提供一个默认值给 IProfileImport, 如果配置查询失败的时候，则可以使用 默认值。</p>
+<p>nlohmann/json 库中的 JSON Pointer 提供了一种简洁的方式来定位和操作 JSON 数据中的特定节点。通过类似 <code>/foo/bar/0</code> 的路径字符串（遵循 RFC 6901 标准），用户可直接访问嵌套结构，例如获取 <code>{"foo": {"bar": [42, 43]}}</code> 中的第一个元素 42。特殊字符（如 <code>/</code> 和 <code>~</code>）需转义为 <code>~1</code> 和 <code>~0</code>。使用 <code>json_pointer</code> 类构造路径后，可通过 <code>at()</code> 或 <code>operator[]</code> 访问数据，若路径无效会抛出 <code>out_of_range</code> 异常。该功能简化了深层数据的读写，同时兼容标准规范。</p>
+<p>所以用户在写path的时候需要注意符合RFC6906的标准。</p>
+<p>以下是一个使用 profile 类型的案例</p>
+<div class="highlight"><pre><span></span><code><span class="n">IProfileImport</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">port</span><span class="p">{</span><span class="s">&quot;/http/port&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">8088</span><span class="p">};</span>
+<span class="n">server</span><span class="p">.</span><span class="n">setPort</span><span class="p">(</span><span class="o">*</span><span class="n">port</span><span class="p">);</span>
+</code></pre></div>
+<p>注意这里用户使用 port 的时候需要通过 <code>*</code>  解引用操作符来获取其内部存储的实际值。</p>
+<h4 id="_5">简单的标记<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
+<p>上面的代码有一些繁琐，为了简单的获取到想要的配置信息我们对 <code>IProfileImport</code> 进行了重定义,如下：</p>
+<div class="highlight"><pre><span></span><code><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">$Profile</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">IProfileImport</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">;</span>
+
+<span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">$ProfileMap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">IProfileImport</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">map</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">,</span><span class="w"> </span><span class="n">T</span><span class="o">&gt;&gt;</span><span class="p">;</span>
+
+<span class="k">using</span><span class="w"> </span><span class="n">$ProfileIJson</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">$Profile</span><span class="o">&lt;</span><span class="n">IJson</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">$ProfileBool</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">$Profile</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">$ProfileChar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">$Profile</span><span class="o">&lt;</span><span class="kt">char</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">$ProfileUChar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">$Profile</span><span class="o">&lt;</span><span class="n">uchar</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">$ProfileSChar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">$Profile</span><span class="o">&lt;</span><span class="kt">signed</span><span class="w"> </span><span class="kt">char</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">$ProfileShort</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">$Profile</span><span class="o">&lt;</span><span class="kt">short</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">$ProfileUShort</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">$Profile</span><span class="o">&lt;</span><span class="n">ushort</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">$ProfileInt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">$Profile</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">$ProfileUInt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">$Profile</span><span class="o">&lt;</span><span class="n">uint</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">$ProfileLong</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">$Profile</span><span class="o">&lt;</span><span class="kt">long</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">$ProfileULong</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">$Profile</span><span class="o">&lt;</span><span class="n">ulong</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">$ProfileLongLong</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">$Profile</span><span class="o">&lt;</span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">$ProfileULongLong</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">$Profile</span><span class="o">&lt;</span><span class="n">qulonglong</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">$ProfileFloat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">$Profile</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">$ProfileDouble</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">$Profile</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">$ProfileLongDouble</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">$Profile</span><span class="o">&lt;</span><span class="kt">long</span><span class="w"> </span><span class="kt">double</span><span class="o">&gt;</span><span class="p">;</span>
+
+<span class="k">using</span><span class="w"> </span><span class="n">$ProfileMapStdString</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">$ProfileMap</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">$ProfileQString</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">$Profile</span><span class="o">&lt;</span><span class="n">QString</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">$ProfileStdString</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">$Profile</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">$ProfileQStringList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">$Profile</span><span class="o">&lt;</span><span class="n">QStringList</span><span class="o">&gt;</span><span class="p">;</span>
+
+<span class="k">using</span><span class="w"> </span><span class="n">$IJson</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">$ProfileIJson</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">$Bool</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">$ProfileBool</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">$Char</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">$ProfileChar</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">$UChar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">$ProfileUChar</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">$SChar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">$ProfileSChar</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">$Short</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">$ProfileShort</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">$UShort</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">$ProfileUShort</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">$Int</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">$ProfileInt</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">$UInt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">$ProfileUInt</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">$Long</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">$ProfileLong</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">$ULong</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">$ProfileULong</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">$LongLong</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">$ProfileLongLong</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">$ULongLong</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">$ProfileULongLong</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">$Float</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">$ProfileFloat</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">$Double</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">$ProfileDouble</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">$LongDouble</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">$ProfileLongDouble</span><span class="p">;</span>
+
+<span class="k">using</span><span class="w"> </span><span class="n">$MapStdString</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">$ProfileMapStdString</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">$QString</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">$ProfileQString</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">$StdString</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">$ProfileStdString</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">$QStringList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">$ProfileQStringList</span><span class="p">;</span>
+</code></pre></div>
+<p>在上面的代码中，我们列举了可能会用到的所有类型。类型的定义也很简单 <code>$</code> 加上类型首字母大写就可以了。</p>
+<p>在上面的代码中，我们就可以改为如下的代码：</p>
+<div class="highlight"><pre><span></span><code><span class="n">$Int</span><span class="w"> </span><span class="n">port</span><span class="p">{</span><span class="s">&quot;/http/port&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">8088</span><span class="p">};</span>
+<span class="n">server</span><span class="p">.</span><span class="n">setPort</span><span class="p">(</span><span class="o">*</span><span class="n">port</span><span class="p">);</span>
+</code></pre></div>
+<p>这样，配置更加简洁易懂。</p>
+<h4 id="_6">查询异常<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
+<p>在上面的代码中，如果查询异常，比如在 IJson对象中没有 <code>/http/port</code> 这个json pointer 对应的数据，或者 <code>/http/port</code> 这里面存储的是一个string类型，不能够被转换为 int 类型，或者它转换int 类型会超过 int 类型的范围，那么这个情况又该如何判断呢？</p>
+<p>在 IProfileImport 类型中，对于结果有三种状态：</p>
+<ul>
+<li>构造值 <code>InitializedValue</code></li>
+</ul>
+<p>这个状态表示当前对象查询或者转换 json 值失败，而用户也没有提供默认值，那么配置对象中现在存储的值是一个默认值，对应的， $Bool 是 false， $Int 是 0， 而$QString 是  “” , 空字符串。、</p>
+<p>用户可以通过函数 <code>bool isInitializedValue() const;</code> 来判断当前值是否时构造值。</p>
+<ul>
+<li>默认值 <code>DefaultValue</code></li>
+</ul>
+<p>如果用户在构造 ProfileImport 对象时传入了默认值，那么在 json 查询或转换失败的时候，会使用默认值状态。</p>
+<p>用户可以通过 <code>bool isDefaultedValue() const;</code> 来判断是否时默认值。</p>
+<ul>
+<li>加载值  <code>LoadedValue</code>,</li>
+</ul>
+<p>用户在json查询并转换成功的时候，IProfileImport 会变为 LoadedValue 状态。</p>
+<p>用户可以通过 <code>bool isLoadedValue() const</code> 来判断当前的值是否时加载值。</p>
+<h4 id="_7">使用配置值<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h4>
+<p>对于一个 IProfileImport 对象而言，用以下两种方式使用里面的值</p>
+<ul>
+<li>通过解引用对象来获取值</li>
+<li>通过 value 函数来获取值</li>
+</ul>
+<p>示例如下：</p>
+<div class="highlight"><pre><span></span><code><span class="n">$Int</span><span class="w"> </span><span class="n">port</span><span class="p">{</span><span class="s">&quot;/http/port&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">8088</span><span class="p">};</span>
+
+<span class="c1">// 方式1</span>
+<span class="c1">//server.setPort(*port);</span>
+
+<span class="c1">// 方式2</span>
+<span class="n">server</span><span class="p">.</span><span class="n">setPort</span><span class="p">(</span><span class="n">port</span><span class="p">.</span><span class="n">value</span><span class="p">());</span>
+</code></pre></div>
+<h3 id="context">Context 配置的引用<a class="headerlink" href="#context" title="Permanent link">&para;</a></h3>
+<h4 id="context_1">Context 的重定义<a class="headerlink" href="#context_1" title="Permanent link">&para;</a></h4>
+<p>context 的重定义如下：</p>
+<div class="highlight"><pre><span></span><code><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">$Context</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">IContextImport</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">;</span>
+
+<span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">$ContextMap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">IContextImport</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">map</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">,</span><span class="w"> </span><span class="n">T</span><span class="o">&gt;&gt;</span><span class="p">;</span>
+
+<span class="k">using</span><span class="w"> </span><span class="n">$ContextJson</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">$Context</span><span class="o">&lt;</span><span class="n">IJson</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">$ContextBool</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">$Context</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">$ContextChar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">$Context</span><span class="o">&lt;</span><span class="kt">char</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">$ContextUChar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">$Context</span><span class="o">&lt;</span><span class="n">uchar</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">$ContextSChar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">$Context</span><span class="o">&lt;</span><span class="kt">signed</span><span class="w"> </span><span class="kt">char</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">$ContextShort</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">$Context</span><span class="o">&lt;</span><span class="kt">short</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">$ContextUShort</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">$Context</span><span class="o">&lt;</span><span class="n">ushort</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">$ContextInt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">$Context</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">$ContextUInt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">$Context</span><span class="o">&lt;</span><span class="n">uint</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">$ContextLong</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">$Context</span><span class="o">&lt;</span><span class="kt">long</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">$ContextULong</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">$Context</span><span class="o">&lt;</span><span class="n">ulong</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">$ContextLongLong</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">$Context</span><span class="o">&lt;</span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">$ContextULongLong</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">$Context</span><span class="o">&lt;</span><span class="n">qulonglong</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">$ContextFloat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">$Context</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">$ContextDouble</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">$Context</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">$ContextLongDouble</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">$Context</span><span class="o">&lt;</span><span class="kt">long</span><span class="w"> </span><span class="kt">double</span><span class="o">&gt;</span><span class="p">;</span>
+
+<span class="k">using</span><span class="w"> </span><span class="n">$ContextMapStdString</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">$ContextMap</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">$ContextQString</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">$Context</span><span class="o">&lt;</span><span class="n">QString</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">$ContextStdString</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">$Context</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">$ContextQStringList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">$Context</span><span class="o">&lt;</span><span class="n">QStringList</span><span class="o">&gt;</span><span class="p">;</span>
+</code></pre></div>
+<p>这里没有再生了 Context 字符，而是在 <code>$</code> 和类型之间添加了一个 <code>Context</code> 字符串。因为 Context配置查询相对于 Profile 查询并不是一个常见的，面向开发者的操作。所以更短的配置查询留给了 profile 查询。</p>
+<p>context 配置查询的操作和 profile 配置查询的操作一致，这里不再记录。</p>
+<h2 id="_8">注册配置<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<h3 id="context_2">Context 配置注册<a class="headerlink" href="#context_2" title="Permanent link">&para;</a></h3>
+<h4 id="icontexttaskinterface">IContextTaskInterface<a class="headerlink" href="#icontexttaskinterface" title="Permanent link">&para;</a></h4>
+<p>Context 配置注册的基础是 IContextTaskInterface 类，它的声明如下：</p>
+<div class="highlight"><pre><span></span><code><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">enabled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="o">&gt;</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">IContextTaskInterface</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">ITaskWareUnit</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span><span class="w"> </span><span class="n">IConfigTaskCatagory</span><span class="p">,</span><span class="w"> </span><span class="n">enabled</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">ISoloUnit</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span>
+<span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+<span class="w">    </span><span class="n">IContextTaskInterface</span><span class="p">()</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">default</span><span class="p">;</span>
+
+<span class="k">public</span><span class="o">:</span>
+<span class="w">    </span><span class="k">virtual</span><span class="w"> </span><span class="n">IJson</span><span class="w"> </span><span class="n">config</span><span class="p">()</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="k">virtual</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="nf">path</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
+
+<span class="k">protected</span><span class="o">:</span>
+<span class="w">    </span><span class="k">virtual</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">$task</span><span class="p">()</span><span class="w"> </span><span class="k">final</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div>
+<p>用户继承该类，就可以注册自己的配置到 Context 配置中去。 </p>
+<p>config() 函数返回的</p>
+<h3 id="profile_1">Profile 配置注册<a class="headerlink" href="#profile_1" title="Permanent link">&para;</a></h3>
+<h2 id="_9">注意事项<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.instant.preview"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+        <script src="../../js/lunr.zh.js"></script>
+      
+    
+  </body>
+</html>

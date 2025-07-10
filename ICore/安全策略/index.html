@@ -2000,7 +2000,7 @@
 <p>IWebCore的开发过程中，用户的代码时被任务化，模块化的。开发者所编写的代码是整个代码中的一个个功能点，这些功能点会被封装成一个个的任务（Task），在项目运行的初期，初始化这一系列的任务。在所有的任务完成初始化的时候，程序开始提供服务。</p>
 <p>所以对于IWebCore而言，用户可以在任务执行的时候对代码的逻辑功能和内容等进行先期的判断，如果代码符合一定的逻辑，则可以继续执行，如果不符合逻辑，则直接让任务失败，提前暴露问题，让问题在开发阶段就被发现和解决。</p>
 <p>关于Fast-Fail 请参考 <a href="../Abort-FailFast/">Abort-FastFail</a>文档。</p>
-<p>IWebCore 执行运行初期 Fast-Fail 功能的是我们的 <a href="./Abort.md">Abort</a> 机制。具体内容请参考该文档。</p>
+<p>IWebCore 执行运行初期 Fast-Fail 功能的是我们的 <a href="../IAbort/">Abort</a> 机制。具体内容请参考该文档。</p>
 <h2 id="_2">运行期安全<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <h3 id="iresult">使用 IResult<a class="headerlink" href="#iresult" title="Permanent link">&para;</a></h3>
 <p>IResult 是对 <code>std::optional</code> 的一个重命名，让该机制可以自然，无缝的和 IWebCore 的命名机制结合起来，用户使用的时候不显突兀。</p>

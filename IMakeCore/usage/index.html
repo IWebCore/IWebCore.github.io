@@ -2521,7 +2521,7 @@
 <h3 id="python">python 支持需要<a class="headerlink" href="#python" title="Permanent link">&para;</a></h3>
 <p>IMakeCore在底层实际执行功能的是 python代码，所以windows用户确保系统中有可用的python，python要求的版本是3.0 以上的版本。</p>
 <h3 id="_3">下载与安装<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<p>我们先来安装这个包，在网络上下载该下载文件， IMakeCore.zip。解压该文件，如下所示：</p>
+<p>我们先来安装这个包，在网络上下载该下载文件， <a href="../../assets/IMakeCore.zip">IMakeCore.zip</a>。解压该文件，如下所示：</p>
 <p><img alt="image-20250520125556708" src="../IMakeCore%E4%BD%BF%E7%94%A8%E6%96%87%E6%A1%A3.assets/image-20250520125556708.png" /></p>
 <p>在这个文件中，有一系列的文件夹。.data 是配置文件存放的地方，.system 文件夹是功能集成的地方，其他的文件夹是IMakeCore预制的一些库，用户可以直接使用这些库，不用再去下载。</p>
 <p>在文件夹之外，有两个文件，windows_install.bat 是windows上执行安装的脚本，linux_install.sh 则是在 linux上执行安装的脚本，mac_install.sh 是在 mac 电脑上安装的脚本(关于mac_install.sh，只是先写在这里，我并没有mac电脑，也不知道对不对)。</p>
@@ -2755,7 +2755,7 @@
 <p>在 vs2019 中，解决方案资源管理器面板如下：</p>
 <p><img alt="image-20250520200501358" src="../IMakeCore%E4%BD%BF%E7%94%A8%E6%96%87%E6%A1%A3.assets/image-20250520200501358.png" /></p>
 <p>vs2019没有将引入的库显示在项目资源面板上，但是编译正常进行，正常输出。</p>
-<p>其他的编辑器我没有进行更多的尝试。其实我很想试一试 clion 的，但是之前我想申请开源开发者license 的时候，我的github 被封掉了，没有办法申请，现在 clion 可以免费商用了，但我还没时间搞，之后有时间的时候试一下，看看是什么效果，我的电脑可带的动。(我问了一圈，没见过 github 也被封禁的<img alt="😅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f605.svg" title=":sweat_smile:" />):</p>
+<p>其他的编辑器我没有进行更多的尝试。其实我很想试一试 clion 的，但是之前我想申请开源开发者license 的时候，我的github 被封掉了，没有办法申请，现在 clion 可以免费商用了，但我还没时间搞，之后有时间的时候试一下，看看是什么效果，我的电脑可带的动。(我问了一圈，没见过 github 也被封禁的<img alt="😅" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f605.png" title=":sweat_smile:" />):</p>
 <h2 id="packagesjson">项目 packages.json<a class="headerlink" href="#packagesjson" title="Permanent link">&para;</a></h2>
 <p>项目中 packages.json 用于管理 IMakeCore插件使用的文件。在上述示例中，我们只使用到了 packages.json 中的一个属性<code>packages</code>。在我写这篇文档的时候（今天是这个项目的第6天，开始写文档了，打算一个星期解决这个事情），我也一共定义和使用了三个属性，另外两个分别是 <code>localized</code> 和 <code>libstore</code>。</p>
 <p>packages.json 不像 node 工程里的 package.json 文件，来管理整个的项目。所以针对于项目上的package.json 我不准备定义很多的属性。（不定义，用户自己可以定义一些来玩， 比如 name， author 等，虽然也没啥意义）。在我们之后描述到的插件的 package.json 文档中，我们会定义很多，大量的属性。注意这两个描述文件，一个带<code>s</code>， 一个不带。</p>

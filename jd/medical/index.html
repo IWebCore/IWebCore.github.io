@@ -1682,12 +1682,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IMakeCore/usage/" class="md-nav__link">
+      <a href="../../IMakeCore/packages_json/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    IMakeCore使用文档
+    pacakges.json
     
   </span>
   
@@ -1705,12 +1705,35 @@
   
   
     <li class="md-nav__item">
-      <a href="../../IMakeCore/packages_json/" class="md-nav__link">
+      <a href="../../IMakeCore/wandering/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    pacakges.json
+    IMakeCore 漫谈
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IMakeCore/usage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    IMakeCore使用文档
     
   </span>
   
@@ -1862,9 +1885,18 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#ihttp-chttp" class="md-nav__link">
+  <a href="#ipubcore" class="md-nav__link">
     <span class="md-ellipsis">
-      IHttp 基于反射和注解的c++http 框架
+      IPubCore 包管理网站
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ihttp-c-http" class="md-nav__link">
+    <span class="md-ellipsis">
+      IHttp 基于反射和注解的c++ http 框架
     </span>
   </a>
   
@@ -2072,7 +2104,7 @@
 <p class="admonition-title">基本信息</p>
 <ul>
 <li>性别: 男 / 年龄: 30</li>
-<li>手机号码: 18096611724  / 邮箱：<a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#121;&#117;&#101;&#107;&#101;&#121;&#117;&#97;&#110;&#64;&#113;&#113;&#46;&#99;&#111;&#109;">&#121;&#117;&#101;&#107;&#101;&#121;&#117;&#97;&#110;&#64;&#113;&#113;&#46;&#99;&#111;&#109;</a> / 户籍地址： 安徽阜阳</li>
+<li>手机号: 18096611724  / 邮箱：<a href="mailto:yuekeyuan@qq.com">yuekeyuan@qq.com</a> / 户籍： 安徽阜阳</li>
 <li>杭州电子科技大学 / 2012-2016 / 本科 / 计算机科学与技术专业</li>
 </ul>
 </div>
@@ -2087,24 +2119,24 @@
 <h2 id="_3">工作/项目经历<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <h3 id="iwebcore">IWebCore 开发<a class="headerlink" href="#iwebcore" title="Permanent link">&para;</a></h3>
 <h4 id="imakecore">IMakeCore 基于源码的包管理系统<a class="headerlink" href="#imakecore" title="Permanent link">&para;</a></h4>
-<blockquote>
-<p>该包管理系统的目的是用于管理 IWebCore 插件使用,后扩展到所有其他的可以基于源码的包。</p>
-</blockquote>
 <ul>
 <li>基于源码的包管理系统，可以在 qmake, cmake 中无缝集成。</li>
 <li>基于packages.json文件，实现了包的自动查找，下载，解压，导入，依赖管理，版本管理，缓存管理等功能。</li>
-<li>实现了网上的包管理网站，可以在线查找包，用户注册，包上传分享等。网站后台是基于 IHttp, 前端是基于 React.该网站的地址是 <a href="https://pub.iwebcore.org">https://pub.iwebcore.org</a> 。</li>
-<li>地址：<a href="http://127.0.0.1:8000/IMakeCore/usage/">http://127.0.0.1:8000/IMakeCore/usage/</a></li>
+<li>文档：<a href="http://docs.iwebcore.org/IMakeCore/quick_start/">http://docs.iwebcore.org/IMakeCore/quick_start/</a></li>
 </ul>
-<h4 id="ihttp-chttp">IHttp 基于反射和注解的c++http 框架<a class="headerlink" href="#ihttp-chttp" title="Permanent link">&para;</a></h4>
+<h4 id="ipubcore">IPubCore 包管理网站<a class="headerlink" href="#ipubcore" title="Permanent link">&para;</a></h4>
+<ul>
+<li>实现了网上的包管理网站，可以在线查找包，用户注册，包上传分享等。网站后台是基于 IHttp, 前端是基于 React.</li>
+<li>地址：<a href="https://pub.iwebcore.org">https://pub.iwebcore.org</a> </li>
+</ul>
+<h4 id="ihttp-c-http">IHttp 基于反射和注解的c++ http 框架<a class="headerlink" href="#ihttp-c-http" title="Permanent link">&para;</a></h4>
 <ul>
 <li>IHttp 是一款基于<code>c++</code>的快速开发，高效运行的 网络框架。 它降低<code>c++</code>网络开发的难度，并提高开发效率。</li>
 <li>框架提供了和 Spring 一致的操作逻辑和Api。</li>
 <li>基于反射和注解，实现了路由映射，参数注入，请求拦截，任意返回值类型处理，异常处理等功能。</li>
 <li>对于 query, path, cookie, header, session, form-data, multipart, json, xml 等请求参数的处理，均可以快速处理。</li>
 <li>目前插件实现了对 session, 静态文件映射，模板渲染等功能。</li>
-<li>github: <a href="https://github.com/IWebCore/IHttp">https://github.com/IWebCore/IHttp</a></li>
-<li>documents: <a href="https://iwebcore.github.io/IHttpCore/overview/">https://iwebcore.github.io/IHttpCore/overview/</a></li>
+<li>文档: <a href="https://docs.iwebcore.org/ICmd/overview/">https://docs.iwebcore.org/IHttpCore/overview/</a></li>
 </ul>
 <h4 id="irdb-c">IRdb 基于注解的c++数据库框架<a class="headerlink" href="#irdb-c" title="Permanent link">&para;</a></h4>
 <ul>
@@ -2113,13 +2145,13 @@
 <li>基于model 框架，实现了数据库的查询，更新，删除，分页，排序， 事务处理等功能。</li>
 <li>目前支持 sqlite, mysql, sqlserver, Postgres, MariaDb 五种数据库，后续会有更多的数据库被支持。</li>
 <li>支持用户自定义扩展，可以实现复杂的查询，更新，删除，分页，排序等功能。</li>
-<li>github: <a href="https://github.com/IWebCore/IRdb">https://github.com/IWebCore/IRdb</a></li>
+<li>文档：<a href="https://docs.iwebcore.org/ICmd/overview/">https://docs.iwebcore.org/ICmd/overview/</a></li>
 </ul>
 <h4 id="icmdcore-c">ICmdCore 基于反射和注解的c++命令行框架<a class="headerlink" href="#icmdcore-c" title="Permanent link">&para;</a></h4>
 <ul>
 <li>基于反射和注解，实现了命令行参数解析，参数前后拦截，命令执行，命令帮助等功能。</li>
 <li>自定义命令格式</li>
-<li>文档请参考 <a href="https://iwebcore.github.io/ICmd/overview/">https://iwebcore.github.io/ICmd/overview/</a></li>
+<li>文档: <a href="https://docs.iwebcore.org/ICmd/overview/">https://docs.iwebcore.org/ICmd/overview/</a></li>
 </ul>
 <h3 id="_4">合肥锐视医疗科技有限公司<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <h4 id="sharp1000">Sharp1000 多模态精准放疗系统<a class="headerlink" href="#sharp1000" title="Permanent link">&para;</a></h4>

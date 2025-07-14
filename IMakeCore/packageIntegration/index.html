@@ -1846,15 +1846,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#forcelocal_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      forceLocal 选项
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#ipc_1" class="md-nav__link">
     <span class="md-ellipsis">
       使用 ipc 进行包管理
@@ -2221,15 +2212,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#forcelocal_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      forceLocal 选项
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#ipc_1" class="md-nav__link">
     <span class="md-ellipsis">
       使用 ipc 进行包管理
@@ -2426,7 +2408,7 @@
 <p>这里的 url 是包的下载地址，如果用户没有配置本地路径，或者在本地没有查找到相关的包，那么IMakeCore 就会使用用户定义的url路径顺序下载包，尝试解析加载包。</p>
 <p>如果url 指定多个，并且前一个 url 下载到包了，但是该报并不匹配配置中的包，那么此时IMakeCore不会尝试下载解析后面的包，而是直接报错。此时用户需要手动检查包的配置。</p>
 <p>url 可以省略不写。</p>
-<h3 id="forcelocal">forceLocal<a class="headerlink" href="#forcelocal" title="Permanent link">&para;</a></h3>
+<h3 id="forcelocal">forceLocal <a href="#forceLocal"></a><a class="headerlink" href="#forcelocal" title="Permanent link">&para;</a></h3>
 <p><code>forceLocal</code> 的值为 <code>bool</code> 类型，默认为 <code>false</code>。</p>
 <p>forceLocal 如果为 true。那么表示这个包必须从<code>项目路径下的包文件夹</code>中加载包。如果<code>项目路径下的包文件夹</code>中没有该包，IMakeCore 会复制一个包到该路径下，并进行加载。</p>
 <p><code>项目路径下的包文件夹</code> 默认是项目路径下的.<code>lib 文件夹</code>，用户也可以在package.json 中配置其他路径。</p>
@@ -2435,159 +2417,148 @@
 <li>用户对一个包想进行一些更改，以满足自己的要求。此时如果直接在包上进行更改，则会污染这个包。导致其他项目出现问题。如果拷贝到项目路径下，则没有这个问题。</li>
 <li>用户想将这个项目拷贝分享，而将要拷贝的位置没有安装 IMakeCore, 或者是断网状态，或者是想直接拷贝过去编译，那么将依赖的包拷贝到项目文件夹下无疑是一个很好的方法。</li>
 </ul>
-<h2 id="forcelocal_1">forceLocal 选项<a class="headerlink" href="#forcelocal_1" title="Permanent link">&para;</a></h2>
-<p>forceLocal 除了可以定义在包的配置信息中，也可以定义在 <code>packages.json</code> 文件的全局作用域。如下：
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-3-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-3-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-3-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-3-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-3-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-3-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-3-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-3-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-3-10">10</a></span>
-<span class="normal"><a href="#__codelineno-3-11">11</a></span>
-<span class="normal"><a href="#__codelineno-3-12">12</a></span>
-<span class="normal"><a href="#__codelineno-3-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="p">{</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="w">    </span><span class="nt">&quot;forceLocal&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="w">    </span><span class="nt">&quot;packages&quot;</span><span class="p">:{</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="w">        </span><span class="nt">&quot;MyLib&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="w">            </span><span class="nt">&quot;version&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;*&quot;</span><span class="p">,</span>
-<a id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="w">            </span><span class="nt">&quot;path&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;c:/mylib_path/MyLib&quot;</span><span class="p">,</span>
-<a id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="w">            </span><span class="nt">&quot;url&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="nt">&quot;https://github.com/MyName/MyLib/MyLib.zip&quot;</span>
-<a id="__codelineno-3-8" name="__codelineno-3-8"></a><span class="w">            </span><span class="nt">&quot;forceLocal&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
-<a id="__codelineno-3-9" name="__codelineno-3-9"></a><span class="w">        </span><span class="p">},</span>
-<a id="__codelineno-3-10" name="__codelineno-3-10"></a><span class="w">        </span><span class="nt">&quot;MyLib2&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;*&quot;</span><span class="p">,</span>
-<a id="__codelineno-3-11" name="__codelineno-3-11"></a><span class="w">        </span><span class="nt">&quot;MyLib3&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;x&quot;</span>
-<a id="__codelineno-3-12" name="__codelineno-3-12"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-3-13" name="__codelineno-3-13"></a><span class="p">}</span>
-</code></pre></div></td></tr></table></div></p>
-<p>全局作用域的 <code>forceLocal</code> 值类型是 <code>bool</code> 类型， 默认值是 <code>true</code> 。</p>
-<p><code>forceLocal</code> 如果定义在全局作用域，那么配置在 packages.json 中的包都要受到影响。如果一个 包没有在属性中配置 <code>"forceLocal":false</code> 那么这个包的 <code>forceLocal</code> 值为全局作用域中的 <code>forceLocal</code> 的值。 </p>
-<p>如果一个包的<code>forceLocal</code> 的值为 <code>true</code>, 该包将会被拷贝到项目的包路径下面。</p>
-<p>这里的优先级是： 具体的包的 <code>forceLocal</code> 的优先级高于 全局 <code>forceLocal</code> 的优先级。 如果一个包的 <code>forceLocal</code> 的属性没有定义，那么全局的<code>forceLocal</code>的值将会代替包的 <code>forceLocal</code> 的值。</p>
+<p>forceLocal 字段除了可以配置在包属性内，可以配置在 packages.json 的公共域中，具体用法参考 <a href="../packages_json/#forceLocal">forceLocal</a></p>
 <h2 id="ipc_1">使用 ipc 进行包管理<a class="headerlink" href="#ipc_1" title="Permanent link">&para;</a></h2>
 <h3 id="ipc-search">ipc search<a class="headerlink" href="#ipc-search" title="Permanent link">&para;</a></h3>
 <p>该命令的格式如下：</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
-<span class="normal"><a href="#__codelineno-4-2">2</a></span>
-<span class="normal"><a href="#__codelineno-4-3">3</a></span>
-<span class="normal"><a href="#__codelineno-4-4">4</a></span>
-<span class="normal"><a href="#__codelineno-4-5">5</a></span>
-<span class="normal"><a href="#__codelineno-4-6">6</a></span>
-<span class="normal"><a href="#__codelineno-4-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="o">[</span>CMD<span class="o">]</span>:
-<a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="w">    </span>ipc<span class="w"> </span>search
-<a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="o">[</span>Memo<span class="o">]</span>:
-<a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="w">    </span>search<span class="w"> </span>package<span class="w"> </span>online
-<a id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="o">[</span>Argx<span class="o">]</span>:
-<a id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="w">    </span>Index<span class="w">  </span>Name<span class="w">        </span>TypeName<span class="w">  </span>Nullable<span class="w">  </span>Memo
-<a id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="w">    </span><span class="m">1</span><span class="w">      </span>searchText<span class="w">  </span>QString<span class="w">   </span><span class="nb">false</span><span class="w">     </span>searched<span class="w"> </span>text
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
+<span class="normal"><a href="#__codelineno-3-2">2</a></span>
+<span class="normal"><a href="#__codelineno-3-3">3</a></span>
+<span class="normal"><a href="#__codelineno-3-4">4</a></span>
+<span class="normal"><a href="#__codelineno-3-5">5</a></span>
+<span class="normal"><a href="#__codelineno-3-6">6</a></span>
+<span class="normal"><a href="#__codelineno-3-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="o">[</span>CMD<span class="o">]</span>:
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="w">    </span>ipc<span class="w"> </span>search
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="o">[</span>Memo<span class="o">]</span>:
+<a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="w">    </span>search<span class="w"> </span>package<span class="w"> </span>online
+<a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="o">[</span>Argx<span class="o">]</span>:
+<a id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="w">    </span>Index<span class="w">  </span>Name<span class="w">        </span>TypeName<span class="w">  </span>Nullable<span class="w">  </span>Memo
+<a id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="w">    </span><span class="m">1</span><span class="w">      </span>searchText<span class="w">  </span>QString<span class="w">   </span><span class="nb">false</span><span class="w">     </span>searched<span class="w"> </span>text
 </code></pre></div></td></tr></table></div>
 <p>它有一个 searchText 参数</p>
 <p>如果使用该命令行，则是如下：</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-5-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-5-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-5-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-5-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-5-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-5-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-5-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-5-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-5-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a>C:<span class="se">\U</span>sers<span class="se">\Y</span>ue&gt;ipc<span class="w"> </span>search<span class="w"> </span>--<span class="w"> </span>tcp
-<a id="__codelineno-5-2" name="__codelineno-5-2"></a>
-<a id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="w"> </span>_____<span class="w">  </span>_<span class="w">    </span>_<span class="w">        </span>_<span class="w">      </span>_____
-<a id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="p">|</span>_<span class="w">   </span>_<span class="o">||</span><span class="w"> </span><span class="p">|</span><span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">      </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">    </span>/<span class="w">  </span>__<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-5-5" name="__codelineno-5-5"></a><span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">  </span>___<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="p">|</span>__<span class="w">  </span><span class="p">|</span><span class="w"> </span>/<span class="w">  </span><span class="se">\/</span><span class="w">  </span>___<span class="w">   </span>_<span class="w"> </span>__<span class="w">  </span>___
-<a id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="p">|</span>/<span class="se">\|</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>/<span class="w"> </span>_<span class="w"> </span><span class="se">\|</span><span class="w"> </span><span class="s1">&#39;_ \ | |     / _ \ | &#39;</span>__<span class="p">|</span>/<span class="w"> </span>_<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-5-7" name="__codelineno-5-7"></a><span class="w"> </span>_<span class="p">|</span><span class="w"> </span><span class="p">|</span>_<span class="w"> </span><span class="se">\ </span><span class="w"> </span>/<span class="se">\ </span><span class="w"> </span>/<span class="p">|</span><span class="w">  </span>__/<span class="p">|</span><span class="w"> </span><span class="p">|</span>_<span class="o">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="se">\_</span>_/<span class="se">\|</span><span class="w"> </span><span class="o">(</span>_<span class="o">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="p">|</span><span class="w">  </span><span class="p">|</span><span class="w">  </span>__/
-<a id="__codelineno-5-8" name="__codelineno-5-8"></a><span class="w"> </span><span class="se">\_</span>__/<span class="w">  </span><span class="se">\/</span><span class="w">  </span><span class="se">\/</span><span class="w">  </span><span class="se">\_</span>__<span class="o">||</span>_.__/<span class="w">  </span><span class="se">\_</span>___/<span class="w"> </span><span class="se">\_</span>__/<span class="w"> </span><span class="p">|</span>_<span class="p">|</span><span class="w">   </span><span class="se">\_</span>__<span class="p">|</span>
-<a id="__codelineno-5-9" name="__codelineno-5-9"></a>
-<a id="__codelineno-5-10" name="__codelineno-5-10"></a>ITcp<span class="w">  </span><span class="m">1</span>.0.0<span class="w">  </span>wrapped<span class="w"> </span>asio<span class="w"> </span>tcp<span class="w"> </span>server
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-4-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-4-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-4-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-4-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-4-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-4-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-4-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-4-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-4-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a>C:<span class="se">\U</span>sers<span class="se">\Y</span>ue&gt;ipc<span class="w"> </span>search<span class="w"> </span>--<span class="w"> </span>tcp
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a>
+<a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="w"> </span>_____<span class="w">  </span>_<span class="w">    </span>_<span class="w">        </span>_<span class="w">      </span>_____
+<a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="p">|</span>_<span class="w">   </span>_<span class="o">||</span><span class="w"> </span><span class="p">|</span><span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">      </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">    </span>/<span class="w">  </span>__<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">  </span>___<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="p">|</span>__<span class="w">  </span><span class="p">|</span><span class="w"> </span>/<span class="w">  </span><span class="se">\/</span><span class="w">  </span>___<span class="w">   </span>_<span class="w"> </span>__<span class="w">  </span>___
+<a id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="p">|</span>/<span class="se">\|</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>/<span class="w"> </span>_<span class="w"> </span><span class="se">\|</span><span class="w"> </span><span class="s1">&#39;_ \ | |     / _ \ | &#39;</span>__<span class="p">|</span>/<span class="w"> </span>_<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="w"> </span>_<span class="p">|</span><span class="w"> </span><span class="p">|</span>_<span class="w"> </span><span class="se">\ </span><span class="w"> </span>/<span class="se">\ </span><span class="w"> </span>/<span class="p">|</span><span class="w">  </span>__/<span class="p">|</span><span class="w"> </span><span class="p">|</span>_<span class="o">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="se">\_</span>_/<span class="se">\|</span><span class="w"> </span><span class="o">(</span>_<span class="o">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="p">|</span><span class="w">  </span><span class="p">|</span><span class="w">  </span>__/
+<a id="__codelineno-4-8" name="__codelineno-4-8"></a><span class="w"> </span><span class="se">\_</span>__/<span class="w">  </span><span class="se">\/</span><span class="w">  </span><span class="se">\/</span><span class="w">  </span><span class="se">\_</span>__<span class="o">||</span>_.__/<span class="w">  </span><span class="se">\_</span>___/<span class="w"> </span><span class="se">\_</span>__/<span class="w"> </span><span class="p">|</span>_<span class="p">|</span><span class="w">   </span><span class="se">\_</span>__<span class="p">|</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9"></a>
+<a id="__codelineno-4-10" name="__codelineno-4-10"></a>ITcp<span class="w">  </span><span class="m">1</span>.0.0<span class="w">  </span>wrapped<span class="w"> </span>asio<span class="w"> </span>tcp<span class="w"> </span>server
 </code></pre></div></td></tr></table></div>
 <p>用户可以通过此命令搜索网络上的库。</p>
 <h3 id="ipc-add">ipc add<a class="headerlink" href="#ipc-add" title="Permanent link">&para;</a></h3>
 <p>该命令的格式如下：</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
-<span class="normal"><a href="#__codelineno-6-2">2</a></span>
-<span class="normal"><a href="#__codelineno-6-3">3</a></span>
-<span class="normal"><a href="#__codelineno-6-4">4</a></span>
-<span class="normal"><a href="#__codelineno-6-5">5</a></span>
-<span class="normal"><a href="#__codelineno-6-6">6</a></span>
-<span class="normal"><a href="#__codelineno-6-7">7</a></span>
-<span class="normal"><a href="#__codelineno-6-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="o">[</span>CMD<span class="o">]</span>:
-<a id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="w">    </span>ipc<span class="w"> </span>add
-<a id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="o">[</span>Memo<span class="o">]</span>:
-<a id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="w">    </span>add<span class="w"> </span>package<span class="w"> </span>to<span class="w"> </span>project,<span class="w"> </span>same<span class="w"> </span>as<span class="w"> </span><span class="nb">command</span><span class="w"> </span><span class="s1">&#39;package add&#39;</span>
-<a id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="o">[</span>Argx<span class="o">]</span>:
-<a id="__codelineno-6-6" name="__codelineno-6-6"></a><span class="w">    </span>Index<span class="w">  </span>Name<span class="w">     </span>TypeName<span class="w">  </span>Nullable<span class="w">  </span>Memo
-<a id="__codelineno-6-7" name="__codelineno-6-7"></a><span class="w">    </span><span class="m">1</span><span class="w">      </span>name<span class="w">     </span>QString<span class="w">   </span><span class="nb">false</span>
-<a id="__codelineno-6-8" name="__codelineno-6-8"></a><span class="w">    </span><span class="m">2</span><span class="w">      </span>version<span class="w">  </span>QString<span class="w">   </span><span class="nb">true</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
+<span class="normal"><a href="#__codelineno-5-2">2</a></span>
+<span class="normal"><a href="#__codelineno-5-3">3</a></span>
+<span class="normal"><a href="#__codelineno-5-4">4</a></span>
+<span class="normal"><a href="#__codelineno-5-5">5</a></span>
+<span class="normal"><a href="#__codelineno-5-6">6</a></span>
+<span class="normal"><a href="#__codelineno-5-7">7</a></span>
+<span class="normal"><a href="#__codelineno-5-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="o">[</span>CMD<span class="o">]</span>:
+<a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="w">    </span>ipc<span class="w"> </span>add
+<a id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="o">[</span>Memo<span class="o">]</span>:
+<a id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="w">    </span>add<span class="w"> </span>package<span class="w"> </span>to<span class="w"> </span>project,<span class="w"> </span>same<span class="w"> </span>as<span class="w"> </span><span class="nb">command</span><span class="w"> </span><span class="s1">&#39;package add&#39;</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5"></a><span class="o">[</span>Argx<span class="o">]</span>:
+<a id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="w">    </span>Index<span class="w">  </span>Name<span class="w">     </span>TypeName<span class="w">  </span>Nullable<span class="w">  </span>Memo
+<a id="__codelineno-5-7" name="__codelineno-5-7"></a><span class="w">    </span><span class="m">1</span><span class="w">      </span>name<span class="w">     </span>QString<span class="w">   </span><span class="nb">false</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8"></a><span class="w">    </span><span class="m">2</span><span class="w">      </span>version<span class="w">  </span>QString<span class="w">   </span><span class="nb">true</span>
 </code></pre></div></td></tr></table></div>
 <p>它可以有两个参数，第一个参数是包名称，第二个参数是版本号，第二个参数可以省略，默认是 <code>*</code>, 最新版本。</p>
 <p>如果省略版本，命令行会自动计算出相应的版本号。</p>
 <p>如下是调用示例：</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-7-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-7-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-7-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-7-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-7-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-7-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-7-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-7-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-7-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a>D:<span class="se">\c</span>ode<span class="se">\p</span>roject<span class="se">\I</span>PubCmd&gt;ipc<span class="w"> </span>add<span class="w"> </span>--<span class="w"> </span>cpr
-<a id="__codelineno-7-2" name="__codelineno-7-2"></a>
-<a id="__codelineno-7-3" name="__codelineno-7-3"></a><span class="w"> </span>_____<span class="w">  </span>_<span class="w">    </span>_<span class="w">        </span>_<span class="w">      </span>_____
-<a id="__codelineno-7-4" name="__codelineno-7-4"></a><span class="p">|</span>_<span class="w">   </span>_<span class="o">||</span><span class="w"> </span><span class="p">|</span><span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">      </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">    </span>/<span class="w">  </span>__<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-7-5" name="__codelineno-7-5"></a><span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">  </span>___<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="p">|</span>__<span class="w">  </span><span class="p">|</span><span class="w"> </span>/<span class="w">  </span><span class="se">\/</span><span class="w">  </span>___<span class="w">   </span>_<span class="w"> </span>__<span class="w">  </span>___
-<a id="__codelineno-7-6" name="__codelineno-7-6"></a><span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="p">|</span>/<span class="se">\|</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>/<span class="w"> </span>_<span class="w"> </span><span class="se">\|</span><span class="w"> </span><span class="s1">&#39;_ \ | |     / _ \ | &#39;</span>__<span class="p">|</span>/<span class="w"> </span>_<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-7-7" name="__codelineno-7-7"></a><span class="w"> </span>_<span class="p">|</span><span class="w"> </span><span class="p">|</span>_<span class="w"> </span><span class="se">\ </span><span class="w"> </span>/<span class="se">\ </span><span class="w"> </span>/<span class="p">|</span><span class="w">  </span>__/<span class="p">|</span><span class="w"> </span><span class="p">|</span>_<span class="o">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="se">\_</span>_/<span class="se">\|</span><span class="w"> </span><span class="o">(</span>_<span class="o">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="p">|</span><span class="w">  </span><span class="p">|</span><span class="w">  </span>__/
-<a id="__codelineno-7-8" name="__codelineno-7-8"></a><span class="w"> </span><span class="se">\_</span>__/<span class="w">  </span><span class="se">\/</span><span class="w">  </span><span class="se">\/</span><span class="w">  </span><span class="se">\_</span>__<span class="o">||</span>_.__/<span class="w">  </span><span class="se">\_</span>___/<span class="w"> </span><span class="se">\_</span>__/<span class="w"> </span><span class="p">|</span>_<span class="p">|</span><span class="w">   </span><span class="se">\_</span>__<span class="p">|</span>
-<a id="__codelineno-7-9" name="__codelineno-7-9"></a>
-<a id="__codelineno-7-10" name="__codelineno-7-10"></a>package<span class="w"> </span>add<span class="w"> </span>success.<span class="w"> </span>Name:<span class="w"> </span>cpr<span class="w"> </span>Version:<span class="w"> </span><span class="m">1</span>.20.0
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-6-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-6-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-6-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-6-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-6-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-6-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-6-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-6-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-6-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a>D:<span class="se">\c</span>ode<span class="se">\p</span>roject<span class="se">\I</span>PubCmd&gt;ipc<span class="w"> </span>add<span class="w"> </span>--<span class="w"> </span>cpr
+<a id="__codelineno-6-2" name="__codelineno-6-2"></a>
+<a id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="w"> </span>_____<span class="w">  </span>_<span class="w">    </span>_<span class="w">        </span>_<span class="w">      </span>_____
+<a id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="p">|</span>_<span class="w">   </span>_<span class="o">||</span><span class="w"> </span><span class="p">|</span><span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">      </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">    </span>/<span class="w">  </span>__<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">  </span>___<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="p">|</span>__<span class="w">  </span><span class="p">|</span><span class="w"> </span>/<span class="w">  </span><span class="se">\/</span><span class="w">  </span>___<span class="w">   </span>_<span class="w"> </span>__<span class="w">  </span>___
+<a id="__codelineno-6-6" name="__codelineno-6-6"></a><span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="p">|</span>/<span class="se">\|</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>/<span class="w"> </span>_<span class="w"> </span><span class="se">\|</span><span class="w"> </span><span class="s1">&#39;_ \ | |     / _ \ | &#39;</span>__<span class="p">|</span>/<span class="w"> </span>_<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7"></a><span class="w"> </span>_<span class="p">|</span><span class="w"> </span><span class="p">|</span>_<span class="w"> </span><span class="se">\ </span><span class="w"> </span>/<span class="se">\ </span><span class="w"> </span>/<span class="p">|</span><span class="w">  </span>__/<span class="p">|</span><span class="w"> </span><span class="p">|</span>_<span class="o">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="se">\_</span>_/<span class="se">\|</span><span class="w"> </span><span class="o">(</span>_<span class="o">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="p">|</span><span class="w">  </span><span class="p">|</span><span class="w">  </span>__/
+<a id="__codelineno-6-8" name="__codelineno-6-8"></a><span class="w"> </span><span class="se">\_</span>__/<span class="w">  </span><span class="se">\/</span><span class="w">  </span><span class="se">\/</span><span class="w">  </span><span class="se">\_</span>__<span class="o">||</span>_.__/<span class="w">  </span><span class="se">\_</span>___/<span class="w"> </span><span class="se">\_</span>__/<span class="w"> </span><span class="p">|</span>_<span class="p">|</span><span class="w">   </span><span class="se">\_</span>__<span class="p">|</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9"></a>
+<a id="__codelineno-6-10" name="__codelineno-6-10"></a>package<span class="w"> </span>add<span class="w"> </span>success.<span class="w"> </span>Name:<span class="w"> </span>cpr<span class="w"> </span>Version:<span class="w"> </span><span class="m">1</span>.20.0
 </code></pre></div></td></tr></table></div>
 <h3 id="ipc-remove">ipc remove<a class="headerlink" href="#ipc-remove" title="Permanent link">&para;</a></h3>
 <p>该命令行的格式如下：</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span>
-<span class="normal"><a href="#__codelineno-8-2">2</a></span>
-<span class="normal"><a href="#__codelineno-8-3">3</a></span>
-<span class="normal"><a href="#__codelineno-8-4">4</a></span>
-<span class="normal"><a href="#__codelineno-8-5">5</a></span>
-<span class="normal"><a href="#__codelineno-8-6">6</a></span>
-<span class="normal"><a href="#__codelineno-8-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="o">[</span>CMD<span class="o">]</span>:
-<a id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="w">    </span>ipc<span class="w"> </span>remove
-<a id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="o">[</span>Memo<span class="o">]</span>:
-<a id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="w">    </span>remove<span class="w"> </span>package<span class="w"> </span>from<span class="w"> </span>project.<span class="w"> </span>same<span class="w"> </span>as<span class="w"> </span><span class="nb">command</span><span class="w"> </span><span class="s1">&#39;package remove&#39;</span>
-<a id="__codelineno-8-5" name="__codelineno-8-5"></a><span class="o">[</span>Args<span class="o">]</span>:
-<a id="__codelineno-8-6" name="__codelineno-8-6"></a><span class="w">    </span>Name<span class="w">  </span>TypeName<span class="w">  </span>Nullable<span class="w">  </span>Memo
-<a id="__codelineno-8-7" name="__codelineno-8-7"></a><span class="w">    </span>name<span class="w">  </span>QString<span class="w">   </span><span class="nb">false</span><span class="w">     </span>package<span class="w"> </span>name<span class="w"> </span>you<span class="w"> </span>want<span class="w"> </span>to<span class="w"> </span>remove<span class="w"> </span>from<span class="w"> </span>project
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span>
+<span class="normal"><a href="#__codelineno-7-2">2</a></span>
+<span class="normal"><a href="#__codelineno-7-3">3</a></span>
+<span class="normal"><a href="#__codelineno-7-4">4</a></span>
+<span class="normal"><a href="#__codelineno-7-5">5</a></span>
+<span class="normal"><a href="#__codelineno-7-6">6</a></span>
+<span class="normal"><a href="#__codelineno-7-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="o">[</span>CMD<span class="o">]</span>:
+<a id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="w">    </span>ipc<span class="w"> </span>remove
+<a id="__codelineno-7-3" name="__codelineno-7-3"></a><span class="o">[</span>Memo<span class="o">]</span>:
+<a id="__codelineno-7-4" name="__codelineno-7-4"></a><span class="w">    </span>remove<span class="w"> </span>package<span class="w"> </span>from<span class="w"> </span>project.<span class="w"> </span>same<span class="w"> </span>as<span class="w"> </span><span class="nb">command</span><span class="w"> </span><span class="s1">&#39;package remove&#39;</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5"></a><span class="o">[</span>Args<span class="o">]</span>:
+<a id="__codelineno-7-6" name="__codelineno-7-6"></a><span class="w">    </span>Name<span class="w">  </span>TypeName<span class="w">  </span>Nullable<span class="w">  </span>Memo
+<a id="__codelineno-7-7" name="__codelineno-7-7"></a><span class="w">    </span>name<span class="w">  </span>QString<span class="w">   </span><span class="nb">false</span><span class="w">     </span>package<span class="w"> </span>name<span class="w"> </span>you<span class="w"> </span>want<span class="w"> </span>to<span class="w"> </span>remove<span class="w"> </span>from<span class="w"> </span>project
 </code></pre></div></td></tr></table></div>
 <p>它只有一个必须的参数 name, 包的名称。</p>
 <p>如下是调用示例：</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-9-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-9-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-9-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-9-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-9-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-9-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-9-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-9-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-9-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a>D:<span class="se">\c</span>ode<span class="se">\p</span>roject<span class="se">\I</span>PubCmd&gt;ipc<span class="w"> </span>remove<span class="w"> </span>--<span class="w"> </span>cpr
-<a id="__codelineno-9-2" name="__codelineno-9-2"></a>
-<a id="__codelineno-9-3" name="__codelineno-9-3"></a><span class="w"> </span>_____<span class="w">  </span>_<span class="w">    </span>_<span class="w">        </span>_<span class="w">      </span>_____
-<a id="__codelineno-9-4" name="__codelineno-9-4"></a><span class="p">|</span>_<span class="w">   </span>_<span class="o">||</span><span class="w"> </span><span class="p">|</span><span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">      </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">    </span>/<span class="w">  </span>__<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-9-5" name="__codelineno-9-5"></a><span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">  </span>___<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="p">|</span>__<span class="w">  </span><span class="p">|</span><span class="w"> </span>/<span class="w">  </span><span class="se">\/</span><span class="w">  </span>___<span class="w">   </span>_<span class="w"> </span>__<span class="w">  </span>___
-<a id="__codelineno-9-6" name="__codelineno-9-6"></a><span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="p">|</span>/<span class="se">\|</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>/<span class="w"> </span>_<span class="w"> </span><span class="se">\|</span><span class="w"> </span><span class="s1">&#39;_ \ | |     / _ \ | &#39;</span>__<span class="p">|</span>/<span class="w"> </span>_<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-9-7" name="__codelineno-9-7"></a><span class="w"> </span>_<span class="p">|</span><span class="w"> </span><span class="p">|</span>_<span class="w"> </span><span class="se">\ </span><span class="w"> </span>/<span class="se">\ </span><span class="w"> </span>/<span class="p">|</span><span class="w">  </span>__/<span class="p">|</span><span class="w"> </span><span class="p">|</span>_<span class="o">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="se">\_</span>_/<span class="se">\|</span><span class="w"> </span><span class="o">(</span>_<span class="o">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="p">|</span><span class="w">  </span><span class="p">|</span><span class="w">  </span>__/
-<a id="__codelineno-9-8" name="__codelineno-9-8"></a><span class="w"> </span><span class="se">\_</span>__/<span class="w">  </span><span class="se">\/</span><span class="w">  </span><span class="se">\/</span><span class="w">  </span><span class="se">\_</span>__<span class="o">||</span>_.__/<span class="w">  </span><span class="se">\_</span>___/<span class="w"> </span><span class="se">\_</span>__/<span class="w"> </span><span class="p">|</span>_<span class="p">|</span><span class="w">   </span><span class="se">\_</span>__<span class="p">|</span>
-<a id="__codelineno-9-9" name="__codelineno-9-9"></a>
-<a id="__codelineno-9-10" name="__codelineno-9-10"></a>remove<span class="w"> </span>package<span class="w"> </span>succeed.<span class="w"> </span>package<span class="w"> </span>name:<span class="w">  </span><span class="s2">&quot;cpr&quot;</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-8-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-8-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-8-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-8-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-8-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-8-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-8-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-8-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-8-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a>D:<span class="se">\c</span>ode<span class="se">\p</span>roject<span class="se">\I</span>PubCmd&gt;ipc<span class="w"> </span>remove<span class="w"> </span>--<span class="w"> </span>cpr
+<a id="__codelineno-8-2" name="__codelineno-8-2"></a>
+<a id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="w"> </span>_____<span class="w">  </span>_<span class="w">    </span>_<span class="w">        </span>_<span class="w">      </span>_____
+<a id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="p">|</span>_<span class="w">   </span>_<span class="o">||</span><span class="w"> </span><span class="p">|</span><span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">      </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">    </span>/<span class="w">  </span>__<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5"></a><span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">  </span>___<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="p">|</span>__<span class="w">  </span><span class="p">|</span><span class="w"> </span>/<span class="w">  </span><span class="se">\/</span><span class="w">  </span>___<span class="w">   </span>_<span class="w"> </span>__<span class="w">  </span>___
+<a id="__codelineno-8-6" name="__codelineno-8-6"></a><span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="p">|</span>/<span class="se">\|</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>/<span class="w"> </span>_<span class="w"> </span><span class="se">\|</span><span class="w"> </span><span class="s1">&#39;_ \ | |     / _ \ | &#39;</span>__<span class="p">|</span>/<span class="w"> </span>_<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7"></a><span class="w"> </span>_<span class="p">|</span><span class="w"> </span><span class="p">|</span>_<span class="w"> </span><span class="se">\ </span><span class="w"> </span>/<span class="se">\ </span><span class="w"> </span>/<span class="p">|</span><span class="w">  </span>__/<span class="p">|</span><span class="w"> </span><span class="p">|</span>_<span class="o">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="se">\_</span>_/<span class="se">\|</span><span class="w"> </span><span class="o">(</span>_<span class="o">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="p">|</span><span class="w">  </span><span class="p">|</span><span class="w">  </span>__/
+<a id="__codelineno-8-8" name="__codelineno-8-8"></a><span class="w"> </span><span class="se">\_</span>__/<span class="w">  </span><span class="se">\/</span><span class="w">  </span><span class="se">\/</span><span class="w">  </span><span class="se">\_</span>__<span class="o">||</span>_.__/<span class="w">  </span><span class="se">\_</span>___/<span class="w"> </span><span class="se">\_</span>__/<span class="w"> </span><span class="p">|</span>_<span class="p">|</span><span class="w">   </span><span class="se">\_</span>__<span class="p">|</span>
+<a id="__codelineno-8-9" name="__codelineno-8-9"></a>
+<a id="__codelineno-8-10" name="__codelineno-8-10"></a>remove<span class="w"> </span>package<span class="w"> </span>succeed.<span class="w"> </span>package<span class="w"> </span>name:<span class="w">  </span><span class="s2">&quot;cpr&quot;</span>
 </code></pre></div></td></tr></table></div>
 <h3 id="ipc-update">ipc update<a class="headerlink" href="#ipc-update" title="Permanent link">&para;</a></h3>
 <p>该命令行的作用是更新包，它的格式如下：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span>
+<span class="normal"><a href="#__codelineno-9-2">2</a></span>
+<span class="normal"><a href="#__codelineno-9-3">3</a></span>
+<span class="normal"><a href="#__codelineno-9-4">4</a></span>
+<span class="normal"><a href="#__codelineno-9-5">5</a></span>
+<span class="normal"><a href="#__codelineno-9-6">6</a></span>
+<span class="normal"><a href="#__codelineno-9-7">7</a></span>
+<span class="normal"><a href="#__codelineno-9-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a>[CMD]:
+<a id="__codelineno-9-2" name="__codelineno-9-2"></a>    ipc update
+<a id="__codelineno-9-3" name="__codelineno-9-3"></a>[Memo]:
+<a id="__codelineno-9-4" name="__codelineno-9-4"></a>    update package in project. same as command &#39;package update&#39;
+<a id="__codelineno-9-5" name="__codelineno-9-5"></a>[Argx]:
+<a id="__codelineno-9-6" name="__codelineno-9-6"></a>    Index  Name     TypeName  Nullable  Memo
+<a id="__codelineno-9-7" name="__codelineno-9-7"></a>    1      name     QString   false     package name to be update in project
+<a id="__codelineno-9-8" name="__codelineno-9-8"></a>    2      version  QString   true      package version to be update in project
+</code></pre></div></td></tr></table></div>
+<p>它有两个参数，第一个参数是包名，这个是必须项。第二个参数是版本号，版本号可以是 <code>*</code> 或者具体版本，可以省略。如果省略，则版本是 <code>*</code>。</p>
+<p>如果版本为 <code>*</code>， 那么IMakeCore 会查找该包的最高版本，并设置为最高版本。最高版本是查找本地和线上的所有版本，找出所有版本中的最高版本进行设置。</p>
+<h3 id="ipc-install">ipc install<a class="headerlink" href="#ipc-install" title="Permanent link">&para;</a></h3>
+<p>该命令的格式如下：</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span>
 <span class="normal"><a href="#__codelineno-10-2">2</a></span>
 <span class="normal"><a href="#__codelineno-10-3">3</a></span>
@@ -2596,33 +2567,13 @@
 <span class="normal"><a href="#__codelineno-10-6">6</a></span>
 <span class="normal"><a href="#__codelineno-10-7">7</a></span>
 <span class="normal"><a href="#__codelineno-10-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a>[CMD]:
-<a id="__codelineno-10-2" name="__codelineno-10-2"></a>    ipc update
+<a id="__codelineno-10-2" name="__codelineno-10-2"></a>    ipc install
 <a id="__codelineno-10-3" name="__codelineno-10-3"></a>[Memo]:
-<a id="__codelineno-10-4" name="__codelineno-10-4"></a>    update package in project. same as command &#39;package update&#39;
+<a id="__codelineno-10-4" name="__codelineno-10-4"></a>    install package from remote to system. same as commad &#39;package install&#39;
 <a id="__codelineno-10-5" name="__codelineno-10-5"></a>[Argx]:
-<a id="__codelineno-10-6" name="__codelineno-10-6"></a>    Index  Name     TypeName  Nullable  Memo
-<a id="__codelineno-10-7" name="__codelineno-10-7"></a>    1      name     QString   false     package name to be update in project
-<a id="__codelineno-10-8" name="__codelineno-10-8"></a>    2      version  QString   true      package version to be update in project
-</code></pre></div></td></tr></table></div>
-<p>它有两个参数，第一个参数是包名，这个是必须项。第二个参数是版本号，版本号可以是 <code>*</code> 或者具体版本，可以省略。如果省略，则版本是 <code>*</code>。</p>
-<p>如果版本为 <code>*</code>， 那么IMakeCore 会查找该包的最高版本，并设置为最高版本。最高版本是查找本地和线上的所有版本，找出所有版本中的最高版本进行设置。</p>
-<h3 id="ipc-install">ipc install<a class="headerlink" href="#ipc-install" title="Permanent link">&para;</a></h3>
-<p>该命令的格式如下：</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span>
-<span class="normal"><a href="#__codelineno-11-2">2</a></span>
-<span class="normal"><a href="#__codelineno-11-3">3</a></span>
-<span class="normal"><a href="#__codelineno-11-4">4</a></span>
-<span class="normal"><a href="#__codelineno-11-5">5</a></span>
-<span class="normal"><a href="#__codelineno-11-6">6</a></span>
-<span class="normal"><a href="#__codelineno-11-7">7</a></span>
-<span class="normal"><a href="#__codelineno-11-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a>[CMD]:
-<a id="__codelineno-11-2" name="__codelineno-11-2"></a>    ipc install
-<a id="__codelineno-11-3" name="__codelineno-11-3"></a>[Memo]:
-<a id="__codelineno-11-4" name="__codelineno-11-4"></a>    install package from remote to system. same as commad &#39;package install&#39;
-<a id="__codelineno-11-5" name="__codelineno-11-5"></a>[Argx]:
-<a id="__codelineno-11-6" name="__codelineno-11-6"></a>    Index  Name         TypeName  Nullable  Memo
-<a id="__codelineno-11-7" name="__codelineno-11-7"></a>    1      packageName  QString   false     to be installed package name
-<a id="__codelineno-11-8" name="__codelineno-11-8"></a>    2      version      QString   true      to be installed package version
+<a id="__codelineno-10-6" name="__codelineno-10-6"></a>    Index  Name         TypeName  Nullable  Memo
+<a id="__codelineno-10-7" name="__codelineno-10-7"></a>    1      packageName  QString   false     to be installed package name
+<a id="__codelineno-10-8" name="__codelineno-10-8"></a>    2      version      QString   true      to be installed package version
 </code></pre></div></td></tr></table></div>
 <p>它有两个参数，包名和版本号。如果verrsion 省略，则默认是最高版本。</p>
 <p>该命令会查找网络上的包，并下载安装包。</p>

@@ -1,0 +1,3412 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../Controller%E5%AE%9A%E4%B9%89/">
+      
+      
+        <link rel="next" href="../IHttpCore%E8%B7%AF%E7%94%B1%E8%BF%94%E5%9B%9E%E7%B1%BB%E5%9E%8B%20%E5%9F%BA%E7%A1%80%E7%B1%BB%E5%9E%8B/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
+    
+    
+      
+        <title>IHttpCore 路由 - IWebCore</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="deep-purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ihttpcore" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="IWebCore" class="md-header__button md-logo" aria-label="IWebCore" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            IWebCore
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              IHttpCore 路由
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="deep-purple"  aria-label="深色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="amber"  aria-label="浅色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="浅色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../quickstart/" class="md-tabs__link">
+          
+  
+  
+  IHttp
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../ICmd/overview/" class="md-tabs__link">
+          
+  
+  
+  ICmd
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../IRdbCore/overview/" class="md-tabs__link">
+          
+  
+  
+  IRdb
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../ICore/IApplication/" class="md-tabs__link">
+          
+  
+  
+  ICore
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../IMakeCore/quick_start/" class="md-tabs__link">
+          
+  
+  
+  IMake
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="IWebCore" class="md-nav__button md-logo" aria-label="IWebCore" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    IWebCore
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    IHttp
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            IHttp
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    快速开始
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    controller
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            controller
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Controller%E5%AE%9A%E4%B9%89/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Controller定义
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    IHttpCore 路由
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    IHttpCore 路由
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      关于路由
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="关于路由">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ihttpcore_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      IHttpCore 中的路由
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      请求方法
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="请求方法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#xxxmapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      $XxxMapping
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xxxmappingdeclare" class="md-nav__link">
+    <span class="md-ellipsis">
+      $XxxMappingDeclare
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      路径规则
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="路径规则">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      路由路径和路由片段
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      普通路由片段
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      &lt;&gt; 路径
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      “/” 根目录
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      函数名作为路径
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      注意事项
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      自定义路径限定
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="自定义路径限定">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ihttppathvalidatorinterface" class="md-nav__link">
+    <span class="md-ellipsis">
+      IHttpPathValidatorInterface
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      举例
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IHttpCore%E8%B7%AF%E7%94%B1%E8%BF%94%E5%9B%9E%E7%B1%BB%E5%9E%8B%20%E5%9F%BA%E7%A1%80%E7%B1%BB%E5%9E%8B/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    IHttpCore 路由返回类型 基础类型
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IHttpCore%E8%B7%AF%E7%94%B1%E8%BF%94%E5%9B%9E%E7%B1%BB%E5%9E%8B%20Response%E7%B1%BB%E5%9E%8B/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    IHttpCore路由返回类型 Response类型
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%8F%82%E6%95%B0%E8%BE%93%E5%85%A5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    参数输入 参考示例
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    components
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            components
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../components/headers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Headers
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../components/cookie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Cookies
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../components/session/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Session
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../components/json/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    json
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../components/formdata/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    FormData
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../components/multipart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    multipart
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../components/request/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Request
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../components/response/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Response
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    middleware
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            middleware
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../middleware/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    biscuit
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            biscuit
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../biscuit/IHttpMime/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    IHttpMime
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    advance
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            advance
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advance/https/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    https
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advance/INody/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    INody
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advance/invalid%20handler/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    invalid handler
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advance/IHttpAssets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    IHttp.assets
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advance/IHttpCors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    IHttp.cors
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advance/IHttp.compress/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    IHttp.compress
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notice/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    IHttp注意事项
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advance/linuxCompile/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    linux 下的编译
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    ICmd
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            ICmd
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ICmd/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ICmd 使用指南
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ICmd/install/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    安装ICmd
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ICmd/cmdrules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    命令行规则
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ICmd/cmdAction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    定义命令
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ICmd/cmdArgs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    命令行参数集*
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ICmd/cmdArgx/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    单个命令行参数*
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ICmd/cmdOption/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    命令行选项*
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ICmd/cmdOptionValue/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    命令行选项参数*
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ICmd/api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ICmd 使用接口
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    IRdb
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            IRdb
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../IRdbCore/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    IRdbCore 简介
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../IRdbCore/database/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    数据库
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../IRdbCore/entity/Table/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Table 实体
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../IRdbCore/entity/View/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    View 实体
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../IRdbCore/model/Table%20Model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Table Model
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../IRdbCore/model/View%20Model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    View Model
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    ICore
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            ICore
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ICore/IApplication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    IApplication 用户文档
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ICore/Config/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    配置模块
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ICore/Bean/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Bean
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ICore/Task/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Task 机制
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ICore/Test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    测试
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_6" id="__nav_5_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    安全
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_6">
+            <span class="md-nav__icon md-icon"></span>
+            安全
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ICore/%E5%AE%89%E5%85%A8%E7%AD%96%E7%95%A5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    IWebCore的安全策略
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ICore/IAbort/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    IAbort 模块文档
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ICore/Abort-FailFast/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    提前失败 Fail-Fast
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_7" id="__nav_5_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    其他
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_7">
+            <span class="md-nav__icon md-icon"></span>
+            其他
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ICore/%E8%87%AA%E5%AE%9A%E4%B9%89%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%201/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    内置数据类型 基础数据类型
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ICore/%E8%87%AA%E5%AE%9A%E4%B9%89%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%202/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    IString / IStringView / IStringViewStash
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ICore/util/IPacakgeUtil/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Packages
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    IMake
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            IMake
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../IMakeCore/quick_start/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    快速开始
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../IMakeCore/packageIntegration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    包集成
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../IMakeCore/packages_json/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    pacakges.json
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../IMakeCore/configs_json/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    configs.json
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../IMakeCore/definePackage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    定义包
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../IMakeCore/ipc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ipc 工具
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../IMakeCore/ipubcore/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    IPubCore 包分发网站
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../IMakeCore/wandering/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    IMakeCore 漫谈
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      关于路由
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="关于路由">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ihttpcore_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      IHttpCore 中的路由
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      请求方法
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="请求方法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#xxxmapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      $XxxMapping
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xxxmappingdeclare" class="md-nav__link">
+    <span class="md-ellipsis">
+      $XxxMappingDeclare
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      路径规则
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="路径规则">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      路由路径和路由片段
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      普通路由片段
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      &lt;&gt; 路径
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      “/” 根目录
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      函数名作为路径
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      注意事项
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      自定义路径限定
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="自定义路径限定">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ihttppathvalidatorinterface" class="md-nav__link">
+    <span class="md-ellipsis">
+      IHttpPathValidatorInterface
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      举例
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="ihttpcore">IHttpCore 路由<a class="headerlink" href="#ihttpcore" title="Permanent link">&para;</a></h1>
+<h2 id="_1">关于路由<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>HTTP路由是Web开发中的一个关键概念，它负责将客户端的HTTP请求映射到服务器上相应的处理程序或资源。在构建Web应用时，开发者通常会设计一套路由规则，以便根据不同的URL路径和HTTP方法（如GET、POST、PUT、DELETE等）来执行不同的操作。例如，当用户访问一个博客网站的主页时，服务器可能会根据路由规则将请求转发到一个特定的函数或控制器，该函数或控制器负责渲染主页内容并返回给客户端。</p>
+<p>在现代Web框架中，路由通常通过声明式的方式进行配置，允许开发者以清晰、简洁的语法定义路由规则。例如，在Express.js（一个流行的Node.js Web框架）中，路由可以这样定义：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;/articles/:id&#39;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span><span class="w"> </span><span class="nx">res</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="p">});</span>
+</code></pre></div></td></tr></table></div>
+<p>在 python flask 中这样定义：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
+<span class="normal"><a href="#__codelineno-1-2">2</a></span>
+<span class="normal"><a href="#__codelineno-1-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="k">def</span><span class="w"> </span><span class="nf">hello_world</span><span class="p">():</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a>    <span class="k">return</span> <span class="s1">&#39;Hello, World!&#39;</span>
+</code></pre></div></td></tr></table></div>
+<p>通过这些方式，开发者可以灵活地控制Web应用的导航结构，同时确保应用能够响应各种用户请求。良好的HTTP路由设计不仅有助于提高应用的可维护性，还能提升用户体验，因为它们允许开发者快速定位和处理特定的请求。</p>
+<h3 id="ihttpcore_1">IHttpCore 中的路由<a class="headerlink" href="#ihttpcore_1" title="Permanent link">&para;</a></h3>
+<p>在 IHttpCore 中，路由的定义 和 flask， SpringMvc类似，可以让用户通过注解的方式进行定义。</p>
+<p>下面给一个简单的例子</p>
+<blockquote>
+<p>MyController</p>
+</blockquote>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-2-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-2-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-2-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-2-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-2-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-2-10">10</a></span>
+<span class="normal"><a href="#__codelineno-2-11">11</a></span>
+<span class="normal"><a href="#__codelineno-2-12">12</a></span>
+<span class="normal"><a href="#__codelineno-2-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">MyController</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">IControllerInterface</span><span class="o">&lt;</span><span class="n">MyController</span><span class="o">&gt;</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="p">{</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="w">    </span><span class="n">Q_GADGET</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="k">public</span><span class="o">:</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="w">    </span><span class="n">$GetMapping</span><span class="p">(</span><span class="n">index</span><span class="p">,</span><span class="w"> </span><span class="o">/</span><span class="p">)</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="w">    </span><span class="n">QString</span><span class="w"> </span><span class="n">index</span><span class="p">();</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7"></a>
+<a id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="w">    </span><span class="n">$PostMapping</span><span class="p">(</span><span class="n">abc</span><span class="p">)</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="w">    </span><span class="n">IFileResponse</span><span class="w"> </span><span class="n">abc</span><span class="p">();</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10"></a>
+<a id="__codelineno-2-11" name="__codelineno-2-11"></a><span class="w">    </span><span class="n">$DeleteMapping</span><span class="p">(</span><span class="n">deleteFile</span><span class="p">,</span><span class="w"> </span><span class="o">/</span><span class="n">del</span><span class="o">/&lt;</span><span class="n">id</span><span class="o">&gt;</span><span class="p">)</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12"></a><span class="w">    </span><span class="n">IStatusResponse</span><span class="w"> </span><span class="n">deleteFile</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">id</span><span class="p">);</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13"></a><span class="p">};</span>
+</code></pre></div></td></tr></table></div>
+<p>上面给了三个路由映射的案例，第一个是 映射到 <code>GET /</code>, 第二个映射到 <code>POST /abc</code> ， 第三个映射到 <code>DELETE /del/&lt;id&gt;</code> ，其中 <id> 是一个通配符，并将拦截的内容传入到函数当中去。下面我们详细解释IHttpCore中的路由规则。</p>
+<h2 id="_2">请求方法<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>在上面的案例中，我们看到了三种不同的请求方法。IHttpCore总计支持 <code>GET</code>, <code>POST</code>, <code>PUT</code>, <code>DELETE</code>,<code>PATCH</code>, <code>HEAD</code>, <code>OPTIONS</code> 七种请求方法。支持宏注解的方法有5 种，宏注解分别为：</p>
+<ul>
+<li>$GetMapping</li>
+<li>$PutMapping</li>
+<li>$PostMapping</li>
+<li>$DeleteMapping</li>
+<li>$PatchMapping</li>
+</ul>
+<p><code>HEAD</code> 方法是返回 <code>GET</code> 方法的 头部信息，不需要宏注解定义他的返回函数。<code>OPTIONS</code> 方法是查询是对一个特定的url 返回有哪些方法被支持了，同样不需要宏注解定义他的处理函数。</p>
+<p>上述的Mapping 的命名规则统一，是 <code>$</code> + <code>METHOD</code> + <code>Mapping</code> 的样式。 他们的使用方法类似，下面以 $GetMapping 为例进行讲解。</p>
+<h3 id="xxxmapping">$XxxMapping<a class="headerlink" href="#xxxmapping" title="Permanent link">&para;</a></h3>
+<p><code>$GetMapping</code>的宏注解实现如下：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-3-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-3-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-3-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-3-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-3-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-3-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-3-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-3-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-3-10">10</a></span>
+<span class="normal"><a href="#__codelineno-3-11">11</a></span>
+<span class="normal"><a href="#__codelineno-3-12">12</a></span>
+<span class="normal"><a href="#__codelineno-3-13">13</a></span>
+<span class="normal"><a href="#__codelineno-3-14">14</a></span>
+<span class="normal"><a href="#__codelineno-3-15">15</a></span>
+<span class="normal"><a href="#__codelineno-3-16">16</a></span>
+<span class="normal"><a href="#__codelineno-3-17">17</a></span>
+<span class="normal"><a href="#__codelineno-3-18">18</a></span>
+<span class="normal"><a href="#__codelineno-3-19">19</a></span>
+<span class="normal"><a href="#__codelineno-3-20">20</a></span>
+<span class="normal"><a href="#__codelineno-3-21">21</a></span>
+<span class="normal"><a href="#__codelineno-3-22">22</a></span>
+<span class="normal"><a href="#__codelineno-3-23">23</a></span>
+<span class="normal"><a href="#__codelineno-3-24">24</a></span>
+<span class="normal"><a href="#__codelineno-3-25">25</a></span>
+<span class="normal"><a href="#__codelineno-3-26">26</a></span>
+<span class="normal"><a href="#__codelineno-3-27">27</a></span>
+<span class="normal"><a href="#__codelineno-3-28">28</a></span>
+<span class="normal"><a href="#__codelineno-3-29">29</a></span>
+<span class="normal"><a href="#__codelineno-3-30">30</a></span>
+<span class="normal"><a href="#__codelineno-3-31">31</a></span>
+<span class="normal"><a href="#__codelineno-3-32">32</a></span>
+<span class="normal"><a href="#__codelineno-3-33">33</a></span>
+<span class="normal"><a href="#__codelineno-3-34">34</a></span>
+<span class="normal"><a href="#__codelineno-3-35">35</a></span>
+<span class="normal"><a href="#__codelineno-3-36">36</a></span>
+<span class="normal"><a href="#__codelineno-3-37">37</a></span>
+<span class="normal"><a href="#__codelineno-3-38">38</a></span>
+<span class="normal"><a href="#__codelineno-3-39">39</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="cp">#define $GetMapping_1(funName)  \</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="cp">    $GetMappingDeclare(funName) \</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="cp">    Q_INVOKABLE</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4"></a>
+<a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="cp">#define $GetMapping_2(funName, url1)  \</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="cp">    $GetMappingDeclare(funName, url1) \</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="cp">    Q_INVOKABLE</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8"></a>
+<a id="__codelineno-3-9" name="__codelineno-3-9"></a><span class="cp">#define $GetMapping_3(funName, url1, url2)  \</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10"></a><span class="cp">    $GetMappingDeclare(funName, url1, url2) \</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11"></a><span class="cp">    Q_INVOKABLE</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12"></a>
+<a id="__codelineno-3-13" name="__codelineno-3-13"></a><span class="cp">#define $GetMapping_4(funName, url1, url2, url3)  \</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14"></a><span class="cp">    $GetMappingDeclare(funName, url1, url2, url3) \</span>
+<a id="__codelineno-3-15" name="__codelineno-3-15"></a><span class="cp">    Q_INVOKABLE</span>
+<a id="__codelineno-3-16" name="__codelineno-3-16"></a>
+<a id="__codelineno-3-17" name="__codelineno-3-17"></a><span class="cp">#define $GetMapping_5(funName, url1, url2, url3, url4)  \</span>
+<a id="__codelineno-3-18" name="__codelineno-3-18"></a><span class="cp">    $GetMappingDeclare(funName, url1, url2, url3, url4) \</span>
+<a id="__codelineno-3-19" name="__codelineno-3-19"></a><span class="cp">    Q_INVOKABLE</span>
+<a id="__codelineno-3-20" name="__codelineno-3-20"></a>
+<a id="__codelineno-3-21" name="__codelineno-3-21"></a><span class="cp">#define $GetMapping_6(funName, url1, url2, url3, url4, url5)  \</span>
+<a id="__codelineno-3-22" name="__codelineno-3-22"></a><span class="cp">    $GetMappingDeclare(funName, url1, url2, url3, url4, url5) \</span>
+<a id="__codelineno-3-23" name="__codelineno-3-23"></a><span class="cp">    Q_INVOKABLE</span>
+<a id="__codelineno-3-24" name="__codelineno-3-24"></a>
+<a id="__codelineno-3-25" name="__codelineno-3-25"></a><span class="cp">#define $GetMapping_7(funName, url1, url2, url3, url4, url5, url6)  \</span>
+<a id="__codelineno-3-26" name="__codelineno-3-26"></a><span class="cp">    $GetMappingDeclare(funName, url1, url2, url3, url4, url5, url6) \</span>
+<a id="__codelineno-3-27" name="__codelineno-3-27"></a><span class="cp">    Q_INVOKABLE</span>
+<a id="__codelineno-3-28" name="__codelineno-3-28"></a>
+<a id="__codelineno-3-29" name="__codelineno-3-29"></a><span class="cp">#define $GetMapping_8(funName, url1, url2, url3, url4, url5, url6, url7)  \</span>
+<a id="__codelineno-3-30" name="__codelineno-3-30"></a><span class="cp">    $GetMappingDeclare(funName, url1, url2, url3, url4, url5, url6, url7) \</span>
+<a id="__codelineno-3-31" name="__codelineno-3-31"></a><span class="cp">    Q_INVOKABLE</span>
+<a id="__codelineno-3-32" name="__codelineno-3-32"></a>
+<a id="__codelineno-3-33" name="__codelineno-3-33"></a><span class="cp">#define $GetMapping_9(funName, url1, url2, url3, url4, url5, url6, url7, url8)  \</span>
+<a id="__codelineno-3-34" name="__codelineno-3-34"></a><span class="cp">    $GetMappingDeclare(funName, url1, url2, url3, url4, url5, url6, url7, url8) \</span>
+<a id="__codelineno-3-35" name="__codelineno-3-35"></a><span class="cp">    Q_INVOKABLE</span>
+<a id="__codelineno-3-36" name="__codelineno-3-36"></a>
+<a id="__codelineno-3-37" name="__codelineno-3-37"></a><span class="cp">#define $GetMapping_(N) $GetMapping_##N</span>
+<a id="__codelineno-3-38" name="__codelineno-3-38"></a><span class="cp">#define $GetMapping_EVAL(N) $GetMapping_(N)</span>
+<a id="__codelineno-3-39" name="__codelineno-3-39"></a><span class="cp">#define $GetMapping(...) PP_EXPAND( $GetMapping_EVAL(PP_EXPAND( PP_NARG(__VA_ARGS__) ))(__VA_ARGS__) )</span>
+</code></pre></div></td></tr></table></div>
+<p>在上面的代码中，可以看见，GetMapping 的参数可以从 1个参数到9个参数。 </p>
+<ul>
+<li>
+<p>第一个参数一定是他对应的函数名称。 </p>
+</li>
+<li>
+<p>当只有一个参数的时候，函数名称也是我们要映射的路由路径。 </p>
+</li>
+<li>
+<ul>
+<li>这个比如上面 MyController.h 中，第8行， abc  既是要映射的函数名称，也是要映射的函数路径。</li>
+</ul>
+</li>
+<li>
+<p>当参数多于1个的时候，除了第一个参数之外的参数都是要映射的路径。也就是说我们的一个 $GetMapping 可以有最多8个路径，被映射到这个函数上面。</p>
+</li>
+<li>
+<ul>
+<li>在绝大多数的情况下，其实只需要一个路径即可。这里可以多路径映射是给一些特殊需要的程序所留的接口。</li>
+</ul>
+</li>
+</ul>
+<p>另外我们看见 <code>$GetMapping</code> 宏注解的最后跟着一个 <code>Q_INVOKABLE</code> 的宏。<code>Q_INVOKABLE</code> 是用于修饰函数的，被该宏修饰的函数可以在 Qt Moc 的时候被记录，在运行期可以获得他的名字，参数，返回值等一系列的信息。这个也是为什么<code>GetMapping</code> 后面一定要跟上 函数的原因。如果没有跟着函数，程序在运行的时候就会报错。</p>
+<p>那有没有方法绕过这个限制呢，有的，可以往下看:</p>
+<h3 id="xxxmappingdeclare">$XxxMappingDeclare<a class="headerlink" href="#xxxmappingdeclare" title="Permanent link">&para;</a></h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-4-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-4-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-4-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-4-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-4-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-4-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-4-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-4-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-4-10">10</a></span>
+<span class="normal"><a href="#__codelineno-4-11">11</a></span>
+<span class="normal"><a href="#__codelineno-4-12">12</a></span>
+<span class="normal"><a href="#__codelineno-4-13">13</a></span>
+<span class="normal"><a href="#__codelineno-4-14">14</a></span>
+<span class="normal"><a href="#__codelineno-4-15">15</a></span>
+<span class="normal"><a href="#__codelineno-4-16">16</a></span>
+<span class="normal"><a href="#__codelineno-4-17">17</a></span>
+<span class="normal"><a href="#__codelineno-4-18">18</a></span>
+<span class="normal"><a href="#__codelineno-4-19">19</a></span>
+<span class="normal"><a href="#__codelineno-4-20">20</a></span>
+<span class="normal"><a href="#__codelineno-4-21">21</a></span>
+<span class="normal"><a href="#__codelineno-4-22">22</a></span>
+<span class="normal"><a href="#__codelineno-4-23">23</a></span>
+<span class="normal"><a href="#__codelineno-4-24">24</a></span>
+<span class="normal"><a href="#__codelineno-4-25">25</a></span>
+<span class="normal"><a href="#__codelineno-4-26">26</a></span>
+<span class="normal"><a href="#__codelineno-4-27">27</a></span>
+<span class="normal"><a href="#__codelineno-4-28">28</a></span>
+<span class="normal"><a href="#__codelineno-4-29">29</a></span>
+<span class="normal"><a href="#__codelineno-4-30">30</a></span>
+<span class="normal"><a href="#__codelineno-4-31">31</a></span>
+<span class="normal"><a href="#__codelineno-4-32">32</a></span>
+<span class="normal"><a href="#__codelineno-4-33">33</a></span>
+<span class="normal"><a href="#__codelineno-4-34">34</a></span>
+<span class="normal"><a href="#__codelineno-4-35">35</a></span>
+<span class="normal"><a href="#__codelineno-4-36">36</a></span>
+<span class="normal"><a href="#__codelineno-4-37">37</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="cp">#define $GetMappingDeclare_1(funName)  \</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="cp">    Q_CLASSINFO( PP_CONTROLLER_PROP(funName, GET, 1), #funName)</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3"></a>
+<a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="cp">#define $GetMappingDeclare_2(funName, url1)  \</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="cp">    Q_CLASSINFO( PP_CONTROLLER_PROP(funName, GET, 1), #url1)</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6"></a>
+<a id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="cp">#define $GetMappingDeclare_3(funName, url1, url2)  \</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8"></a><span class="cp">    $GetMappingDeclare(funName, url1) \</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9"></a><span class="cp">    Q_CLASSINFO( PP_CONTROLLER_PROP(funName, GET, 2), #url2)</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10"></a>
+<a id="__codelineno-4-11" name="__codelineno-4-11"></a><span class="cp">#define $GetMappingDeclare_4(funName, url1, url2, url3)  \</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12"></a><span class="cp">    $GetMappingDeclare(funName, url1, url2) \</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13"></a><span class="cp">    Q_CLASSINFO( PP_CONTROLLER_PROP(funName, GET, 3), #url3)</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14"></a>
+<a id="__codelineno-4-15" name="__codelineno-4-15"></a><span class="cp">#define $GetMappingDeclare_5(funName, url1, url2, url3, url4)  \</span>
+<a id="__codelineno-4-16" name="__codelineno-4-16"></a><span class="cp">    $GetMappingDeclare(funName, url1, url2, url3) \</span>
+<a id="__codelineno-4-17" name="__codelineno-4-17"></a><span class="cp">    Q_CLASSINFO( PP_CONTROLLER_PROP(funName, GET, 4), #url4)</span>
+<a id="__codelineno-4-18" name="__codelineno-4-18"></a>
+<a id="__codelineno-4-19" name="__codelineno-4-19"></a><span class="cp">#define $GetMappingDeclare_6(funName, url1, url2, url3, url4, url5)  \</span>
+<a id="__codelineno-4-20" name="__codelineno-4-20"></a><span class="cp">    $GetMappingDeclare(funName, url1, url2, url3, url4) \</span>
+<a id="__codelineno-4-21" name="__codelineno-4-21"></a><span class="cp">    Q_CLASSINFO( PP_CONTROLLER_PROP(funName, GET, 5), #url5)</span>
+<a id="__codelineno-4-22" name="__codelineno-4-22"></a>
+<a id="__codelineno-4-23" name="__codelineno-4-23"></a><span class="cp">#define $GetMappingDeclare_7(funName, url1, url2, url3, url4, url5, url6)  \</span>
+<a id="__codelineno-4-24" name="__codelineno-4-24"></a><span class="cp">    $GetMappingDeclare(funName, url1, url2, url3, url4, url5) \</span>
+<a id="__codelineno-4-25" name="__codelineno-4-25"></a><span class="cp">    Q_CLASSINFO( PP_CONTROLLER_PROP(funName, GET, 6), #url6)</span>
+<a id="__codelineno-4-26" name="__codelineno-4-26"></a>
+<a id="__codelineno-4-27" name="__codelineno-4-27"></a><span class="cp">#define $GetMappingDeclare_8(funName, url1, url2, url3, url4, url5, url6, url7)  \</span>
+<a id="__codelineno-4-28" name="__codelineno-4-28"></a><span class="cp">    $GetMappingDeclare(funName, url1, url2, url3, url4, url5, url6) \</span>
+<a id="__codelineno-4-29" name="__codelineno-4-29"></a><span class="cp">    Q_CLASSINFO( PP_CONTROLLER_PROP(funName, GET, 7), #url7)</span>
+<a id="__codelineno-4-30" name="__codelineno-4-30"></a>
+<a id="__codelineno-4-31" name="__codelineno-4-31"></a><span class="cp">#define $GetMappingDeclare_9(funName, url1, url2, url3, url4, url5, url6, url7, url8)  \</span>
+<a id="__codelineno-4-32" name="__codelineno-4-32"></a><span class="cp">    $GetMappingDeclare(funName, url1, url2, url3, url4, url5, url6, url7) \</span>
+<a id="__codelineno-4-33" name="__codelineno-4-33"></a><span class="cp">    Q_CLASSINFO( PP_CONTROLLER_PROP(funName, GET, 8), #url8)</span>
+<a id="__codelineno-4-34" name="__codelineno-4-34"></a>
+<a id="__codelineno-4-35" name="__codelineno-4-35"></a><span class="cp">#define $GetMappingDeclare_(N) $GetMappingDeclare_##N</span>
+<a id="__codelineno-4-36" name="__codelineno-4-36"></a><span class="cp">#define $GetMappingDeclare_EVAL(N) $GetMappingDeclare_(N)</span>
+<a id="__codelineno-4-37" name="__codelineno-4-37"></a><span class="cp">#define $GetMappingDeclare(...) PP_EXPAND( $GetMappingDeclare_EVAL(PP_EXPAND( PP_NARG(__VA_ARGS__) ))(__VA_ARGS__) )</span>
+</code></pre></div></td></tr></table></div>
+<p>我们实际对路由以及路由函数的信息的绑定是在 <code>$GetMappingDeclare</code> 中完成的。上述中他会将 functionName 和url 以 键-值 映射的方式写入类的元信息（meta info）中。这样我们在后续的Action 注册生成的过程中，就可以知道哪些路由对应哪些函数。</p>
+<p>注意这里 <code>$GetMappingDeclare</code> 与 <code>$GetMapping</code> 的区别除了 <code>$GetMapping</code> 更短更容易书写之外，<code>$GetMappingDeclare</code> 本身不带 <code>Q_INVOKABLE</code> 这个宏后缀。这样，我们就可以将路由和函数分离开来。</p>
+<p>如下所示</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
+<span class="normal"><a href="#__codelineno-5-2">2</a></span>
+<span class="normal"><a href="#__codelineno-5-3">3</a></span>
+<span class="normal"><a href="#__codelineno-5-4">4</a></span>
+<span class="normal"><a href="#__codelineno-5-5">5</a></span>
+<span class="normal"><a href="#__codelineno-5-6">6</a></span>
+<span class="normal"><a href="#__codelineno-5-7">7</a></span>
+<span class="normal"><a href="#__codelineno-5-8">8</a></span>
+<span class="normal"><a href="#__codelineno-5-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="n">$GetMappingDeclare</span><span class="p">(</span><span class="n">fun</span><span class="p">,</span><span class="w"> </span><span class="o">/</span><span class="n">abc</span><span class="p">)</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="n">$PostMappingDeclare</span><span class="p">(</span><span class="n">fun</span><span class="p">,</span><span class="w"> </span><span class="o">/</span><span class="n">abc</span><span class="p">)</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3"></a>
+<a id="__codelineno-5-4" name="__codelineno-5-4"></a>
+<a id="__codelineno-5-5" name="__codelineno-5-5"></a><span class="n">$GetMappingDeclare</span><span class="p">(</span><span class="n">fun2</span><span class="p">,</span><span class="w"> </span><span class="o">/</span><span class="n">get_fun2</span><span class="p">)</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="n">$GetMapping</span><span class="p">(</span><span class="n">fun2</span><span class="p">,</span><span class="w"> </span><span class="o">/</span><span class="n">get_fun2_again</span><span class="p">)</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7"></a><span class="n">QString</span><span class="w"> </span><span class="n">fun2</span><span class="p">();</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8"></a>
+<a id="__codelineno-5-9" name="__codelineno-5-9"></a><span class="n">Q_INVOKABLE</span><span class="w"> </span><span class="n">QString</span><span class="w"> </span><span class="n">fun</span><span class="p">();</span>
+</code></pre></div></td></tr></table></div>
+<p>上面有两组映射，第一组中 1-2行是我们使用<code>MappingDeclare</code> 声明一个 <code>Get</code> 和一个 <code>POST</code> 方法。他对应的函数定义在 第9行。注意第九行的函数前面有 <code>Q_INVOKABLE</code> 宏限定。这限定会将该函数入到类的元信息当中。</p>
+<p>第5-7行是第二个路由映射。该路由映射的宏注解第一个是 <code>GetMappingDeclare</code>,第二个是 <code>$GetMapping</code>。函数的元信息会通过第二个 <code>$GetMapping</code> 后面所带的 <code>Q_INVOKABLE</code> 进行反射。</p>
+<p>在通常的使用当中，在定义了一个路由映射关系的前提下，如果想要增加一个相同请求方法的路由，可以直接在当前的 Mapping的参数后面继续写入一个路由即可， 不需要定义多个宏注解。如果是不同的方法的一个路由，这个时候就需要 <code>MappingDeclare</code> 进行声明新的路由规则。</p>
+<h2 id="_3">路径规则<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>IHttpCore 框架中的路径规则通常是指在控制器（Controller）中定义的URL映射规则。这些规则用于将HTTP请求映射到相应的控制器（Controller）方法上。IHttpCore使用<code>$AsController</code>宏注解来定义控制器的公共路径规则，它可以用在类级别上。 使用 <code>$XxxMapping</code> 如 <code>$GetMapping</code> 来定义具体函数的路径规则，他作用在具体的函数上面。</p>
+<h3 id="_4">路由路径和路由片段<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>在IHttpCore 将全局的路基和 针对于具体方法的路基拼接在一起，成为一个处理函数的路径，这个是一个完整的路由路径。路由路径由 <code>/</code> 分隔符和路由片段组成，路由片段之间有且只有一个 <code>/</code> 分隔符。在 IHttpCore 中，路由片段可以是普通的url 路由片段，也可以是 捕获路由片段， 捕获路由片段是以 <code>&lt;</code> 开头，以 <code>&gt;</code> 结尾的片段。下面做一个详细的介绍。</p>
+<h3 id="_5">普通路由片段<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>普通的路径片段是只不具有捕获功能的，合法的，可以被服务器解析的路径片段。在 rfc 文档中有具体的相关规定。</p>
+<blockquote>
+<p>在 <strong><em>*</em>*RFC 9110****</strong> 中，路径部分遵循 <strong><em>*</em>*RFC 3986****</strong> 的字符集定义，因此路径段中的字符集应包括：
+<strong><em>*字母*</em></strong>：<code>a-z</code>, <code>A-Z</code>
+<strong><em>*数字*</em></strong>：<code>0-9</code>
+<strong><em>*特殊字符*</em></strong>：
+<code>-</code>、<code>_</code>、<code>.</code>、<code>~</code> 等（这些是 URI 中常见的合法字符）
+分隔符：<code>!</code>、<code>$</code>、<code>&amp;</code>、<code>'</code>、<code>(</code>、<code>)</code>、<code>*</code>、<code>+</code>、<code>,</code>、<code>;</code>、<code>=</code> 等
+编码字符（如 <code>%20</code> 替代空格）
+路径段不能包含斜杠 <code>/</code>，因为 <code>/</code> 用作路径段之间的分隔符。如果路径段中需要使用斜杠，必须使用 URL 编码（<code>%2F</code>）来代替。</p>
+</blockquote>
+<p>其次，中文等内容也可以作为路由片段的一部分。中文字符会在服务器发送请求的时候通过 urlencode 进行编码，成为普通的路由片段。在服务器接收到请求后会 urldecode 进行解码，变回为中文字符。不过在开发的过程中，不建议使用中文字符。</p>
+<p>以下列举一些合法的路径片段:</p>
+<ol>
+<li>字母和数字</li>
+</ol>
+<blockquote>
+<p>example, abc123,  HelloWorld,  file2025</p>
+</blockquote>
+<ol>
+<li>特殊字符（常见合法字符）</li>
+</ol>
+<p>-（连字符）</p>
+<p>_（下划线）</p>
+<p>.（点号）</p>
+<p>~（波浪号）</p>
+<p>@（at符号）</p>
+<p>+（加号）</p>
+<p>,（逗号） ;（分号）  =（等号）</p>
+<p>例如：</p>
+<blockquote>
+<p>product-name  user_profile file.name folder~1</p>
+</blockquote>
+<ol>
+<li>中文字符（无需编码）</li>
+</ol>
+<p>现代浏览器和服务器支持中文作为路径片段的一部分：</p>
+<blockquote>
+<p>产品  手机   文件夹</p>
+</blockquote>
+<p>例如：</p>
+<p><a href="https://example.com/产品">https://example.com/产品</a></p>
+<p><a href="https://example.com/手机/价格">https://example.com/手机/价格</a></p>
+<ol>
+<li>数字和符号组合</li>
+</ol>
+<blockquote>
+<p>product-123 , data_2025 , name~version</p>
+</blockquote>
+<ol>
+<li>带有编码字符的路径片段</li>
+</ol>
+<p>有些特殊字符（如空格、#、?、&amp; 等）不能直接出现在路径段中，必须进行 URL 编码。例如：</p>
+<blockquote>
+<p>空格：%20</p>
+</blockquote>
+<h3 id="_6">&lt;&gt; 路径<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p>这个路径是一个通配符，用于匹配路径中的任意一个片段。注意这里是只能且必须匹配一个路径片段，如果路径片段为空，或者路径超过一个路径片段，则无法匹配。</p>
+<ul>
+<li>
+<p><strong><em>*示例*</em></strong>：<code>/products/&lt;&gt;</code></p>
+</li>
+<li>
+<ul>
+<li>匹配：<code>/products/123</code>, <code>/products/abc</code></li>
+</ul>
+</li>
+<li>
+<p>不匹配：<code>/products/123/details</code>, <code>/products</code></p>
+</li>
+<li>
+<p><strong><em>*用法示例*</em></strong>：</p>
+</li>
+</ul>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
+<span class="normal"><a href="#__codelineno-6-2">2</a></span>
+<span class="normal"><a href="#__codelineno-6-3">3</a></span>
+<span class="normal"><a href="#__codelineno-6-4">4</a></span>
+<span class="normal"><a href="#__codelineno-6-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="n">$GetMapping</span><span class="p">(</span><span class="n">fun</span><span class="p">,</span><span class="w"> </span><span class="o">/</span><span class="n">products</span><span class="o">/&lt;&gt;</span><span class="p">)</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="n">QString</span><span class="w"> </span><span class="n">fun</span><span class="p">();</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3"></a>
+<a id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="n">GetMapping</span><span class="p">(</span><span class="n">hello</span><span class="p">,</span><span class="w"> </span><span class="o">/</span><span class="n">products</span><span class="o">/&lt;&gt;/</span><span class="n">hello</span><span class="p">)</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="n">QString</span><span class="w"> </span><span class="n">hello</span><span class="p">();</span>
+</code></pre></div></td></tr></table></div>
+<p>注意这里的通配符只会去匹配路径，并不会捕获路径。所以如果用户只是想在这里匹配一个路径，并且不关心这个路径的内容是什么，可以直接使用 <code>&lt;&gt;</code> 通配符。如果用户想要对路径片段进行捕获，或则对路径的格式进行限定，则需要下面的 路由片段匹配格式。</p>
+<h3 id="_7"><name><a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<p><code>&lt;name&gt;</code> 和上面的 <code>&lt;&gt;</code> 通配符的类似，他的作用是通配一个路径，不管这个路径是什么内容。有一点不同的是，<code>&lt;name&gt;</code> 不仅会对 url 路径片段进行通配，他也会捕获自己的路径内容，捕获的内容可以放置在 函数参数当中，也可以通过 <code>IRequest</code> 类进行查询使用。</p>
+<p>下面举一个例子</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span>
+<span class="normal"><a href="#__codelineno-7-2">2</a></span>
+<span class="normal"><a href="#__codelineno-7-3">3</a></span>
+<span class="normal"><a href="#__codelineno-7-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="n">$GetMapping</span><span class="p">(</span><span class="n">hi</span><span class="p">,</span><span class="w"> </span><span class="n">hi</span><span class="o">/&lt;</span><span class="n">your</span><span class="o">&gt;/&lt;</span><span class="n">name</span><span class="o">&gt;</span><span class="p">)</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="n">QString</span><span class="w"> </span><span class="n">hi</span><span class="p">(</span><span class="n">QString</span><span class="w"> </span><span class="n">$Path</span><span class="p">(</span><span class="n">your</span><span class="p">),</span><span class="w"> </span><span class="n">QString</span><span class="w"> </span><span class="n">$Path</span><span class="p">(</span><span class="n">name</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">your</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>在上面的例子中，我们拦截了 第二个路径参数和第三个路径参数，并将他们拼接在一起输出。 注意函数参数有 <code>$Path</code> 限定，这个表示<code>your</code> 和 <code>name</code> 这两个参数必须从捕获的路径参数中查找，具体关于请求参数限定的内容，可以参考 <code>IHttpCore 函数参数</code> 的相关内容。</p>
+<p>上面的请求中，请求路径是  <code>/hi/yue/keyuan</code>，返回内容是 <code>yuekeyuan</code>。实现了完美的拦截。</p>
+<h3 id="_8"><name | restrict><a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<p>实际的应用过程中，用户不仅希望对参数进行捕获，更希望参数有合法性。比如我们的参数必须是一个数字，参数必须符合一个正则规则，或者是用户定义的其他规则。 <code>&lt;name|restrict&gt;</code> 这个路由片段的目的是对参数进行一个人为的限定。让参数符合一定的要求，不符合的参数不能通过路由到该处理函数。</p>
+<p>在这个路由规则中，<code>name</code> 表示我们捕获的参数名称。如果用户仅仅希望是参数限定，可以省略这个 <code>name</code> 的内容，这样我们的路径片段就会变成 <code>&lt;|restrict&gt;</code>。这个路径片段只对url 进行判断，不对片段进行捕获。</p>
+<p>此外，我们还可以省略 restrict， 那这样的通配符会成为  <code>&lt;name|&gt;</code> 或则 <code>&lt;|&gt;</code>, 他会匹配任何的url 片段。</p>
+<p>在 IHttpCore 中，我们预定义了一系列的 restrict。 他们分别如下：</p>
+<ul>
+<li>数值类型</li>
+</ul>
+<blockquote>
+<p>short ,ushort, int, uint, long ,ulong, longlong, ulonglong, float, double</p>
+</blockquote>
+<p>这些类型是数值类型，如果查询的参数是数值，并且他的范围在选定的类型范围之内，则匹配成功，否则，匹配失败。</p>
+<ul>
+<li>时间类型</li>
+</ul>
+<blockquote>
+<p>date, QDate, time, QTime, datetime， QDateTime</p>
+</blockquote>
+<p>这里的类型是时间类型，输入的内容必须能够转换成 Qt 支持的时间格式，比如 date/QDate， 如果输入内容可以转换成这个类型，则匹配成功。</p>
+<ul>
+<li>字符串类型</li>
+</ul>
+<blockquote>
+<p>string, QString</p>
+</blockquote>
+<p>这两个东西是凑数的，因为所有的内容这俩都能匹配，写在这里的原因是想让程序完整，自洽。</p>
+<ul>
+<li>特殊类型</li>
+</ul>
+<blockquote>
+<p>uuid, base64</p>
+</blockquote>
+<p>uuid类型是 满足 QUUid 生成格式类型。 base64 是指通过 base64转码之后的类型。</p>
+<p>下面我们举例说明以上的内容</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-8-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-8-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-8-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-8-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-8-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-8-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-8-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-8-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-8-10">10</a></span>
+<span class="normal"><a href="#__codelineno-8-11">11</a></span>
+<span class="normal"><a href="#__codelineno-8-12">12</a></span>
+<span class="normal"><a href="#__codelineno-8-13">13</a></span>
+<span class="normal"><a href="#__codelineno-8-14">14</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="n">$GetMapping</span><span class="p">(</span><span class="n">datetimeVal</span><span class="p">,</span><span class="w"> </span><span class="o">/</span><span class="n">datetimeVal</span><span class="o">/&lt;</span><span class="n">val</span><span class="o">|</span><span class="n">datetime</span><span class="o">&gt;</span><span class="p">)</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="n">QString</span><span class="w"> </span><span class="n">datetimeVal</span><span class="p">(</span><span class="n">QDateTime</span><span class="w"> </span><span class="n">$Path</span><span class="p">(</span><span class="n">val</span><span class="p">)){</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">val</span><span class="p">.</span><span class="n">toString</span><span class="p">(</span><span class="n">Qt</span><span class="o">::</span><span class="n">DateFormat</span><span class="o">::</span><span class="n">ISODate</span><span class="p">);</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="p">}</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5"></a>
+<a id="__codelineno-8-6" name="__codelineno-8-6"></a><span class="n">$GetMapping</span><span class="p">(</span><span class="n">doubleVal</span><span class="p">,</span><span class="w"> </span><span class="o">/</span><span class="n">doubleVal</span><span class="o">/&lt;</span><span class="n">val</span><span class="o">|</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">)</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7"></a><span class="n">QString</span><span class="w"> </span><span class="n">doubleVal</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">$Path</span><span class="p">(</span><span class="n">val</span><span class="p">)){</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">QString</span><span class="o">::</span><span class="n">number</span><span class="p">(</span><span class="n">val</span><span class="p">);</span>
+<a id="__codelineno-8-9" name="__codelineno-8-9"></a><span class="p">}</span>
+<a id="__codelineno-8-10" name="__codelineno-8-10"></a>
+<a id="__codelineno-8-11" name="__codelineno-8-11"></a><span class="n">$GetMapping</span><span class="p">(</span><span class="n">uuidVal</span><span class="p">,</span><span class="w"> </span><span class="o">/</span><span class="n">uuidVal</span><span class="o">/&lt;</span><span class="n">val</span><span class="o">|</span><span class="n">uuid</span><span class="o">&gt;</span><span class="p">)</span>
+<a id="__codelineno-8-12" name="__codelineno-8-12"></a><span class="n">QString</span><span class="w"> </span><span class="n">uuidVal</span><span class="p">(</span><span class="n">QString</span><span class="w"> </span><span class="n">$Path</span><span class="p">(</span><span class="n">val</span><span class="p">)){</span>
+<a id="__codelineno-8-13" name="__codelineno-8-13"></a><span class="w">    </span><span class="n">eturn</span><span class="w"> </span><span class="n">val</span><span class="p">;</span>
+<a id="__codelineno-8-14" name="__codelineno-8-14"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>另外，用户可以自定义限制，来满足开发需求。具体内容可以查看下面 <code>自定义路径限制</code> 的相关内容。</p>
+<h3 id="_9"><name || regexp><a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<p>路径片段也可以使用正则式进行匹配。如果有一个路径需要特殊的匹配规则，而这个规则又只使用一次的话，这种需求并不值得写一个参数约束。用正则式是最简单的一种方式。</p>
+<p>注意正则式的约束是在<code>name</code> 和 <code>regexp</code> 中间有两道竖杠 <code>||</code>，这个是正则式约束和参数具名约束的最大区别。</p>
+<p>下面举一个例子</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span>
+<span class="normal"><a href="#__codelineno-9-2">2</a></span>
+<span class="normal"><a href="#__codelineno-9-3">3</a></span>
+<span class="normal"><a href="#__codelineno-9-4">4</a></span>
+<span class="normal"><a href="#__codelineno-9-5">5</a></span>
+<span class="normal"><a href="#__codelineno-9-6">6</a></span>
+<span class="normal"><a href="#__codelineno-9-7">7</a></span>
+<span class="normal"><a href="#__codelineno-9-8">8</a></span>
+<span class="normal"><a href="#__codelineno-9-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="n">$GetMapping</span><span class="p">(</span><span class="n">hello</span><span class="p">,</span><span class="w"> </span><span class="n">hello</span><span class="o">/&lt;</span><span class="n">path</span><span class="o">||</span><span class="p">(</span><span class="err">\\</span><span class="n">w</span><span class="o">+</span><span class="p">)</span><span class="o">&gt;</span><span class="p">)</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2"></a><span class="n">QString</span><span class="w"> </span><span class="n">hello</span><span class="p">(</span><span class="n">QString</span><span class="w"> </span><span class="n">$Path</span><span class="p">(</span><span class="n">path</span><span class="p">)){</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">path</span><span class="p">;</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4"></a><span class="p">}</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5"></a>
+<a id="__codelineno-9-6" name="__codelineno-9-6"></a><span class="n">GetMapping</span><span class="p">(</span><span class="n">world</span><span class="p">,</span><span class="w"> </span><span class="n">world</span><span class="o">/&lt;</span><span class="n">path</span><span class="o">||</span><span class="n">abc</span><span class="p">.</span><span class="o">*&gt;</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7"></a><span class="n">QString</span><span class="w"> </span><span class="n">world</span><span class="p">(</span><span class="n">QString</span><span class="w"> </span><span class="n">$Path</span><span class="p">(</span><span class="n">path</span><span class="p">)){</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">path</span><span class="p">;</span>
+<a id="__codelineno-9-9" name="__codelineno-9-9"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>第一个路由请求是捕获任意的字符，第二个路由是捕获以 <code>abc</code> 开头的名字。</p>
+<p>在正则式路由片段中，name 可以省略写成 <code>&lt;||regexp&gt;</code>.这个表示该路由片段只做正则式匹配验证，不做参数的捕获。</p>
+<p>用户也可以省略 regexp，写成 <code>&lt;name||&gt;</code>, 这样是匹配所有的路径，捕获成为 name 变量。用户也可以省略全部内容，路由片段写成 <code>&lt;||&gt;</code>, 这个功能和 <code>&lt;&gt;</code> 一致。   </p>
+<h3 id="_10">“/” 根目录<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<p>如果用户想将一个路径匹配到根目录，则需要将 mapping 的参数写成 <code>/</code>，如下所示</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span>
+<span class="normal"><a href="#__codelineno-10-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a>$GetMapping(index, /)
+<a id="__codelineno-10-2" name="__codelineno-10-2"></a>QString index();
+</code></pre></div></td></tr></table></div>
+<p>这样 index() 函数就会和 我们url 请求的根目录绑定。如果在Controller 中有 <code>$AsController</code> 定义的前缀，则 index 会映射到前缀所在的url 上面。</p>
+<h3 id="_11">函数名作为路径<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<p>如果映射关系中中只有函数名称，而没有路径，则该函数的名称就是映射路径。</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span>
+<span class="normal"><a href="#__codelineno-11-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a>$GetMapping(index)
+<a id="__codelineno-11-2" name="__codelineno-11-2"></a>QString index();
+</code></pre></div></td></tr></table></div>
+<p>在这个情况下，index函数的映射路径是 <code>/index</code>。这样省略路径可以减少用户的输入和心智负担。</p>
+<h3 id="_12">注意事项<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>在路径的书写中，路径片段不可以为 <code>..</code> 和 <code>.</code>。</p>
+</li>
+<li>
+<ul>
+<li><code>..</code> 表示 上级目录，<code>.</code> 表示本目录，这两个片段都不可以作为路径片段。</li>
+</ul>
+</li>
+<li>
+<p>最前面的 <code>/</code> 可以省略不写，不影响路径的解析。</p>
+</li>
+<li>
+<p>Mapping 的函数名词一定要和函数能够对应起来，如果对应不起来，在运行初期会报异常。</p>
+</li>
+<li>
+<p>函数目前禁止使用 重载函数。也就是说一个函数名只能在 Controller 中出现一次。如果有重载函数，程序运气初期将会报错。</p>
+</li>
+<li>
+<p>对于多级目录的通配符，目前框架并不支持。这个功能将在后续进行支持。</p>
+</li>
+</ul>
+<h2 id="_13">自定义路径限定<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h2>
+<p>在上面的路由片段限制中，除了框架提供的限定方式之外，用户也可以通过继承 <code>IHttpPathValidatorInterface</code> 这个类来添加自定义的路径限制规则。 </p>
+<h3 id="ihttppathvalidatorinterface">IHttpPathValidatorInterface<a class="headerlink" href="#ihttppathvalidatorinterface" title="Permanent link">&para;</a></h3>
+<p>该类的声明可以简化如下：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-12-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-12-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-12-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-12-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-12-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-12-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-12-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-12-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-12-10">10</a></span>
+<span class="normal"><a href="#__codelineno-12-11">11</a></span>
+<span class="normal"><a href="#__codelineno-12-12">12</a></span>
+<span class="normal"><a href="#__codelineno-12-13">13</a></span>
+<span class="normal"><a href="#__codelineno-12-14">14</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">enabled</span><span class="o">=</span><span class="nb">true</span><span class="o">&gt;</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2"></a><span class="k">class</span><span class="w"> </span><span class="nc">IHttpPathValidatorInterface</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">ITaskWareUnit</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span><span class="w"> </span><span class="n">IHttpTaskCatagory</span><span class="p">,</span><span class="w"> </span><span class="n">enabled</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">ISoloUnit</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3"></a><span class="p">{</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4"></a><span class="k">public</span><span class="o">:</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5"></a><span class="w">    </span><span class="k">using</span><span class="w"> </span><span class="n">Validator</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">bool</span><span class="p">(</span><span class="n">IStringView</span><span class="p">)</span><span class="o">&gt;</span><span class="p">;</span>
+<a id="__codelineno-12-6" name="__codelineno-12-6"></a>
+<a id="__codelineno-12-7" name="__codelineno-12-7"></a><span class="k">public</span><span class="o">:</span>
+<a id="__codelineno-12-8" name="__codelineno-12-8"></a><span class="w">    </span><span class="k">virtual</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">$task</span><span class="p">()</span><span class="w"> </span><span class="k">final</span><span class="p">;</span>
+<a id="__codelineno-12-9" name="__codelineno-12-9"></a><span class="w">    </span><span class="k">virtual</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">$order</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="k">final</span><span class="p">;</span>
+<a id="__codelineno-12-10" name="__codelineno-12-10"></a>
+<a id="__codelineno-12-11" name="__codelineno-12-11"></a><span class="k">public</span><span class="o">:</span>
+<a id="__codelineno-12-12" name="__codelineno-12-12"></a><span class="w">    </span><span class="k">virtual</span><span class="w"> </span><span class="n">QString</span><span class="w"> </span><span class="n">marker</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-12-13" name="__codelineno-12-13"></a><span class="w">    </span><span class="k">virtual</span><span class="w"> </span><span class="n">Validator</span><span class="w"> </span><span class="nf">validator</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-12-14" name="__codelineno-12-14"></a><span class="p">};</span>
+</code></pre></div></td></tr></table></div>
+<p>这是一个 <code>CRTP</code> 模版基类。用户可以继承该基类来定义自己的限定条件。 模版基类的第一个模版参数是子类的名称，这个是 CRTP 的基础。 第二个参数是 bool 类型参数，默认为 <code>true</code>，表示启用该类型限定。如果参数值为 false，则这个类型限定就不会被启用，他的任务就不会被执行，用户也无法使用该类型。</p>
+<p>在这个类中，定义有两个纯虚函数，这两个函数需要被子类重载。<code>maker()</code> 函数的返回值是表示路由片段的限定名称。<code>validator()</code> 函数返回的是一个函子，他是一个可调用对象 类型为 <code>std::function&lt;bool(IStringView)&gt;</code>。用户需要返回一个可调用对象，这个对象可以是一个静态函数，可以是<code>lambda</code> 表达式，也可以是一个 封装后的成员函数。</p>
+<h3 id="_14">举例<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
+<p>下面举一个例子，我们定义一个 gender 的路由限定。这个限定只允许用户输入两种性别 <code>male</code> 和 <code>female</code>，如果输入的不是这两种性别，则路由无法匹配。实现代码如下：</p>
+<blockquote>
+<p>GenderValidator.h</p>
+</blockquote>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-13-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-13-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-13-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-13-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-13-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-13-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-13-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-13-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-13-10">10</a></span>
+<span class="normal"><a href="#__codelineno-13-11">11</a></span>
+<span class="normal"><a href="#__codelineno-13-12">12</a></span>
+<span class="normal"><a href="#__codelineno-13-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="cp">#pragma once</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2"></a>
+<a id="__codelineno-13-3" name="__codelineno-13-3"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;http/path/IHttpPathValidatorInterface.h&quot;</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4"></a>
+<a id="__codelineno-13-5" name="__codelineno-13-5"></a><span class="k">class</span><span class="w"> </span><span class="nc">GenderValidator</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">IHttpPathValidatorInterface</span><span class="o">&lt;</span><span class="n">GenderValidator</span><span class="o">&gt;</span>
+<a id="__codelineno-13-6" name="__codelineno-13-6"></a><span class="p">{</span>
+<a id="__codelineno-13-7" name="__codelineno-13-7"></a><span class="k">public</span><span class="o">:</span>
+<a id="__codelineno-13-8" name="__codelineno-13-8"></a><span class="w">    </span><span class="n">GenderValidator</span><span class="p">()</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">default</span><span class="p">;</span>
+<a id="__codelineno-13-9" name="__codelineno-13-9"></a>
+<a id="__codelineno-13-10" name="__codelineno-13-10"></a><span class="k">public</span><span class="o">:</span>
+<a id="__codelineno-13-11" name="__codelineno-13-11"></a><span class="w">    </span><span class="k">virtual</span><span class="w"> </span><span class="n">QString</span><span class="w"> </span><span class="n">marker</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="k">final</span><span class="p">;</span>
+<a id="__codelineno-13-12" name="__codelineno-13-12"></a><span class="w">    </span><span class="k">virtual</span><span class="w"> </span><span class="n">Validator</span><span class="w"> </span><span class="nf">validator</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="k">final</span><span class="p">;</span>
+<a id="__codelineno-13-13" name="__codelineno-13-13"></a><span class="p">};</span>
+</code></pre></div></td></tr></table></div>
+<blockquote>
+<p>GenderValidator.cpp</p>
+</blockquote>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-14-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-14-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-14-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-14-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-14-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-14-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-14-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-14-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-14-10">10</a></span>
+<span class="normal"><a href="#__codelineno-14-11">11</a></span>
+<span class="normal"><a href="#__codelineno-14-12">12</a></span>
+<span class="normal"><a href="#__codelineno-14-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;GenderValidator.h&quot;</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2"></a>
+<a id="__codelineno-14-3" name="__codelineno-14-3"></a><span class="n">QString</span><span class="w"> </span><span class="nf">GenderValidator::marker</span><span class="p">()</span><span class="w"> </span><span class="k">const</span>
+<a id="__codelineno-14-4" name="__codelineno-14-4"></a><span class="p">{</span>
+<a id="__codelineno-14-5" name="__codelineno-14-5"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;gender&quot;</span><span class="p">;</span>
+<a id="__codelineno-14-6" name="__codelineno-14-6"></a><span class="p">}</span>
+<a id="__codelineno-14-7" name="__codelineno-14-7"></a>
+<a id="__codelineno-14-8" name="__codelineno-14-8"></a><span class="n">GenderValidator</span><span class="o">::</span><span class="n">Validator</span><span class="w"> </span><span class="nf">GenderValidator::validator</span><span class="p">()</span><span class="w"> </span><span class="k">const</span>
+<a id="__codelineno-14-9" name="__codelineno-14-9"></a><span class="p">{</span>
+<a id="__codelineno-14-10" name="__codelineno-14-10"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">[](</span><span class="n">IStringView</span><span class="w"> </span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="kt">bool</span><span class="p">{</span>
+<a id="__codelineno-14-11" name="__codelineno-14-11"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;male&quot;</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;female&quot;</span><span class="p">;</span>
+<a id="__codelineno-14-12" name="__codelineno-14-12"></a><span class="w">    </span><span class="p">};</span>
+<a id="__codelineno-14-13" name="__codelineno-14-13"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>这样gender 类型就注册好了，写一组路由映射，验证一下</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1">1</a></span>
+<span class="normal"><a href="#__codelineno-15-2">2</a></span>
+<span class="normal"><a href="#__codelineno-15-3">3</a></span>
+<span class="normal"><a href="#__codelineno-15-4">4</a></span>
+<span class="normal"><a href="#__codelineno-15-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="w">    </span><span class="n">$GetMapping</span><span class="p">(</span><span class="n">gender</span><span class="p">,</span><span class="w"> </span><span class="o">/</span><span class="n">gender</span><span class="o">/&lt;</span><span class="n">gender</span><span class="o">|</span><span class="n">gender</span><span class="o">&gt;</span><span class="p">)</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2"></a><span class="w">    </span><span class="n">QString</span><span class="w"> </span><span class="n">gender</span><span class="p">(</span><span class="n">QString</span><span class="w"> </span><span class="n">$Path</span><span class="p">(</span><span class="n">gender</span><span class="p">))</span>
+<a id="__codelineno-15-3" name="__codelineno-15-3"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-15-4" name="__codelineno-15-4"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">gender</span><span class="p">;</span>
+<a id="__codelineno-15-5" name="__codelineno-15-5"></a><span class="w">    </span><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>上面的代码编译通过，单元测试也通过，能够正常拦截非 male 和 female 数据的内容。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.instant.preview", "navigation.tabs", "header.autohide", "content.tabs.link", "content.code.annotate", "content.tabs"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.56ea9cef.min.js"></script>
+      
+    
+  </body>
+</html>

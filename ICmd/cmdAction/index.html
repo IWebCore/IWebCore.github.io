@@ -1434,6 +1434,63 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="$CmdMapping">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      映射函数
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      映射路径
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="映射路径">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      默认映射路径
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      自定义映射路径
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      / 映射路径
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1446,9 +1503,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#cmdmapping_1" class="md-nav__link">
+  <a href="#_8" class="md-nav__link">
     <span class="md-ellipsis">
-      类中定义多个 CmdMapping
+      一个类中定义多个命令
     </span>
   </a>
   
@@ -2471,6 +2528,63 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="$CmdMapping">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      映射函数
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      映射路径
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="映射路径">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      默认映射路径
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      自定义映射路径
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      / 映射路径
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -2483,9 +2597,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#cmdmapping_1" class="md-nav__link">
+  <a href="#_8" class="md-nav__link">
     <span class="md-ellipsis">
-      类中定义多个 CmdMapping
+      一个类中定义多个命令
     </span>
   </a>
   
@@ -2744,10 +2858,201 @@
 </div>
 </div>
 </div>
+<h3 id="_3">映射函数<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>这里 $CmdMapping 宏注解有一个参数，参数的内容必须是响应函数的名称， 宏注解后面必须跟随响应的函数。</p>
+<p>如果 $CmdMapping 后面没有跟随函数，则程序在运行前会报错，如果函数的名称和宏注解中的第一个参数不一致，则程序在运行的时候页会报错。</p>
+<p>对于响应函数，ICmd 也有要求：</p>
+<ul>
+<li>
+<p>该响应函数的返回值必须是 void 类型，不能够是其他任何类型的返回值。</p>
+</li>
+<li>
+<p>该响应函数可以没有参数，如果有参数，则参数类型必须是  ICmdRequest&amp; 或 const ICmdRequest&amp; 类型。</p>
+</li>
+</ul>
+<h3 id="_4">映射路径<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>$CmdMapping 的映射路径有以下的情况</p>
+<h4 id="_5">默认映射路径<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
+<p>如果$CmdMapping 只有一个参数，就像例子中的 <code>version</code>  一样，那么这个参数既是 函数名称，也是映射路径。</p>
+<p>也就是说在这个例子中 <code>$CmdMapping(version)</code> 定义了一个 <code>version</code> 的映射函数，这个映射函数的映射路径是 <code>version</code>。</p>
+<p>一个完整的命令行是有 <code>程序名称</code>， <code>$AsCmd</code> 定义的前置命令路径，和 <code>$CmdMapping</code> 定义的命令路径组合而成的。所以这些组合起来，就是 <code>some-exe version</code> 这个命令的由来。</p>
+<h4 id="_6">自定义映射路径<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
+<p>用户也可以自定义命令。</p>
+<p><code>$CmdMapping</code> 一共可以有9个参数。如果参数超过一个。那么从第二个参数开始的参数列表就是 <code>$CmdMapping</code> 所定义的映射路径。</p>
+<p>所以 <code>$CmdMapping(version)</code> 和 <code>$CmdMapping(version, version)</code> 这两种定义方式是等价的。</p>
+<p>如果 这个定义是 <code>$CmdMapping(version, abc, def, ghi)</code> ，那么 $CmdMapping 定义的路径就是 <code>abc def ghi</code> ，这个路径再结合 <code>$AsCmd</code> 所定义的路径，就是整个映射函数的完整路径。</p>
+<h4 id="_7"><code>/</code> 映射路径<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h4>
+<p><code>$CmdMapping</code> 的参数可以是 <code>/</code>， 这个表示 <code>$CmdMapping</code> 没有定义路径，那么此时映射函数的路径就是  <code>$AsCmd</code> 所定义的路径。</p>
+<p>所以 <code>VersionCmd.h</code> 可以书写为如下格式，他和一开始定义的 <code>VersionCmd.h</code> 是等价的</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="9:1"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio" /><div class="tabbed-labels"><label for="__tabbed_9_1">VersionCmd.h</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-9-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-9-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-9-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-9-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-9-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-9-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-9-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-9-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-9-10">10</a></span>
+<span class="normal"><a href="#__codelineno-9-11">11</a></span>
+<span class="normal"><a href="#__codelineno-9-12">12</a></span>
+<span class="normal"><a href="#__codelineno-9-13">13</a></span>
+<span class="normal"><a href="#__codelineno-9-14">14</a></span>
+<span class="normal"><a href="#__codelineno-9-15">15</a></span>
+<span class="normal"><a href="#__codelineno-9-16">16</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="cp">#pragma once</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2"></a>
+<a id="__codelineno-9-3" name="__codelineno-9-3"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;cmd/ICmdInterface.h&quot;</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4"></a>
+<a id="__codelineno-9-5" name="__codelineno-9-5"></a><span class="k">class</span><span class="w"> </span><span class="nc">VersionCmd</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">ICmdInterface</span><span class="o">&lt;</span><span class="n">VersionCmd</span><span class="o">&gt;</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6"></a><span class="p">{</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7"></a><span class="w">    </span><span class="n">Q_GADGET</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8"></a><span class="w">    </span><span class="nf">$AsCmd</span><span class="p">(</span><span class="n">version</span><span class="p">)</span>
+<a id="__codelineno-9-9" name="__codelineno-9-9"></a><span class="k">public</span><span class="o">:</span>
+<a id="__codelineno-9-10" name="__codelineno-9-10"></a><span class="w">    </span><span class="n">VersionCmd</span><span class="p">();</span>
+<a id="__codelineno-9-11" name="__codelineno-9-11"></a>
+<a id="__codelineno-9-12" name="__codelineno-9-12"></a><span class="k">public</span><span class="o">:</span>
+<a id="__codelineno-9-13" name="__codelineno-9-13"></a><span class="w">    </span><span class="n">$CmdMappingMemo</span><span class="p">(</span><span class="n">version</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;print imakecore version info&quot;</span><span class="p">)</span>
+<a id="__codelineno-9-14" name="__codelineno-9-14"></a><span class="w">    </span><span class="n">$CmdMapping</span><span class="p">(</span><span class="n">version</span><span class="p">,</span><span class="w"> </span><span class="o">/</span><span class="p">)</span>
+<a id="__codelineno-9-15" name="__codelineno-9-15"></a><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">version</span><span class="p">();</span>
+<a id="__codelineno-9-16" name="__codelineno-9-16"></a><span class="p">};</span>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
 <h2 id="cmdmappingmemo">$CmdMappingMemo<a class="headerlink" href="#cmdmappingmemo" title="Permanent link">&para;</a></h2>
 <p><code>$CmdMappingMemo</code> 用于定义命令的描述信息，这个信息会在程序帮助中进行输出。</p>
-<h2 id="cmdmapping_1">类中定义多个 CmdMapping<a class="headerlink" href="#cmdmapping_1" title="Permanent link">&para;</a></h2>
-<p>一个 Cmd 类可以定义多个命令。</p>
+<p>$CmdMappingMemo 的第一个参数必须是我们的映射函数的名称。第二个参数是一个用 双引号括起来的字符串，就如在示例中所描述的。</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="10:1"><input checked="checked" id="__tabbed_10_1" name="__tabbed_10" type="radio" /><div class="tabbed-labels"><label for="__tabbed_10_1">$CmdMappingMemo</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="w">    </span><span class="n">$CmdMappingMemo</span><span class="p">(</span><span class="n">version</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;print imakecore version info&quot;</span><span class="p">)</span><span class="w">    </span>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+<p>此时，如果我们 使用命令  <code>some-exe version  -?</code> 命令查看该内容，就可以看到相关的输出</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="11:1"><input checked="checked" id="__tabbed_11_1" name="__tabbed_11" type="radio" /><div class="tabbed-labels"><label for="__tabbed_11_1">some-exe version -? 输出</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-11-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-11-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-11-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-11-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-11-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-11-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-11-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-11-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-11-10">10</a></span>
+<span class="normal"><a href="#__codelineno-11-11">11</a></span>
+<span class="normal"><a href="#__codelineno-11-12">12</a></span>
+<span class="normal"><a href="#__codelineno-11-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a>C:\Users\Yue&gt;ipc version -?
+<a id="__codelineno-11-2" name="__codelineno-11-2"></a>
+<a id="__codelineno-11-3" name="__codelineno-11-3"></a>_____  _    _        _      _____
+<a id="__codelineno-11-4" name="__codelineno-11-4"></a>|_   _|| |  | |      | |    /  __ \
+<a id="__codelineno-11-5" name="__codelineno-11-5"></a>| |  | |  | |  ___ | |__  | /  \/  ___   _ __  ___
+<a id="__codelineno-11-6" name="__codelineno-11-6"></a>| |  | |/\| | / _ \| &#39;_ \ | |     / _ \ | &#39;__|/ _ \
+<a id="__codelineno-11-7" name="__codelineno-11-7"></a>_| |_ \  /\  /|  __/| |_) || \__/\| (_) || |  |  __/
+<a id="__codelineno-11-8" name="__codelineno-11-8"></a>\___/  \/  \/  \___||_.__/  \____/ \___/ |_|   \___|
+<a id="__codelineno-11-9" name="__codelineno-11-9"></a>
+<a id="__codelineno-11-10" name="__codelineno-11-10"></a>[CMD]:
+<a id="__codelineno-11-11" name="__codelineno-11-11"></a>    ipc version
+<a id="__codelineno-11-12" name="__codelineno-11-12"></a>[Memo]:
+<a id="__codelineno-11-13" name="__codelineno-11-13"></a>    print imakecore version info
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+<h2 id="_8">一个类中定义多个命令<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<p>一个 Cmd 类可以定义多个命令。每一个命令都必须由 $CmdMapping 定义。</p>
+<p>比如我们可以定义一个 <code>add</code> 和 <code>sub</code> 命令。</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="12:2"><input checked="checked" id="__tabbed_12_1" name="__tabbed_12" type="radio" /><input id="__tabbed_12_2" name="__tabbed_12" type="radio" /><div class="tabbed-labels"><label for="__tabbed_12_1">AddSubCmd.h</label><label for="__tabbed_12_2">AddSubCmd.cpp</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-12-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-12-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-12-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-12-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-12-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-12-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-12-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-12-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-12-10">10</a></span>
+<span class="normal"><a href="#__codelineno-12-11">11</a></span>
+<span class="normal"><a href="#__codelineno-12-12">12</a></span>
+<span class="normal"><a href="#__codelineno-12-13">13</a></span>
+<span class="normal"><a href="#__codelineno-12-14">14</a></span>
+<span class="normal"><a href="#__codelineno-12-15">15</a></span>
+<span class="normal"><a href="#__codelineno-12-16">16</a></span>
+<span class="normal"><a href="#__codelineno-12-17">17</a></span>
+<span class="normal"><a href="#__codelineno-12-18">18</a></span>
+<span class="normal"><a href="#__codelineno-12-19">19</a></span>
+<span class="normal"><a href="#__codelineno-12-20">20</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="cp">#pragma once</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2"></a>
+<a id="__codelineno-12-3" name="__codelineno-12-3"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;cmd/ICmdInterface.h&quot;</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4"></a>
+<a id="__codelineno-12-5" name="__codelineno-12-5"></a><span class="k">class</span><span class="w"> </span><span class="nc">AddSubCmd</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">ICmdInterface</span><span class="o">&lt;</span><span class="n">AddSubCmd</span><span class="o">&gt;</span>
+<a id="__codelineno-12-6" name="__codelineno-12-6"></a><span class="p">{</span>
+<a id="__codelineno-12-7" name="__codelineno-12-7"></a><span class="w">    </span><span class="n">Q_GADGET</span>
+<a id="__codelineno-12-8" name="__codelineno-12-8"></a><span class="w">    </span><span class="nf">$AsCmd</span><span class="p">(</span><span class="n">addsub</span><span class="p">)</span>
+<a id="__codelineno-12-9" name="__codelineno-12-9"></a><span class="k">public</span><span class="o">:</span>
+<a id="__codelineno-12-10" name="__codelineno-12-10"></a><span class="w">    </span><span class="n">AddSubCmd</span><span class="p">();</span>
+<a id="__codelineno-12-11" name="__codelineno-12-11"></a>
+<a id="__codelineno-12-12" name="__codelineno-12-12"></a><span class="k">public</span><span class="o">:</span>
+<a id="__codelineno-12-13" name="__codelineno-12-13"></a><span class="w">    </span><span class="n">$CmdMappingMemo</span><span class="p">(</span><span class="n">add</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;add two numbers&quot;</span><span class="p">)</span>
+<a id="__codelineno-12-14" name="__codelineno-12-14"></a><span class="w">    </span><span class="n">$CmdMapping</span><span class="p">(</span><span class="n">add</span><span class="p">)</span>
+<a id="__codelineno-12-15" name="__codelineno-12-15"></a><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">add</span><span class="p">();</span>
+<a id="__codelineno-12-16" name="__codelineno-12-16"></a>
+<a id="__codelineno-12-17" name="__codelineno-12-17"></a><span class="w">    </span><span class="n">$CmdMappingMemo</span><span class="p">(</span><span class="n">sub</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;sub two numbers&quot;</span><span class="p">)</span>
+<a id="__codelineno-12-18" name="__codelineno-12-18"></a><span class="w">    </span><span class="n">$CmdMapping</span><span class="p">(</span><span class="n">sub</span><span class="p">)</span>
+<a id="__codelineno-12-19" name="__codelineno-12-19"></a><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">sub</span><span class="p">();</span>
+<a id="__codelineno-12-20" name="__codelineno-12-20"></a><span class="p">};</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-13-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-13-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-13-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-13-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-13-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-13-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-13-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-13-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-13-10">10</a></span>
+<span class="normal"><a href="#__codelineno-13-11">11</a></span>
+<span class="normal"><a href="#__codelineno-13-12">12</a></span>
+<span class="normal"><a href="#__codelineno-13-13">13</a></span>
+<span class="normal"><a href="#__codelineno-13-14">14</a></span>
+<span class="normal"><a href="#__codelineno-13-15">15</a></span>
+<span class="normal"><a href="#__codelineno-13-16">16</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;AddSubCmd.h&quot;</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2"></a>
+<a id="__codelineno-13-3" name="__codelineno-13-3"></a><span class="n">AddSubCmd</span><span class="o">::</span><span class="n">AddSubCmd</span><span class="p">()</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4"></a><span class="p">{</span>
+<a id="__codelineno-13-5" name="__codelineno-13-5"></a><span class="p">}</span>
+<a id="__codelineno-13-6" name="__codelineno-13-6"></a><span class="kt">void</span><span class="w"> </span><span class="n">AddSubCmd</span><span class="o">::</span><span class="n">add</span><span class="p">()</span>
+<a id="__codelineno-13-7" name="__codelineno-13-7"></a><span class="p">{</span>
+<a id="__codelineno-13-8" name="__codelineno-13-8"></a><span class="w">    </span><span class="n">qDebug</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;add created&quot;</span><span class="p">;</span>
+<a id="__codelineno-13-9" name="__codelineno-13-9"></a><span class="w">    </span><span class="n">quick_exit</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<a id="__codelineno-13-10" name="__codelineno-13-10"></a><span class="p">}</span>
+<a id="__codelineno-13-11" name="__codelineno-13-11"></a>
+<a id="__codelineno-13-12" name="__codelineno-13-12"></a><span class="kt">void</span><span class="w"> </span><span class="n">AddSubCmd</span><span class="o">::</span><span class="n">sub</span><span class="p">()</span>
+<a id="__codelineno-13-13" name="__codelineno-13-13"></a><span class="p">{</span>
+<a id="__codelineno-13-14" name="__codelineno-13-14"></a><span class="w">    </span><span class="n">qDebug</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;sub created&quot;</span><span class="p">;</span>
+<a id="__codelineno-13-15" name="__codelineno-13-15"></a><span class="w">    </span><span class="n">quick_exit</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<a id="__codelineno-13-16" name="__codelineno-13-16"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+<p>在上面的示例中，我们在一个类中定义了两个命令。<code>some-exe addsub add</code> 和 <code>some-exe addsub sub</code> 这两个命令分别调用了 <code>AddSubCmd</code> 类中的 <code>add</code> 和 <code>sub</code> 函数。</p>
+<p>但是在实际的应用中，非常不建议这么定义。因为在一个类中，不仅有命令的定义，还有参数和选项的内容。一个类中定义的命令会同时共享选项和参数。</p>
+<p>所以，我们推荐一个命令一个类。</p>
+<p>但是还有一些例外的事情，比如我 定义了一个  <code>some-exe package list</code> 的名命令，那么我想以 <code>some-exe list</code> 作为其简写方式。 这样的情况就可以定义两个映射函数，而在其中一个映射函数中调用另外一个映射函数。</p>
 
 
 

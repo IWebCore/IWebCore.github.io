@@ -1357,6 +1357,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#icmd_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      安装 ICmd
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#maincpp" class="md-nav__link">
     <span class="md-ellipsis">
       main.cpp
@@ -1394,6 +1403,15 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      接下来的内容
+    </span>
+  </a>
   
 </li>
       
@@ -2360,6 +2378,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#icmd_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      安装 ICmd
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#maincpp" class="md-nav__link">
     <span class="md-ellipsis">
       main.cpp
@@ -2400,6 +2427,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      接下来的内容
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2424,8 +2460,14 @@
 <p>用户可以参考 <a href="https://github.com/IWebCore/IPubCmd">IPubCore</a> 来进一步了解使用方法 </p>
 <h2 id="_3">案例<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p>我们写一个简单的案例，来描述ICmd如何使用。</p>
+<h3 id="icmd_1">安装 ICmd<a class="headerlink" href="#icmd_1" title="Permanent link">&para;</a></h3>
+<p>关于如何安装 ICmd，请参考 <a href="../install/">安装 ICmd</a>。</p>
+<p>如果想更多的了解包管理系统，请参考 <a href="../../IMakeCore/quick_start/">包管理系统</a>。</p>
 <h3 id="maincpp">main.cpp<a class="headerlink" href="#maincpp" title="Permanent link">&para;</a></h3>
 <p>首先定义 main.cpp， main.cpp 的主要内容是启动一个 ICmdServer ,来接收，解析并执行 cmd.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">main.cpp</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
@@ -2450,12 +2492,17 @@
 <a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">run</span><span class="p">();</span>
 <a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
 <p>ICmdServer 的具体功能是， 解析出 ICmdRequest 内容，匹配具体的某个路径的 ICmdAction，并执行 ICmdAction 的处理逻辑。</p>
 <p>其中 ICmdRequest 是将命令行解析为 <code>路径</code>，<code>参数</code> 和<code>选项</code> 三个部分的内容。</p>
 <p>ICmdAction是针对某个具体的 <code>路径</code> 的处理动作，而处理的包括，将参数和选项注入到定义的 <code>Cmd</code> 中去，如果<code>参数</code>和<code>选项</code>有定义预处理函数或后处理函数，则会执行预处理函数或后处理函数，最后执行 处理函数。</p>
 <h3 id="cmd">定义一个 Cmd<a class="headerlink" href="#cmd" title="Permanent link">&para;</a></h3>
 <p>下面我们定义一个 VersionCmd。</p>
-<p>VersionCmd.h</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">VersionCmd.h</label><label for="__tabbed_2_2">VersionCmd.cpp</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
@@ -2488,7 +2535,8 @@
 <a id="__codelineno-1-15" name="__codelineno-1-15"></a><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">version</span><span class="p">();</span>
 <a id="__codelineno-1-16" name="__codelineno-1-16"></a><span class="p">};</span>
 </code></pre></div></td></tr></table></div>
-<p>VersionCmd.cpp</p>
+</div>
+<div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
@@ -2513,6 +2561,9 @@
 <a id="__codelineno-2-11" name="__codelineno-2-11"></a><span class="w">    </span><span class="n">quick_exit</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
 <a id="__codelineno-2-12" name="__codelineno-2-12"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
 <p>在头文件中，我们定义了一个 Cmd 项， </p>
 <p>VersionCmd 通过CRTP继承 ICmdInterface。这个 ICmdInterface主要的内容就是解析Cmd,生成 CmdAction 内容，并注入到 ICmdManage 中去。这时如果 ICmdServer 匹配到这个 CmdAction, 这个类就会被执行。</p>
 <p><code>Q_GADGET</code> 的作用是使这个类能够被反射，知道它定义了什么 classinfo, property 和 method。这些信息会被组织起来成为 CmdAction 中的内容。</p>
@@ -2522,15 +2573,27 @@
 <p>在 <code>void version()</code> 函数中，不仅执行了具体的打印功能，还有一句值得注意 <code>quick_exit(0);</code> 这个的目的是退出整个程序。所以在 Cmd 书写过程中，用户执行完成功能后，必须手动退出程序。</p>
 <h3 id="cmd_1">使用该 Cmd<a class="headerlink" href="#cmd_1" title="Permanent link">&para;</a></h3>
 <p>我们执行该命令，如下：</p>
-<p><img src="assets/image-20250702212502579.png" alt="image-20250702212502579"  /></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:1"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">IPubCmd verison</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><img alt="cmd version" src="../assets/image-20250702212502579.png" /></p>
+</div>
+</div>
+</div>
 <p>我们使用 -？打印一下它的介绍</p>
-<p><img alt="image-20250702212559976" src="../assets/image-20250702212559976.png" /></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:1"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">-? 帮助</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><img alt="cmd version help" src="../assets/image-20250702212559976.png" /></p>
+</div>
+</div>
+</div>
 <p>在上面我们看到了它的命令内容和我们写入的 Memo内容。用户可以通过这些内容快速了解这个命令如何使用。</p>
 <h3 id="_4">更复杂的例子<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <p>下面我们将写一个更复杂的例子，在这个例子中，我们显示代码和输入输出，不多作介绍。</p>
-<ul>
-<li>PackageInstall.h</li>
-</ul>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">PackageInstall.h</label><label for="__tabbed_5_2">PackageInstall.cpp</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-3-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-3-3"> 3</a></span>
@@ -2621,9 +2684,8 @@
 <a id="__codelineno-3-44" name="__codelineno-3-44"></a><span class="w">    </span><span class="n">QString</span><span class="w"> </span><span class="n">m_zipPath</span><span class="p">;</span>
 <a id="__codelineno-3-45" name="__codelineno-3-45"></a><span class="p">};</span>
 </code></pre></div></td></tr></table></div>
-<ul>
-<li>PackageInstall.cpp</li>
-</ul>
+</div>
+<div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-4-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-4-3"> 3</a></span>
@@ -2794,11 +2856,24 @@
 <a id="__codelineno-4-84" name="__codelineno-4-84"></a><span class="w">    </span><span class="n">JlCompress</span><span class="o">::</span><span class="n">extractDir</span><span class="p">(</span><span class="n">m_zipPath</span><span class="p">,</span><span class="w"> </span><span class="n">path</span><span class="p">);</span>
 <a id="__codelineno-4-85" name="__codelineno-4-85"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
-<ul>
-<li>info 输出</li>
-</ul>
+</div>
+</div>
+</div>
+<p>相关的输出如下：</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">help</label><label for="__tabbed_6_2">install package</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <p><img alt="image-20250702213049934" src="../assets/image-20250702213049934.png" /></p>
+</div>
+<div class="tabbed-block">
 <p><img alt="image-20250702213132674" src="../assets/image-20250702213132674.png" /></p>
+</div>
+</div>
+</div>
+<h2 id="_5">接下来的内容<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<ul>
+<li>在上述的示例中我们展示了如何使用该工具，接下来的内容会更多的介绍相关内容，请继续阅读。</li>
+</ul>
 
 
 

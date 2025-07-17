@@ -20,7 +20,7 @@
     
     
       
-        <title>命令行选项* - IWebCore</title>
+        <title>命令行选项 - IWebCore</title>
       
     
     
@@ -106,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              命令行选项*
+              命令行选项
             
           </span>
         </div>
@@ -1393,7 +1393,7 @@
   
   
   <span class="md-ellipsis">
-    单个命令行参数*
+    单个命令行参数
     
   </span>
   
@@ -1420,17 +1420,103 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    命令行选项
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
   <span class="md-ellipsis">
-    命令行选项*
+    命令行选项
     
   </span>
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      示例
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cmdoption" class="md-nav__link">
+    <span class="md-ellipsis">
+      $CmdOption
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cmdoptionshortname" class="md-nav__link">
+    <span class="md-ellipsis">
+      $CmdOptionShortName
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cmdoptionmemo" class="md-nav__link">
+    <span class="md-ellipsis">
+      $CmdOptionMemo
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cmdoptionrequired" class="md-nav__link">
+    <span class="md-ellipsis">
+      $CmdOptionRequired
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cmdoptionnovalue" class="md-nav__link">
+    <span class="md-ellipsis">
+      $CmdOptionNoValue
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1449,7 +1535,7 @@
   
   
   <span class="md-ellipsis">
-    命令行选项参数*
+    命令行选项参数
     
   </span>
   
@@ -2327,6 +2413,68 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      示例
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cmdoption" class="md-nav__link">
+    <span class="md-ellipsis">
+      $CmdOption
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cmdoptionshortname" class="md-nav__link">
+    <span class="md-ellipsis">
+      $CmdOptionShortName
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cmdoptionmemo" class="md-nav__link">
+    <span class="md-ellipsis">
+      $CmdOptionMemo
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cmdoptionrequired" class="md-nav__link">
+    <span class="md-ellipsis">
+      $CmdOptionRequired
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cmdoptionnovalue" class="md-nav__link">
+    <span class="md-ellipsis">
+      $CmdOptionNoValue
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2341,10 +2489,586 @@
 
 
 
-<h1 id="_1">命令行选项*<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h1 id="_1">命令行选项<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <blockquote>
 <p>本文档描述命令行选项</p>
 </blockquote>
+<p>在 windows 命令行中，可以查看 dir 的命令如下：</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">dir</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-0-10">10</a></span>
+<span class="normal"><a href="#__codelineno-0-11">11</a></span>
+<span class="normal"><a href="#__codelineno-0-12">12</a></span>
+<span class="normal"><a href="#__codelineno-0-13">13</a></span>
+<span class="normal"><a href="#__codelineno-0-14">14</a></span>
+<span class="normal"><a href="#__codelineno-0-15">15</a></span>
+<span class="normal"><a href="#__codelineno-0-16">16</a></span>
+<span class="normal"><a href="#__codelineno-0-17">17</a></span>
+<span class="normal"><a href="#__codelineno-0-18">18</a></span>
+<span class="normal"><a href="#__codelineno-0-19">19</a></span>
+<span class="normal"><a href="#__codelineno-0-20">20</a></span>
+<span class="normal"><a href="#__codelineno-0-21">21</a></span>
+<span class="normal"><a href="#__codelineno-0-22">22</a></span>
+<span class="normal"><a href="#__codelineno-0-23">23</a></span>
+<span class="normal"><a href="#__codelineno-0-24">24</a></span>
+<span class="normal"><a href="#__codelineno-0-25">25</a></span>
+<span class="normal"><a href="#__codelineno-0-26">26</a></span>
+<span class="normal"><a href="#__codelineno-0-27">27</a></span>
+<span class="normal"><a href="#__codelineno-0-28">28</a></span>
+<span class="normal"><a href="#__codelineno-0-29">29</a></span>
+<span class="normal"><a href="#__codelineno-0-30">30</a></span>
+<span class="normal"><a href="#__codelineno-0-31">31</a></span>
+<span class="normal"><a href="#__codelineno-0-32">32</a></span>
+<span class="normal"><a href="#__codelineno-0-33">33</a></span>
+<span class="normal"><a href="#__codelineno-0-34">34</a></span>
+<span class="normal"><a href="#__codelineno-0-35">35</a></span>
+<span class="normal"><a href="#__codelineno-0-36">36</a></span>
+<span class="normal"><a href="#__codelineno-0-37">37</a></span>
+<span class="normal"><a href="#__codelineno-0-38">38</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>C:<span class="se">\U</span>sers<span class="se">\Y</span>ue&gt;dir<span class="w"> </span>/?
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a>显示目录中的文件和子目录列表。
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a>DIR<span class="w"> </span><span class="o">[</span>drive:<span class="o">][</span>path<span class="o">][</span>filename<span class="o">]</span><span class="w"> </span><span class="o">[</span>/A<span class="o">[[</span>:<span class="o">]</span>attributes<span class="o">]]</span><span class="w"> </span><span class="o">[</span>/B<span class="o">]</span><span class="w"> </span><span class="o">[</span>/C<span class="o">]</span><span class="w"> </span><span class="o">[</span>/D<span class="o">]</span><span class="w"> </span><span class="o">[</span>/L<span class="o">]</span><span class="w"> </span><span class="o">[</span>/N<span class="o">]</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="o">[</span>/O<span class="o">[[</span>:<span class="o">]</span>sortorder<span class="o">]]</span><span class="w"> </span><span class="o">[</span>/P<span class="o">]</span><span class="w"> </span><span class="o">[</span>/Q<span class="o">]</span><span class="w"> </span><span class="o">[</span>/R<span class="o">]</span><span class="w"> </span><span class="o">[</span>/S<span class="o">]</span><span class="w"> </span><span class="o">[</span>/T<span class="o">[[</span>:<span class="o">]</span>timefield<span class="o">]]</span><span class="w"> </span><span class="o">[</span>/W<span class="o">]</span><span class="w"> </span><span class="o">[</span>/X<span class="o">]</span><span class="w"> </span><span class="o">[</span>/4<span class="o">]</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a>
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="o">[</span>drive:<span class="o">][</span>path<span class="o">][</span>filename<span class="o">]</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="w">            </span>指定要列出的驱动器、目录和/或文件。
+<a id="__codelineno-0-9" name="__codelineno-0-9"></a>
+<a id="__codelineno-0-10" name="__codelineno-0-10"></a>/A<span class="w">          </span>显示具有指定属性的文件。
+<a id="__codelineno-0-11" name="__codelineno-0-11"></a>属性<span class="w">         </span>D<span class="w">  </span>目录<span class="w">                </span>R<span class="w">  </span>只读文件
+<a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="w">            </span>H<span class="w">  </span>隐藏文件<span class="w">            </span>A<span class="w">  </span>准备存档的文件
+<a id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="w">            </span>S<span class="w">  </span>系统文件<span class="w">            </span>I<span class="w">  </span>无内容索引文件
+<a id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="w">            </span>L<span class="w">  </span>重新分析点<span class="w">          </span>O<span class="w">  </span>脱机文件
+<a id="__codelineno-0-15" name="__codelineno-0-15"></a><span class="w">            </span>-<span class="w">  </span>表示“否”的前缀
+<a id="__codelineno-0-16" name="__codelineno-0-16"></a>/B<span class="w">          </span>使用空格式<span class="o">(</span>没有标题信息或摘要<span class="o">)</span>。
+<a id="__codelineno-0-17" name="__codelineno-0-17"></a>/C<span class="w">          </span>在文件大小中显示千位数分隔符。这是默认值。用<span class="w"> </span>/-C<span class="w"> </span>来
+<a id="__codelineno-0-18" name="__codelineno-0-18"></a><span class="w">            </span>禁用分隔符显示。
+<a id="__codelineno-0-19" name="__codelineno-0-19"></a>/D<span class="w">          </span>跟宽式相同，但文件是按栏分类列出的。
+<a id="__codelineno-0-20" name="__codelineno-0-20"></a>/L<span class="w">          </span>用小写。
+<a id="__codelineno-0-21" name="__codelineno-0-21"></a>/N<span class="w">          </span>新的长列表格式，其中文件名在最右边。
+<a id="__codelineno-0-22" name="__codelineno-0-22"></a>/O<span class="w">          </span>用分类顺序列出文件。
+<a id="__codelineno-0-23" name="__codelineno-0-23"></a>排列顺序<span class="w">     </span>N<span class="w">  </span>按名称<span class="o">(</span>字母顺序<span class="o">)</span><span class="w">     </span>S<span class="w">  </span>按大小<span class="o">(</span>从小到大<span class="o">)</span>
+<a id="__codelineno-0-24" name="__codelineno-0-24"></a><span class="w">            </span>E<span class="w">  </span>按扩展名<span class="o">(</span>字母顺序<span class="o">)</span><span class="w">   </span>D<span class="w">  </span>按日期/时间<span class="o">(</span>从先到后<span class="o">)</span>
+<a id="__codelineno-0-25" name="__codelineno-0-25"></a><span class="w">            </span>G<span class="w">  </span>组目录优先<span class="w">           </span>-<span class="w">  </span>反转顺序的前缀
+<a id="__codelineno-0-26" name="__codelineno-0-26"></a>/P<span class="w">          </span>在每个信息屏幕后暂停。
+<a id="__codelineno-0-27" name="__codelineno-0-27"></a>/Q<span class="w">          </span>显示文件所有者。
+<a id="__codelineno-0-28" name="__codelineno-0-28"></a>/R<span class="w">          </span>显示文件的备用数据流。
+<a id="__codelineno-0-29" name="__codelineno-0-29"></a>/S<span class="w">          </span>显示指定目录和所有子目录中的文件。
+<a id="__codelineno-0-30" name="__codelineno-0-30"></a>/T<span class="w">          </span>控制显示或用来分类的时间字符域
+<a id="__codelineno-0-31" name="__codelineno-0-31"></a>时间段<span class="w">      </span>C<span class="w">  </span>创建时间
+<a id="__codelineno-0-32" name="__codelineno-0-32"></a><span class="w">            </span>A<span class="w">  </span>上次访问时间
+<a id="__codelineno-0-33" name="__codelineno-0-33"></a><span class="w">            </span>W<span class="w">  </span>上次写入的时间
+<a id="__codelineno-0-34" name="__codelineno-0-34"></a>/W<span class="w">          </span>用宽列表格式。
+<a id="__codelineno-0-35" name="__codelineno-0-35"></a>/X<span class="w">          </span>显示为非<span class="w"> </span>8dot3<span class="w"> </span>文件名产生的短名称。格式是<span class="w"> </span>/N<span class="w"> </span>的格式，
+<a id="__codelineno-0-36" name="__codelineno-0-36"></a><span class="w">            </span>短名称插在长名称前面。如果没有短名称，在其位置则
+<a id="__codelineno-0-37" name="__codelineno-0-37"></a><span class="w">            </span>显示空白。
+<a id="__codelineno-0-38" name="__codelineno-0-38"></a>/4<span class="w">          </span>以四位数字显示年份
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+<p>他是有如此之多的选项。下面的内容，我们讲述 ICmd 中如何定义命令行选项。</p>
+<p>ICore 中命令行选项为命令行参数的一种，它以<code>-</code>或<code>--</code>开头，后面跟着一个选项名，然后可以跟着一个参数值。</p>
+<p>它为命令的执行提供指导，使得命令的执行更加灵活、可控。</p>
+<h2 id="_2">示例<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>这里我们也定义一个 dir 的命令作为示例，讲述如何定义命令行选项。注意这里我不会去实现具体的功能，只作为讲清楚命令行选项的工具。</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">MyDirCmd.h</label><label for="__tabbed_2_2">MyDirCmd.cpp</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-1-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-1-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-1-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-1-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-1-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-1-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-1-10">10</a></span>
+<span class="normal"><a href="#__codelineno-1-11">11</a></span>
+<span class="normal"><a href="#__codelineno-1-12">12</a></span>
+<span class="normal"><a href="#__codelineno-1-13">13</a></span>
+<span class="normal"><a href="#__codelineno-1-14">14</a></span>
+<span class="normal"><a href="#__codelineno-1-15">15</a></span>
+<span class="normal"><a href="#__codelineno-1-16">16</a></span>
+<span class="normal"><a href="#__codelineno-1-17">17</a></span>
+<span class="normal"><a href="#__codelineno-1-18">18</a></span>
+<span class="normal"><a href="#__codelineno-1-19">19</a></span>
+<span class="normal"><a href="#__codelineno-1-20">20</a></span>
+<span class="normal"><a href="#__codelineno-1-21">21</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="cp">#pragma once</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;cmd/ICmdInterface.h&quot;</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a>
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="k">class</span><span class="w"> </span><span class="nc">MyDirCmd</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">ICmdInterface</span><span class="o">&lt;</span><span class="n">MyDirCmd</span><span class="o">&gt;</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="p">{</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="w">    </span><span class="n">Q_GADGET</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="w">    </span><span class="nf">$AsCmd</span><span class="p">(</span><span class="o">/</span><span class="p">)</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="k">public</span><span class="o">:</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="w">    </span><span class="n">MyDirCmd</span><span class="p">();</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11"></a>
+<a id="__codelineno-1-12" name="__codelineno-1-12"></a><span class="w">    </span><span class="n">$CmdOptionMemo</span><span class="p">(</span><span class="n">recurse</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;recurse list subdirectory&quot;</span><span class="p">)</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13"></a><span class="w">    </span><span class="n">$CmdOption</span><span class="p">(</span><span class="n">recurse</span><span class="p">)</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14"></a>
+<a id="__codelineno-1-15" name="__codelineno-1-15"></a><span class="w">    </span><span class="n">$CmdOptionMemo</span><span class="p">(</span><span class="n">time</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;print create time&quot;</span><span class="p">)</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16"></a><span class="w">    </span><span class="n">$CmdOption</span><span class="p">(</span><span class="n">time</span><span class="p">)</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17"></a>
+<a id="__codelineno-1-18" name="__codelineno-1-18"></a><span class="k">public</span><span class="o">:</span>
+<a id="__codelineno-1-19" name="__codelineno-1-19"></a><span class="w">    </span><span class="n">$CmdMapping</span><span class="p">(</span><span class="n">mydir</span><span class="p">)</span>
+<a id="__codelineno-1-20" name="__codelineno-1-20"></a><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">mydir</span><span class="p">();</span>
+<a id="__codelineno-1-21" name="__codelineno-1-21"></a><span class="p">};</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-2-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-2-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-2-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-2-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-2-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-2-10">10</a></span>
+<span class="normal"><a href="#__codelineno-2-11">11</a></span>
+<span class="normal"><a href="#__codelineno-2-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;MyDirCmd.h&quot;</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="n">MyDirCmd</span><span class="o">::</span><span class="n">MyDirCmd</span><span class="p">()</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="p">{</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a>
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="p">}</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7"></a>
+<a id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="kt">void</span><span class="w"> </span><span class="n">MyDirCmd</span><span class="o">::</span><span class="n">mydir</span><span class="p">()</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="p">{</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10"></a><span class="w">    </span><span class="n">qDebug</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;recurse:&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">recurse</span><span class="p">;</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11"></a><span class="w">    </span><span class="n">qDebug</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;time:&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">time</span><span class="p">;</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+<p>我们直接列出他们的输出</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:6"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><input id="__tabbed_3_3" name="__tabbed_3" type="radio" /><input id="__tabbed_3_4" name="__tabbed_3" type="radio" /><input id="__tabbed_3_5" name="__tabbed_3" type="radio" /><input id="__tabbed_3_6" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">-?</label><label for="__tabbed_3_2">没有选项</label><label for="__tabbed_3_3">--recurse</label><label for="__tabbed_3_4">--time</label><label for="__tabbed_3_5">--recurse --time</label><label for="__tabbed_3_6">--recurse --time --abc</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-3-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-3-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-3-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-3-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-3-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-3-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-3-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-3-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-3-10">10</a></span>
+<span class="normal"><a href="#__codelineno-3-11">11</a></span>
+<span class="normal"><a href="#__codelineno-3-12">12</a></span>
+<span class="normal"><a href="#__codelineno-3-13">13</a></span>
+<span class="normal"><a href="#__codelineno-3-14">14</a></span>
+<span class="normal"><a href="#__codelineno-3-15">15</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a>PS<span class="w"> </span>D:<span class="se">\t</span>est<span class="se">\c</span>md&gt;<span class="w"> </span>.<span class="se">\t</span>estCmd.exe<span class="w"> </span>mydir<span class="w"> </span>-?
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a>
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="w"> </span>_____<span class="w">  </span>_<span class="w">    </span>_<span class="w">        </span>_<span class="w">      </span>_____
+<a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="p">|</span>_<span class="w">   </span>_<span class="o">||</span><span class="w"> </span><span class="p">|</span><span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">      </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">    </span>/<span class="w">  </span>__<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">  </span>___<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="p">|</span>__<span class="w">  </span><span class="p">|</span><span class="w"> </span>/<span class="w">  </span><span class="se">\/</span><span class="w">  </span>___<span class="w">   </span>_<span class="w"> </span>__<span class="w">  </span>___
+<a id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="p">|</span>/<span class="se">\|</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>/<span class="w"> </span>_<span class="w"> </span><span class="se">\|</span><span class="w"> </span><span class="s1">&#39;_ \ | |     / _ \ | &#39;</span>__<span class="p">|</span>/<span class="w"> </span>_<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7"></a>_<span class="p">|</span><span class="w"> </span><span class="p">|</span>_<span class="w"> </span><span class="se">\ </span><span class="w"> </span>/<span class="se">\ </span><span class="w"> </span>/<span class="p">|</span><span class="w">  </span>__/<span class="p">|</span><span class="w"> </span><span class="p">|</span>_<span class="o">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="se">\_</span>_/<span class="se">\|</span><span class="w"> </span><span class="o">(</span>_<span class="o">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="p">|</span><span class="w">  </span><span class="p">|</span><span class="w">  </span>__/
+<a id="__codelineno-3-8" name="__codelineno-3-8"></a><span class="se">\_</span>__/<span class="w">  </span><span class="se">\/</span><span class="w">  </span><span class="se">\/</span><span class="w">  </span><span class="se">\_</span>__<span class="o">||</span>_.__/<span class="w">  </span><span class="se">\_</span>___/<span class="w"> </span><span class="se">\_</span>__/<span class="w"> </span><span class="p">|</span>_<span class="p">|</span><span class="w">   </span><span class="se">\_</span>__<span class="p">|</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9"></a>
+<a id="__codelineno-3-10" name="__codelineno-3-10"></a><span class="o">[</span>CMD<span class="o">]</span>:
+<a id="__codelineno-3-11" name="__codelineno-3-11"></a><span class="w">    </span>testCmd.exe<span class="w"> </span>mydir
+<a id="__codelineno-3-12" name="__codelineno-3-12"></a><span class="o">[</span>Options<span class="o">]</span>:
+<a id="__codelineno-3-13" name="__codelineno-3-13"></a><span class="w">    </span>Option<span class="w">     </span>ShortName<span class="w">  </span>Required<span class="w">    </span>NoValue<span class="w">    </span>Memo
+<a id="__codelineno-3-14" name="__codelineno-3-14"></a><span class="w">    </span>--recurse<span class="w">  </span>-<span class="w">          </span><span class="nb">false</span><span class="w">       </span><span class="nb">false</span><span class="w">      </span>recurse<span class="w"> </span>list<span class="w"> </span>subdirectory
+<a id="__codelineno-3-15" name="__codelineno-3-15"></a><span class="w">    </span>--time<span class="w">     </span>-<span class="w">          </span><span class="nb">false</span><span class="w">       </span><span class="nb">false</span><span class="w">      </span>print<span class="w"> </span>create<span class="w"> </span><span class="nb">time</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-4-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-4-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-4-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-4-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-4-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-4-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-4-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-4-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-4-10">10</a></span>
+<span class="normal"><a href="#__codelineno-4-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a>PS<span class="w"> </span>D:<span class="se">\t</span>est<span class="se">\c</span>md&gt;<span class="w"> </span>.<span class="se">\t</span>estCmd.exe<span class="w"> </span>mydir
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a>
+<a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="w"> </span>_____<span class="w">  </span>_<span class="w">    </span>_<span class="w">        </span>_<span class="w">      </span>_____
+<a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="p">|</span>_<span class="w">   </span>_<span class="o">||</span><span class="w"> </span><span class="p">|</span><span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">      </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">    </span>/<span class="w">  </span>__<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">  </span>___<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="p">|</span>__<span class="w">  </span><span class="p">|</span><span class="w"> </span>/<span class="w">  </span><span class="se">\/</span><span class="w">  </span>___<span class="w">   </span>_<span class="w"> </span>__<span class="w">  </span>___
+<a id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="p">|</span>/<span class="se">\|</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>/<span class="w"> </span>_<span class="w"> </span><span class="se">\|</span><span class="w"> </span><span class="s1">&#39;_ \ | |     / _ \ | &#39;</span>__<span class="p">|</span>/<span class="w"> </span>_<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7"></a>_<span class="p">|</span><span class="w"> </span><span class="p">|</span>_<span class="w"> </span><span class="se">\ </span><span class="w"> </span>/<span class="se">\ </span><span class="w"> </span>/<span class="p">|</span><span class="w">  </span>__/<span class="p">|</span><span class="w"> </span><span class="p">|</span>_<span class="o">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="se">\_</span>_/<span class="se">\|</span><span class="w"> </span><span class="o">(</span>_<span class="o">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="p">|</span><span class="w">  </span><span class="p">|</span><span class="w">  </span>__/
+<a id="__codelineno-4-8" name="__codelineno-4-8"></a><span class="se">\_</span>__/<span class="w">  </span><span class="se">\/</span><span class="w">  </span><span class="se">\/</span><span class="w">  </span><span class="se">\_</span>__<span class="o">||</span>_.__/<span class="w">  </span><span class="se">\_</span>___/<span class="w"> </span><span class="se">\_</span>__/<span class="w"> </span><span class="p">|</span>_<span class="p">|</span><span class="w">   </span><span class="se">\_</span>__<span class="p">|</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9"></a>
+<a id="__codelineno-4-10" name="__codelineno-4-10"></a>recurse:<span class="w"> </span><span class="nb">false</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11"></a>time:<span class="w"> </span><span class="nb">false</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-5-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-5-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-5-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-5-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-5-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-5-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-5-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-5-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-5-10">10</a></span>
+<span class="normal"><a href="#__codelineno-5-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a>PS<span class="w"> </span>D:<span class="se">\t</span>est<span class="se">\c</span>md&gt;<span class="w"> </span>.<span class="se">\t</span>estCmd.exe<span class="w"> </span>mydir<span class="w"> </span>--recurse
+<a id="__codelineno-5-2" name="__codelineno-5-2"></a>
+<a id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="w"> </span>_____<span class="w">  </span>_<span class="w">    </span>_<span class="w">        </span>_<span class="w">      </span>_____
+<a id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="p">|</span>_<span class="w">   </span>_<span class="o">||</span><span class="w"> </span><span class="p">|</span><span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">      </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">    </span>/<span class="w">  </span>__<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5"></a><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">  </span>___<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="p">|</span>__<span class="w">  </span><span class="p">|</span><span class="w"> </span>/<span class="w">  </span><span class="se">\/</span><span class="w">  </span>___<span class="w">   </span>_<span class="w"> </span>__<span class="w">  </span>___
+<a id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="p">|</span>/<span class="se">\|</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>/<span class="w"> </span>_<span class="w"> </span><span class="se">\|</span><span class="w"> </span><span class="s1">&#39;_ \ | |     / _ \ | &#39;</span>__<span class="p">|</span>/<span class="w"> </span>_<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7"></a>_<span class="p">|</span><span class="w"> </span><span class="p">|</span>_<span class="w"> </span><span class="se">\ </span><span class="w"> </span>/<span class="se">\ </span><span class="w"> </span>/<span class="p">|</span><span class="w">  </span>__/<span class="p">|</span><span class="w"> </span><span class="p">|</span>_<span class="o">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="se">\_</span>_/<span class="se">\|</span><span class="w"> </span><span class="o">(</span>_<span class="o">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="p">|</span><span class="w">  </span><span class="p">|</span><span class="w">  </span>__/
+<a id="__codelineno-5-8" name="__codelineno-5-8"></a><span class="se">\_</span>__/<span class="w">  </span><span class="se">\/</span><span class="w">  </span><span class="se">\/</span><span class="w">  </span><span class="se">\_</span>__<span class="o">||</span>_.__/<span class="w">  </span><span class="se">\_</span>___/<span class="w"> </span><span class="se">\_</span>__/<span class="w"> </span><span class="p">|</span>_<span class="p">|</span><span class="w">   </span><span class="se">\_</span>__<span class="p">|</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9"></a>
+<a id="__codelineno-5-10" name="__codelineno-5-10"></a>recurse:<span class="w"> </span><span class="nb">true</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11"></a>time:<span class="w"> </span><span class="nb">false</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-6-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-6-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-6-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-6-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-6-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-6-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-6-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-6-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-6-10">10</a></span>
+<span class="normal"><a href="#__codelineno-6-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a>PS<span class="w"> </span>D:<span class="se">\t</span>est<span class="se">\c</span>md&gt;<span class="w"> </span>.<span class="se">\t</span>estCmd.exe<span class="w"> </span>mydir<span class="w"> </span>--time
+<a id="__codelineno-6-2" name="__codelineno-6-2"></a>
+<a id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="w"> </span>_____<span class="w">  </span>_<span class="w">    </span>_<span class="w">        </span>_<span class="w">      </span>_____
+<a id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="p">|</span>_<span class="w">   </span>_<span class="o">||</span><span class="w"> </span><span class="p">|</span><span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">      </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">    </span>/<span class="w">  </span>__<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">  </span>___<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="p">|</span>__<span class="w">  </span><span class="p">|</span><span class="w"> </span>/<span class="w">  </span><span class="se">\/</span><span class="w">  </span>___<span class="w">   </span>_<span class="w"> </span>__<span class="w">  </span>___
+<a id="__codelineno-6-6" name="__codelineno-6-6"></a><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="p">|</span>/<span class="se">\|</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>/<span class="w"> </span>_<span class="w"> </span><span class="se">\|</span><span class="w"> </span><span class="s1">&#39;_ \ | |     / _ \ | &#39;</span>__<span class="p">|</span>/<span class="w"> </span>_<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7"></a>_<span class="p">|</span><span class="w"> </span><span class="p">|</span>_<span class="w"> </span><span class="se">\ </span><span class="w"> </span>/<span class="se">\ </span><span class="w"> </span>/<span class="p">|</span><span class="w">  </span>__/<span class="p">|</span><span class="w"> </span><span class="p">|</span>_<span class="o">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="se">\_</span>_/<span class="se">\|</span><span class="w"> </span><span class="o">(</span>_<span class="o">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="p">|</span><span class="w">  </span><span class="p">|</span><span class="w">  </span>__/
+<a id="__codelineno-6-8" name="__codelineno-6-8"></a><span class="se">\_</span>__/<span class="w">  </span><span class="se">\/</span><span class="w">  </span><span class="se">\/</span><span class="w">  </span><span class="se">\_</span>__<span class="o">||</span>_.__/<span class="w">  </span><span class="se">\_</span>___/<span class="w"> </span><span class="se">\_</span>__/<span class="w"> </span><span class="p">|</span>_<span class="p">|</span><span class="w">   </span><span class="se">\_</span>__<span class="p">|</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9"></a>
+<a id="__codelineno-6-10" name="__codelineno-6-10"></a>recurse:<span class="w"> </span><span class="nb">false</span>
+<a id="__codelineno-6-11" name="__codelineno-6-11"></a>time:<span class="w"> </span><span class="nb">true</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-7-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-7-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-7-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-7-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-7-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-7-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-7-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-7-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-7-10">10</a></span>
+<span class="normal"><a href="#__codelineno-7-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a>PS<span class="w"> </span>D:<span class="se">\t</span>est<span class="se">\c</span>md&gt;<span class="w"> </span>.<span class="se">\t</span>estCmd.exe<span class="w"> </span>mydir<span class="w"> </span>--recurse<span class="w"> </span>--time
+<a id="__codelineno-7-2" name="__codelineno-7-2"></a>
+<a id="__codelineno-7-3" name="__codelineno-7-3"></a><span class="w"> </span>_____<span class="w">  </span>_<span class="w">    </span>_<span class="w">        </span>_<span class="w">      </span>_____
+<a id="__codelineno-7-4" name="__codelineno-7-4"></a><span class="p">|</span>_<span class="w">   </span>_<span class="o">||</span><span class="w"> </span><span class="p">|</span><span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">      </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">    </span>/<span class="w">  </span>__<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5"></a><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">  </span>___<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="p">|</span>__<span class="w">  </span><span class="p">|</span><span class="w"> </span>/<span class="w">  </span><span class="se">\/</span><span class="w">  </span>___<span class="w">   </span>_<span class="w"> </span>__<span class="w">  </span>___
+<a id="__codelineno-7-6" name="__codelineno-7-6"></a><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="p">|</span>/<span class="se">\|</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>/<span class="w"> </span>_<span class="w"> </span><span class="se">\|</span><span class="w"> </span><span class="s1">&#39;_ \ | |     / _ \ | &#39;</span>__<span class="p">|</span>/<span class="w"> </span>_<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7"></a>_<span class="p">|</span><span class="w"> </span><span class="p">|</span>_<span class="w"> </span><span class="se">\ </span><span class="w"> </span>/<span class="se">\ </span><span class="w"> </span>/<span class="p">|</span><span class="w">  </span>__/<span class="p">|</span><span class="w"> </span><span class="p">|</span>_<span class="o">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="se">\_</span>_/<span class="se">\|</span><span class="w"> </span><span class="o">(</span>_<span class="o">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="p">|</span><span class="w">  </span><span class="p">|</span><span class="w">  </span>__/
+<a id="__codelineno-7-8" name="__codelineno-7-8"></a><span class="se">\_</span>__/<span class="w">  </span><span class="se">\/</span><span class="w">  </span><span class="se">\/</span><span class="w">  </span><span class="se">\_</span>__<span class="o">||</span>_.__/<span class="w">  </span><span class="se">\_</span>___/<span class="w"> </span><span class="se">\_</span>__/<span class="w"> </span><span class="p">|</span>_<span class="p">|</span><span class="w">   </span><span class="se">\_</span>__<span class="p">|</span>
+<a id="__codelineno-7-9" name="__codelineno-7-9"></a>
+<a id="__codelineno-7-10" name="__codelineno-7-10"></a>recurse:<span class="w"> </span><span class="nb">true</span>
+<a id="__codelineno-7-11" name="__codelineno-7-11"></a>time:<span class="w"> </span><span class="nb">true</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-8-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-8-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-8-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-8-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-8-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-8-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-8-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-8-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-8-10">10</a></span>
+<span class="normal"><a href="#__codelineno-8-11">11</a></span>
+<span class="normal"><a href="#__codelineno-8-12">12</a></span>
+<span class="normal"><a href="#__codelineno-8-13">13</a></span>
+<span class="normal"><a href="#__codelineno-8-14">14</a></span>
+<span class="normal"><a href="#__codelineno-8-15">15</a></span>
+<span class="normal"><a href="#__codelineno-8-16">16</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a>PS<span class="w"> </span>D:<span class="se">\t</span>est<span class="se">\c</span>md&gt;<span class="w"> </span>.<span class="se">\t</span>estCmd.exe<span class="w"> </span>mydir<span class="w"> </span>--recurse<span class="w"> </span>--time<span class="w"> </span>--abc
+<a id="__codelineno-8-2" name="__codelineno-8-2"></a>
+<a id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="w"> </span>_____<span class="w">  </span>_<span class="w">    </span>_<span class="w">        </span>_<span class="w">      </span>_____
+<a id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="p">|</span>_<span class="w">   </span>_<span class="o">||</span><span class="w"> </span><span class="p">|</span><span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">      </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">    </span>/<span class="w">  </span>__<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5"></a><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">  </span>___<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="p">|</span>__<span class="w">  </span><span class="p">|</span><span class="w"> </span>/<span class="w">  </span><span class="se">\/</span><span class="w">  </span>___<span class="w">   </span>_<span class="w"> </span>__<span class="w">  </span>___
+<a id="__codelineno-8-6" name="__codelineno-8-6"></a><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="p">|</span>/<span class="se">\|</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>/<span class="w"> </span>_<span class="w"> </span><span class="se">\|</span><span class="w"> </span><span class="s1">&#39;_ \ | |     / _ \ | &#39;</span>__<span class="p">|</span>/<span class="w"> </span>_<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7"></a>_<span class="p">|</span><span class="w"> </span><span class="p">|</span>_<span class="w"> </span><span class="se">\ </span><span class="w"> </span>/<span class="se">\ </span><span class="w"> </span>/<span class="p">|</span><span class="w">  </span>__/<span class="p">|</span><span class="w"> </span><span class="p">|</span>_<span class="o">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="se">\_</span>_/<span class="se">\|</span><span class="w"> </span><span class="o">(</span>_<span class="o">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="p">|</span><span class="w">  </span><span class="p">|</span><span class="w">  </span>__/
+<a id="__codelineno-8-8" name="__codelineno-8-8"></a><span class="se">\_</span>__/<span class="w">  </span><span class="se">\/</span><span class="w">  </span><span class="se">\/</span><span class="w">  </span><span class="se">\_</span>__<span class="o">||</span>_.__/<span class="w">  </span><span class="se">\_</span>___/<span class="w"> </span><span class="se">\_</span>__/<span class="w"> </span><span class="p">|</span>_<span class="p">|</span><span class="w">   </span><span class="se">\_</span>__<span class="p">|</span>
+<a id="__codelineno-8-9" name="__codelineno-8-9"></a>
+<a id="__codelineno-8-10" name="__codelineno-8-10"></a>ERROR<span class="w"> </span>OCCURED:<span class="w"> </span>your<span class="w"> </span>input<span class="w"> </span>options<span class="w"> </span>are<span class="w"> </span>not<span class="w"> </span>defined<span class="w"> </span><span class="k">in</span><span class="w"> </span>this<span class="w"> </span>cmd.<span class="w"> </span><span class="o">[</span>Option<span class="o">]</span>:<span class="w"> </span>--abc<span class="w"> </span><span class="o">[</span>Cmd<span class="w"> </span>Path<span class="o">]</span>:<span class="w"> </span>mydir
+<a id="__codelineno-8-11" name="__codelineno-8-11"></a><span class="o">[</span>CMD<span class="o">]</span>:
+<a id="__codelineno-8-12" name="__codelineno-8-12"></a><span class="w">    </span>testCmd.exe<span class="w"> </span>mydir
+<a id="__codelineno-8-13" name="__codelineno-8-13"></a><span class="o">[</span>Options<span class="o">]</span>:
+<a id="__codelineno-8-14" name="__codelineno-8-14"></a><span class="w">    </span>Option<span class="w">     </span>ShortName<span class="w">  </span>Required<span class="w">    </span>NoValue<span class="w">    </span>Memo
+<a id="__codelineno-8-15" name="__codelineno-8-15"></a><span class="w">    </span>--recurse<span class="w">  </span>-<span class="w">          </span><span class="nb">false</span><span class="w">       </span><span class="nb">false</span><span class="w">      </span>recurse<span class="w"> </span>list<span class="w"> </span>subdirectory
+<a id="__codelineno-8-16" name="__codelineno-8-16"></a><span class="w">    </span>--time<span class="w">     </span>-<span class="w">          </span><span class="nb">false</span><span class="w">       </span><span class="nb">false</span><span class="w">      </span>print<span class="w"> </span>create<span class="w"> </span><span class="nb">time</span>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+<p>这里请注意最后一个请求，我们输入了不存在的选项，ICmd 会提示错误信息。也就是说用户所能使用的选项必须是已经定义的选项。</p>
+<h2 id="cmdoption">$CmdOption<a class="headerlink" href="#cmdoption" title="Permanent link">&para;</a></h2>
+<p>$CmdOption 用于定义命令行选项，该宏注解只有一个参数，就是选项名称。注意这里的选项名称是全称，在后续有简称可以定义。</p>
+<p>这里不用定义选项数据类型的原因也很简单，一个选项只有两种状态，存在或者不存在，没有薛定谔的猫问题。所以我们不需要定义数据类型，数据类型直接是 bool 类型， 并且这个参数默认是不存在的， 值为 false。如果用户在命令行中使用了该参数，则它的值将变为 true。</p>
+<p>选项后面可以跟随选项参数，这里选项的参数内容将在下一篇文档中进行讲解。</p>
+<h2 id="cmdoptionshortname">$CmdOptionShortName<a class="headerlink" href="#cmdoptionshortname" title="Permanent link">&para;</a></h2>
+<p>一个选项的名称可以很长，能够完整表述出该选项的意义，用户不需要靠猜测，也可以不看 Memo。 但是很长的选项会让用户的输入变得困难。所以我们使用 $CmdOptionShortName 来定义一个选项的简称。</p>
+<p>$CmdOptionShortName 只有两个参数，第一个参数是选项的全称，第二个参数是选项的简称。</p>
+<p>如下，我们改造上面的示例：</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">MyDirCmd.h</label><label for="__tabbed_4_2">MyDirCmd.cpp</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-9-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-9-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-9-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-9-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-9-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-9-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-9-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-9-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-9-10">10</a></span>
+<span class="normal"><a href="#__codelineno-9-11">11</a></span>
+<span class="normal"><a href="#__codelineno-9-12">12</a></span>
+<span class="normal"><a href="#__codelineno-9-13">13</a></span>
+<span class="normal"><a href="#__codelineno-9-14">14</a></span>
+<span class="normal"><a href="#__codelineno-9-15">15</a></span>
+<span class="normal"><a href="#__codelineno-9-16">16</a></span>
+<span class="normal"><a href="#__codelineno-9-17">17</a></span>
+<span class="normal"><a href="#__codelineno-9-18">18</a></span>
+<span class="normal"><a href="#__codelineno-9-19">19</a></span>
+<span class="normal"><a href="#__codelineno-9-20">20</a></span>
+<span class="normal"><a href="#__codelineno-9-21">21</a></span>
+<span class="normal"><a href="#__codelineno-9-22">22</a></span>
+<span class="normal"><a href="#__codelineno-9-23">23</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="cp">#pragma once</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2"></a>
+<a id="__codelineno-9-3" name="__codelineno-9-3"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;cmd/ICmdInterface.h&quot;</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4"></a>
+<a id="__codelineno-9-5" name="__codelineno-9-5"></a><span class="k">class</span><span class="w"> </span><span class="nc">MyDirCmd</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">ICmdInterface</span><span class="o">&lt;</span><span class="n">MyDirCmd</span><span class="o">&gt;</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6"></a><span class="p">{</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7"></a><span class="w">    </span><span class="n">Q_GADGET</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8"></a><span class="w">    </span><span class="nf">$AsCmd</span><span class="p">(</span><span class="o">/</span><span class="p">)</span>
+<a id="__codelineno-9-9" name="__codelineno-9-9"></a><span class="k">public</span><span class="o">:</span>
+<a id="__codelineno-9-10" name="__codelineno-9-10"></a><span class="w">    </span><span class="n">MyDirCmd</span><span class="p">();</span>
+<a id="__codelineno-9-11" name="__codelineno-9-11"></a>
+<a id="__codelineno-9-12" name="__codelineno-9-12"></a><span class="w">    </span><span class="n">$CmdOptionShortName</span><span class="p">(</span><span class="n">recurse</span><span class="p">,</span><span class="w"> </span><span class="n">r</span><span class="p">)</span>
+<a id="__codelineno-9-13" name="__codelineno-9-13"></a><span class="w">    </span><span class="n">$CmdOptionMemo</span><span class="p">(</span><span class="n">recurse</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;recurse list subdirectory&quot;</span><span class="p">)</span>
+<a id="__codelineno-9-14" name="__codelineno-9-14"></a><span class="w">    </span><span class="n">$CmdOption</span><span class="p">(</span><span class="n">recurse</span><span class="p">)</span>
+<a id="__codelineno-9-15" name="__codelineno-9-15"></a>
+<a id="__codelineno-9-16" name="__codelineno-9-16"></a><span class="w">    </span><span class="n">$CmdOptionShortName</span><span class="p">(</span><span class="n">time</span><span class="p">,</span><span class="w"> </span><span class="n">t</span><span class="p">)</span>
+<a id="__codelineno-9-17" name="__codelineno-9-17"></a><span class="w">    </span><span class="n">$CmdOptionMemo</span><span class="p">(</span><span class="n">time</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;print create time&quot;</span><span class="p">)</span>
+<a id="__codelineno-9-18" name="__codelineno-9-18"></a><span class="w">    </span><span class="n">$CmdOption</span><span class="p">(</span><span class="n">time</span><span class="p">)</span>
+<a id="__codelineno-9-19" name="__codelineno-9-19"></a>
+<a id="__codelineno-9-20" name="__codelineno-9-20"></a><span class="k">public</span><span class="o">:</span>
+<a id="__codelineno-9-21" name="__codelineno-9-21"></a><span class="w">    </span><span class="n">$CmdMapping</span><span class="p">(</span><span class="n">mydir</span><span class="p">)</span>
+<a id="__codelineno-9-22" name="__codelineno-9-22"></a><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">mydir</span><span class="p">();</span>
+<a id="__codelineno-9-23" name="__codelineno-9-23"></a><span class="p">};</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-10-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-10-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-10-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-10-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-10-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-10-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-10-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-10-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-10-10">10</a></span>
+<span class="normal"><a href="#__codelineno-10-11">11</a></span>
+<span class="normal"><a href="#__codelineno-10-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;MyDirCmd.h&quot;</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2"></a>
+<a id="__codelineno-10-3" name="__codelineno-10-3"></a><span class="n">MyDirCmd</span><span class="o">::</span><span class="n">MyDirCmd</span><span class="p">()</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4"></a><span class="p">{</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5"></a>
+<a id="__codelineno-10-6" name="__codelineno-10-6"></a><span class="p">}</span>
+<a id="__codelineno-10-7" name="__codelineno-10-7"></a>
+<a id="__codelineno-10-8" name="__codelineno-10-8"></a><span class="kt">void</span><span class="w"> </span><span class="n">MyDirCmd</span><span class="o">::</span><span class="n">mydir</span><span class="p">()</span>
+<a id="__codelineno-10-9" name="__codelineno-10-9"></a><span class="p">{</span>
+<a id="__codelineno-10-10" name="__codelineno-10-10"></a><span class="w">    </span><span class="n">qDebug</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;recurse:&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">recurse</span><span class="p">;</span>
+<a id="__codelineno-10-11" name="__codelineno-10-11"></a><span class="w">    </span><span class="n">qDebug</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;time:&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">time</span><span class="p">;</span>
+<a id="__codelineno-10-12" name="__codelineno-10-12"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+<p>上面的示例中，我们为 resurse 选项和  time 选项定义了简称， r 和 t。</p>
+<p>此时用户的请求就可以使用简称来输入选项了。</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:3"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><input id="__tabbed_5_3" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">-r</label><label for="__tabbed_5_2">-t</label><label for="__tabbed_5_3">-r -t</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-11-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-11-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-11-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-11-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-11-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-11-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-11-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-11-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-11-10">10</a></span>
+<span class="normal"><a href="#__codelineno-11-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a>PS<span class="w"> </span>D:<span class="se">\t</span>est<span class="se">\c</span>md&gt;<span class="w"> </span>.<span class="se">\t</span>estCmd.exe<span class="w"> </span>mydir<span class="w"> </span>-r
+<a id="__codelineno-11-2" name="__codelineno-11-2"></a>
+<a id="__codelineno-11-3" name="__codelineno-11-3"></a><span class="w"> </span>_____<span class="w">  </span>_<span class="w">    </span>_<span class="w">        </span>_<span class="w">      </span>_____
+<a id="__codelineno-11-4" name="__codelineno-11-4"></a><span class="p">|</span>_<span class="w">   </span>_<span class="o">||</span><span class="w"> </span><span class="p">|</span><span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">      </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">    </span>/<span class="w">  </span>__<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5"></a><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">  </span>___<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="p">|</span>__<span class="w">  </span><span class="p">|</span><span class="w"> </span>/<span class="w">  </span><span class="se">\/</span><span class="w">  </span>___<span class="w">   </span>_<span class="w"> </span>__<span class="w">  </span>___
+<a id="__codelineno-11-6" name="__codelineno-11-6"></a><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="p">|</span>/<span class="se">\|</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>/<span class="w"> </span>_<span class="w"> </span><span class="se">\|</span><span class="w"> </span><span class="s1">&#39;_ \ | |     / _ \ | &#39;</span>__<span class="p">|</span>/<span class="w"> </span>_<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-11-7" name="__codelineno-11-7"></a>_<span class="p">|</span><span class="w"> </span><span class="p">|</span>_<span class="w"> </span><span class="se">\ </span><span class="w"> </span>/<span class="se">\ </span><span class="w"> </span>/<span class="p">|</span><span class="w">  </span>__/<span class="p">|</span><span class="w"> </span><span class="p">|</span>_<span class="o">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="se">\_</span>_/<span class="se">\|</span><span class="w"> </span><span class="o">(</span>_<span class="o">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="p">|</span><span class="w">  </span><span class="p">|</span><span class="w">  </span>__/
+<a id="__codelineno-11-8" name="__codelineno-11-8"></a><span class="se">\_</span>__/<span class="w">  </span><span class="se">\/</span><span class="w">  </span><span class="se">\/</span><span class="w">  </span><span class="se">\_</span>__<span class="o">||</span>_.__/<span class="w">  </span><span class="se">\_</span>___/<span class="w"> </span><span class="se">\_</span>__/<span class="w"> </span><span class="p">|</span>_<span class="p">|</span><span class="w">   </span><span class="se">\_</span>__<span class="p">|</span>
+<a id="__codelineno-11-9" name="__codelineno-11-9"></a>
+<a id="__codelineno-11-10" name="__codelineno-11-10"></a>recurse:<span class="w"> </span><span class="nb">true</span>
+<a id="__codelineno-11-11" name="__codelineno-11-11"></a>time:<span class="w"> </span><span class="nb">false</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-12-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-12-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-12-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-12-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-12-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-12-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-12-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-12-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-12-10">10</a></span>
+<span class="normal"><a href="#__codelineno-12-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a>PS<span class="w"> </span>D:<span class="se">\t</span>est<span class="se">\c</span>md&gt;<span class="w"> </span>.<span class="se">\t</span>estCmd.exe<span class="w"> </span>mydir<span class="w"> </span>-t
+<a id="__codelineno-12-2" name="__codelineno-12-2"></a>
+<a id="__codelineno-12-3" name="__codelineno-12-3"></a><span class="w"> </span>_____<span class="w">  </span>_<span class="w">    </span>_<span class="w">        </span>_<span class="w">      </span>_____
+<a id="__codelineno-12-4" name="__codelineno-12-4"></a><span class="p">|</span>_<span class="w">   </span>_<span class="o">||</span><span class="w"> </span><span class="p">|</span><span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">      </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">    </span>/<span class="w">  </span>__<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5"></a><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">  </span>___<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="p">|</span>__<span class="w">  </span><span class="p">|</span><span class="w"> </span>/<span class="w">  </span><span class="se">\/</span><span class="w">  </span>___<span class="w">   </span>_<span class="w"> </span>__<span class="w">  </span>___
+<a id="__codelineno-12-6" name="__codelineno-12-6"></a><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="p">|</span>/<span class="se">\|</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>/<span class="w"> </span>_<span class="w"> </span><span class="se">\|</span><span class="w"> </span><span class="s1">&#39;_ \ | |     / _ \ | &#39;</span>__<span class="p">|</span>/<span class="w"> </span>_<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-12-7" name="__codelineno-12-7"></a>_<span class="p">|</span><span class="w"> </span><span class="p">|</span>_<span class="w"> </span><span class="se">\ </span><span class="w"> </span>/<span class="se">\ </span><span class="w"> </span>/<span class="p">|</span><span class="w">  </span>__/<span class="p">|</span><span class="w"> </span><span class="p">|</span>_<span class="o">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="se">\_</span>_/<span class="se">\|</span><span class="w"> </span><span class="o">(</span>_<span class="o">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="p">|</span><span class="w">  </span><span class="p">|</span><span class="w">  </span>__/
+<a id="__codelineno-12-8" name="__codelineno-12-8"></a><span class="se">\_</span>__/<span class="w">  </span><span class="se">\/</span><span class="w">  </span><span class="se">\/</span><span class="w">  </span><span class="se">\_</span>__<span class="o">||</span>_.__/<span class="w">  </span><span class="se">\_</span>___/<span class="w"> </span><span class="se">\_</span>__/<span class="w"> </span><span class="p">|</span>_<span class="p">|</span><span class="w">   </span><span class="se">\_</span>__<span class="p">|</span>
+<a id="__codelineno-12-9" name="__codelineno-12-9"></a>
+<a id="__codelineno-12-10" name="__codelineno-12-10"></a>recurse:<span class="w"> </span><span class="nb">false</span>
+<a id="__codelineno-12-11" name="__codelineno-12-11"></a>time:<span class="w"> </span><span class="nb">true</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-13-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-13-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-13-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-13-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-13-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-13-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-13-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-13-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-13-10">10</a></span>
+<span class="normal"><a href="#__codelineno-13-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a>PS<span class="w"> </span>D:<span class="se">\t</span>est<span class="se">\c</span>md&gt;<span class="w"> </span>.<span class="se">\t</span>estCmd.exe<span class="w"> </span>mydir<span class="w"> </span>-r<span class="w"> </span>-t
+<a id="__codelineno-13-2" name="__codelineno-13-2"></a>
+<a id="__codelineno-13-3" name="__codelineno-13-3"></a><span class="w"> </span>_____<span class="w">  </span>_<span class="w">    </span>_<span class="w">        </span>_<span class="w">      </span>_____
+<a id="__codelineno-13-4" name="__codelineno-13-4"></a><span class="p">|</span>_<span class="w">   </span>_<span class="o">||</span><span class="w"> </span><span class="p">|</span><span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">      </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">    </span>/<span class="w">  </span>__<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-13-5" name="__codelineno-13-5"></a><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">  </span>___<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="p">|</span>__<span class="w">  </span><span class="p">|</span><span class="w"> </span>/<span class="w">  </span><span class="se">\/</span><span class="w">  </span>___<span class="w">   </span>_<span class="w"> </span>__<span class="w">  </span>___
+<a id="__codelineno-13-6" name="__codelineno-13-6"></a><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="p">|</span>/<span class="se">\|</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>/<span class="w"> </span>_<span class="w"> </span><span class="se">\|</span><span class="w"> </span><span class="s1">&#39;_ \ | |     / _ \ | &#39;</span>__<span class="p">|</span>/<span class="w"> </span>_<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-13-7" name="__codelineno-13-7"></a>_<span class="p">|</span><span class="w"> </span><span class="p">|</span>_<span class="w"> </span><span class="se">\ </span><span class="w"> </span>/<span class="se">\ </span><span class="w"> </span>/<span class="p">|</span><span class="w">  </span>__/<span class="p">|</span><span class="w"> </span><span class="p">|</span>_<span class="o">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="se">\_</span>_/<span class="se">\|</span><span class="w"> </span><span class="o">(</span>_<span class="o">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="p">|</span><span class="w">  </span><span class="p">|</span><span class="w">  </span>__/
+<a id="__codelineno-13-8" name="__codelineno-13-8"></a><span class="se">\_</span>__/<span class="w">  </span><span class="se">\/</span><span class="w">  </span><span class="se">\/</span><span class="w">  </span><span class="se">\_</span>__<span class="o">||</span>_.__/<span class="w">  </span><span class="se">\_</span>___/<span class="w"> </span><span class="se">\_</span>__/<span class="w"> </span><span class="p">|</span>_<span class="p">|</span><span class="w">   </span><span class="se">\_</span>__<span class="p">|</span>
+<a id="__codelineno-13-9" name="__codelineno-13-9"></a>
+<a id="__codelineno-13-10" name="__codelineno-13-10"></a>recurse:<span class="w"> </span><span class="nb">true</span>
+<a id="__codelineno-13-11" name="__codelineno-13-11"></a>time:<span class="w"> </span><span class="nb">true</span>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+<p>而此时我们的帮助也有所变化</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">变化后的帮助</label><label for="__tabbed_6_2">变化前的帮助</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-14-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-14-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-14-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-14-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-14-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-14-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-14-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-14-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-14-10">10</a></span>
+<span class="normal"><a href="#__codelineno-14-11">11</a></span>
+<span class="normal"><a href="#__codelineno-14-12">12</a></span>
+<span class="normal"><a href="#__codelineno-14-13">13</a></span>
+<span class="normal"><a href="#__codelineno-14-14">14</a></span>
+<span class="normal"><a href="#__codelineno-14-15">15</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1"></a>PS<span class="w"> </span>D:<span class="se">\t</span>est<span class="se">\c</span>md&gt;<span class="w"> </span>.<span class="se">\t</span>estCmd.exe<span class="w"> </span>mydir<span class="w"> </span>-?
+<a id="__codelineno-14-2" name="__codelineno-14-2"></a>
+<a id="__codelineno-14-3" name="__codelineno-14-3"></a><span class="w"> </span>_____<span class="w">  </span>_<span class="w">    </span>_<span class="w">        </span>_<span class="w">      </span>_____
+<a id="__codelineno-14-4" name="__codelineno-14-4"></a><span class="p">|</span>_<span class="w">   </span>_<span class="o">||</span><span class="w"> </span><span class="p">|</span><span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">      </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">    </span>/<span class="w">  </span>__<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-14-5" name="__codelineno-14-5"></a><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">  </span>___<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="p">|</span>__<span class="w">  </span><span class="p">|</span><span class="w"> </span>/<span class="w">  </span><span class="se">\/</span><span class="w">  </span>___<span class="w">   </span>_<span class="w"> </span>__<span class="w">  </span>___
+<a id="__codelineno-14-6" name="__codelineno-14-6"></a><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="p">|</span>/<span class="se">\|</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>/<span class="w"> </span>_<span class="w"> </span><span class="se">\|</span><span class="w"> </span><span class="s1">&#39;_ \ | |     / _ \ | &#39;</span>__<span class="p">|</span>/<span class="w"> </span>_<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-14-7" name="__codelineno-14-7"></a>_<span class="p">|</span><span class="w"> </span><span class="p">|</span>_<span class="w"> </span><span class="se">\ </span><span class="w"> </span>/<span class="se">\ </span><span class="w"> </span>/<span class="p">|</span><span class="w">  </span>__/<span class="p">|</span><span class="w"> </span><span class="p">|</span>_<span class="o">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="se">\_</span>_/<span class="se">\|</span><span class="w"> </span><span class="o">(</span>_<span class="o">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="p">|</span><span class="w">  </span><span class="p">|</span><span class="w">  </span>__/
+<a id="__codelineno-14-8" name="__codelineno-14-8"></a><span class="se">\_</span>__/<span class="w">  </span><span class="se">\/</span><span class="w">  </span><span class="se">\/</span><span class="w">  </span><span class="se">\_</span>__<span class="o">||</span>_.__/<span class="w">  </span><span class="se">\_</span>___/<span class="w"> </span><span class="se">\_</span>__/<span class="w"> </span><span class="p">|</span>_<span class="p">|</span><span class="w">   </span><span class="se">\_</span>__<span class="p">|</span>
+<a id="__codelineno-14-9" name="__codelineno-14-9"></a>
+<a id="__codelineno-14-10" name="__codelineno-14-10"></a><span class="o">[</span>CMD<span class="o">]</span>:
+<a id="__codelineno-14-11" name="__codelineno-14-11"></a><span class="w">    </span>testCmd.exe<span class="w"> </span>mydir
+<a id="__codelineno-14-12" name="__codelineno-14-12"></a><span class="o">[</span>Options<span class="o">]</span>:
+<a id="__codelineno-14-13" name="__codelineno-14-13"></a><span class="w">    </span>Option<span class="w">     </span>ShortName<span class="w">  </span>Required<span class="w">    </span>NoValue<span class="w">    </span>Memo
+<a id="__codelineno-14-14" name="__codelineno-14-14"></a><span class="w">    </span>--recurse<span class="w">  </span>-r<span class="w">         </span><span class="nb">false</span><span class="w">       </span><span class="nb">false</span><span class="w">      </span>recurse<span class="w"> </span>list<span class="w"> </span>subdirectory
+<a id="__codelineno-14-15" name="__codelineno-14-15"></a><span class="w">    </span>--time<span class="w">     </span>-t<span class="w">         </span><span class="nb">false</span><span class="w">       </span><span class="nb">false</span><span class="w">      </span>print<span class="w"> </span>create<span class="w"> </span><span class="nb">time</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-15-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-15-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-15-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-15-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-15-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-15-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-15-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-15-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-15-10">10</a></span>
+<span class="normal"><a href="#__codelineno-15-11">11</a></span>
+<span class="normal"><a href="#__codelineno-15-12">12</a></span>
+<span class="normal"><a href="#__codelineno-15-13">13</a></span>
+<span class="normal"><a href="#__codelineno-15-14">14</a></span>
+<span class="normal"><a href="#__codelineno-15-15">15</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1"></a>PS<span class="w"> </span>D:<span class="se">\t</span>est<span class="se">\c</span>md&gt;<span class="w"> </span>.<span class="se">\t</span>estCmd.exe<span class="w"> </span>mydir<span class="w"> </span>-?
+<a id="__codelineno-15-2" name="__codelineno-15-2"></a>
+<a id="__codelineno-15-3" name="__codelineno-15-3"></a><span class="w"> </span>_____<span class="w">  </span>_<span class="w">    </span>_<span class="w">        </span>_<span class="w">      </span>_____
+<a id="__codelineno-15-4" name="__codelineno-15-4"></a><span class="p">|</span>_<span class="w">   </span>_<span class="o">||</span><span class="w"> </span><span class="p">|</span><span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">      </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">    </span>/<span class="w">  </span>__<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-15-5" name="__codelineno-15-5"></a><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">  </span>___<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="p">|</span>__<span class="w">  </span><span class="p">|</span><span class="w"> </span>/<span class="w">  </span><span class="se">\/</span><span class="w">  </span>___<span class="w">   </span>_<span class="w"> </span>__<span class="w">  </span>___
+<a id="__codelineno-15-6" name="__codelineno-15-6"></a><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="p">|</span>/<span class="se">\|</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>/<span class="w"> </span>_<span class="w"> </span><span class="se">\|</span><span class="w"> </span><span class="s1">&#39;_ \ | |     / _ \ | &#39;</span>__<span class="p">|</span>/<span class="w"> </span>_<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-15-7" name="__codelineno-15-7"></a>_<span class="p">|</span><span class="w"> </span><span class="p">|</span>_<span class="w"> </span><span class="se">\ </span><span class="w"> </span>/<span class="se">\ </span><span class="w"> </span>/<span class="p">|</span><span class="w">  </span>__/<span class="p">|</span><span class="w"> </span><span class="p">|</span>_<span class="o">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="se">\_</span>_/<span class="se">\|</span><span class="w"> </span><span class="o">(</span>_<span class="o">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="p">|</span><span class="w">  </span><span class="p">|</span><span class="w">  </span>__/
+<a id="__codelineno-15-8" name="__codelineno-15-8"></a><span class="se">\_</span>__/<span class="w">  </span><span class="se">\/</span><span class="w">  </span><span class="se">\/</span><span class="w">  </span><span class="se">\_</span>__<span class="o">||</span>_.__/<span class="w">  </span><span class="se">\_</span>___/<span class="w"> </span><span class="se">\_</span>__/<span class="w"> </span><span class="p">|</span>_<span class="p">|</span><span class="w">   </span><span class="se">\_</span>__<span class="p">|</span>
+<a id="__codelineno-15-9" name="__codelineno-15-9"></a>
+<a id="__codelineno-15-10" name="__codelineno-15-10"></a><span class="o">[</span>CMD<span class="o">]</span>:
+<a id="__codelineno-15-11" name="__codelineno-15-11"></a><span class="w">    </span>testCmd.exe<span class="w"> </span>mydir
+<a id="__codelineno-15-12" name="__codelineno-15-12"></a><span class="o">[</span>Options<span class="o">]</span>:
+<a id="__codelineno-15-13" name="__codelineno-15-13"></a><span class="w">    </span>Option<span class="w">     </span>ShortName<span class="w">  </span>Required<span class="w">    </span>NoValue<span class="w">    </span>Memo
+<a id="__codelineno-15-14" name="__codelineno-15-14"></a><span class="w">    </span>--recurse<span class="w">  </span>-<span class="w">          </span><span class="nb">false</span><span class="w">       </span><span class="nb">false</span><span class="w">      </span>recurse<span class="w"> </span>list<span class="w"> </span>subdirectory
+<a id="__codelineno-15-15" name="__codelineno-15-15"></a><span class="w">    </span>--time<span class="w">     </span>-<span class="w">          </span><span class="nb">false</span><span class="w">       </span><span class="nb">false</span><span class="w">      </span>print<span class="w"> </span>create<span class="w"> </span><span class="nb">time</span>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+<p>两者想对比，ShortName 的内容被填充上了。</p>
+<h2 id="cmdoptionmemo">$CmdOptionMemo<a class="headerlink" href="#cmdoptionmemo" title="Permanent link">&para;</a></h2>
+<p>$CmdOptionMemo 用于定义选项的说明，该宏注解有两个参数，第一个参数是选项名称，第二个参数是选项的说明。选项的说明必须是双引号括起来的内容。</p>
+<h2 id="cmdoptionrequired">$CmdOptionRequired<a class="headerlink" href="#cmdoptionrequired" title="Permanent link">&para;</a></h2>
+<p>$CmdOptionRequired 有一个参数，这个参数就是选项名称。</p>
+<p>$CmdOptionRequired 用于定义选项为必填项，如果用户没有输入该选项，则命令行会报错。</p>
+<p>这个选项后面一般会跟着相应的参数。如果一个选项是必填项，而没有跟随参数，这个参数也没多大意思，它的值是固定的，那么为什么还需要这个参数呢？</p>
+<p>举个例子，如果我们做认证的工作，那么 --name  和 --password  这两个选项一定是必填项，这样就能够保证用户输入了用户名和密码。</p>
+<p>关于 选项参数，请参考下篇内容。</p>
+<h2 id="cmdoptionnovalue">$CmdOptionNoValue<a class="headerlink" href="#cmdoptionnovalue" title="Permanent link">&para;</a></h2>
+<p>这个注解有一个参数，参数内容就是选项名称。</p>
+<p>该注解的目的是告知 ICmd 这个选项没有任何参数，如果有参数，则是用户输入错误，程序需要报错提示用户。</p>
+<p>举个例子，在 mydir 命令中，我们定义了一个选项 --recurse，这个选项就不应该有任何参数，如果用户输入了 --recurse 而有后续参数，则程序需要报错提示用户。</p>
 
 
 

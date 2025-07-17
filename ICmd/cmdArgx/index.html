@@ -20,7 +20,7 @@
     
     
       
-        <title>单个命令行参数* - IWebCore</title>
+        <title>单个命令行参数 - IWebCore</title>
       
     
     
@@ -106,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              单个命令行参数*
+              单个命令行参数
             
           </span>
         </div>
@@ -1397,17 +1397,112 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    单个命令行参数
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
   <span class="md-ellipsis">
-    单个命令行参数*
+    单个命令行参数
     
   </span>
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      示例
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cmdargx" class="md-nav__link">
+    <span class="md-ellipsis">
+      $CmdArgX
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cmdargxmemo" class="md-nav__link">
+    <span class="md-ellipsis">
+      $CmdArgXMemo
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cmdargxnullable" class="md-nav__link">
+    <span class="md-ellipsis">
+      $CmdArgXNullable
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cmdargxdeclare" class="md-nav__link">
+    <span class="md-ellipsis">
+      $CmdArgXDeclare
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cmdargxprehandle" class="md-nav__link">
+    <span class="md-ellipsis">
+      $CmdArgXPreHandle
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cmdargxposthandle" class="md-nav__link">
+    <span class="md-ellipsis">
+      $CmdArgXPostHandle
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1426,7 +1521,7 @@
   
   
   <span class="md-ellipsis">
-    命令行选项*
+    命令行选项
     
   </span>
   
@@ -1449,7 +1544,7 @@
   
   
   <span class="md-ellipsis">
-    命令行选项参数*
+    命令行选项参数
     
   </span>
   
@@ -2327,6 +2422,77 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      示例
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cmdargx" class="md-nav__link">
+    <span class="md-ellipsis">
+      $CmdArgX
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cmdargxmemo" class="md-nav__link">
+    <span class="md-ellipsis">
+      $CmdArgXMemo
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cmdargxnullable" class="md-nav__link">
+    <span class="md-ellipsis">
+      $CmdArgXNullable
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cmdargxdeclare" class="md-nav__link">
+    <span class="md-ellipsis">
+      $CmdArgXDeclare
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cmdargxprehandle" class="md-nav__link">
+    <span class="md-ellipsis">
+      $CmdArgXPreHandle
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cmdargxposthandle" class="md-nav__link">
+    <span class="md-ellipsis">
+      $CmdArgXPostHandle
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2341,7 +2507,423 @@
 
 
 
-<h1 id="_1">单个命令行参数*<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h1 id="_1">单个命令行参数<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p>在 $CmdArgs 文档中，我们将所有的命令行参数解析到一个成员变量中。如果有一个以上的参数，那么用户需要在 QList, 或 QStringList 等容器中手动获取参数，这种方式显得十分麻烦。</p>
+<p>所以 $CmdArgX 机制提出了将参数精确的映射到自己的位置的方法, 比如将第一个参数映射成 src, 将第二个参数映射到 dest 这种方式。</p>
+<h2 id="_2">示例<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>为了用户快速理解 $CmdArgX，我们写一个 CopyCmd 类， 这个类的作用是拷贝文件，将第一个参数指定的文件 拷贝到 第二个参数指定的路径下免去， 我简单写一个案例，不考虑复杂的处理, 也不执行具体的拷贝，就是让用户感知以下 $CmdArgX 的用法：</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">CopyCmd.h</label><label for="__tabbed_1_2">CopyCmd.cpp</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-0-10">10</a></span>
+<span class="normal"><a href="#__codelineno-0-11">11</a></span>
+<span class="normal"><a href="#__codelineno-0-12">12</a></span>
+<span class="normal"><a href="#__codelineno-0-13">13</a></span>
+<span class="normal"><a href="#__codelineno-0-14">14</a></span>
+<span class="normal"><a href="#__codelineno-0-15">15</a></span>
+<span class="normal"><a href="#__codelineno-0-16">16</a></span>
+<span class="normal"><a href="#__codelineno-0-17">17</a></span>
+<span class="normal"><a href="#__codelineno-0-18">18</a></span>
+<span class="normal"><a href="#__codelineno-0-19">19</a></span>
+<span class="normal"><a href="#__codelineno-0-20">20</a></span>
+<span class="normal"><a href="#__codelineno-0-21">21</a></span>
+<span class="normal"><a href="#__codelineno-0-22">22</a></span>
+<span class="normal"><a href="#__codelineno-0-23">23</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="cp">#pragma once</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;cmd/ICmdInterface.h&quot;</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="k">class</span><span class="w"> </span><span class="nc">CopyCmd</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">ICmdInterface</span><span class="o">&lt;</span><span class="n">CopyCmd</span><span class="o">&gt;</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="p">{</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="w">    </span><span class="n">Q_GADGET</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="w">    </span><span class="nf">$AsCmd</span><span class="p">(</span><span class="o">/</span><span class="p">)</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="k">public</span><span class="o">:</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="w">    </span><span class="n">CopyCmd</span><span class="p">();</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11"></a>
+<a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="k">public</span><span class="o">:</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="w">    </span><span class="n">$CmdArg1Memo</span><span class="p">(</span><span class="s">&quot;file which to be copied&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="w">    </span><span class="n">$CmdArg1</span><span class="p">(</span><span class="n">QString</span><span class="p">,</span><span class="w"> </span><span class="n">src</span><span class="p">)</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15"></a>
+<a id="__codelineno-0-16" name="__codelineno-0-16"></a><span class="w">    </span><span class="n">$CmdArg2Memo</span><span class="p">(</span><span class="s">&quot;path where accept a file copy to&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17"></a><span class="w">    </span><span class="n">$CmdArg2</span><span class="p">(</span><span class="n">QString</span><span class="p">,</span><span class="w"> </span><span class="n">dest</span><span class="p">)</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18"></a>
+<a id="__codelineno-0-19" name="__codelineno-0-19"></a><span class="k">public</span><span class="o">:</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20"></a><span class="w">    </span><span class="n">$CmdMappingMemo</span><span class="p">(</span><span class="n">copy</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;copy file command&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21"></a><span class="w">    </span><span class="n">$CmdMapping</span><span class="p">(</span><span class="n">copy</span><span class="p">)</span>
+<a id="__codelineno-0-22" name="__codelineno-0-22"></a><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">copy</span><span class="p">();</span>
+<a id="__codelineno-0-23" name="__codelineno-0-23"></a><span class="p">};</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-1-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-1-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-1-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-1-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-1-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-1-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-1-10">10</a></span>
+<span class="normal"><a href="#__codelineno-1-11">11</a></span>
+<span class="normal"><a href="#__codelineno-1-12">12</a></span>
+<span class="normal"><a href="#__codelineno-1-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;CopyCmd.h&quot;</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="n">CopyCmd</span><span class="o">::</span><span class="n">CopyCmd</span><span class="p">()</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="p">{</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a>
+<a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="p">}</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7"></a>
+<a id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="kt">void</span><span class="w"> </span><span class="n">CopyCmd</span><span class="o">::</span><span class="n">copy</span><span class="p">()</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="p">{</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="w">    </span><span class="n">qDebug</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;src path&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">src</span><span class="p">;</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11"></a><span class="w">    </span><span class="n">qDebug</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;dest path&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">dest</span><span class="p">;</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12"></a><span class="w">    </span><span class="n">quick_exit</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+<p>或许用户会疑惑，这里并没有出现 $CmdArgX 这个宏注解，而是 $CmdArg1 和 $CmdArg2 两个宏注解。这是因为 $CmdArgX 中的 X 是一个数字，表示参数的位置，比如 $CmdArg1 表示第一个参数，$CmdArg2 表示第二个参数, 而且这里的 X 是大写的，更是方便用户识别。</p>
+<p>在以下的各个说明中，我会会用 X 来代替具体的数值。</p>
+<p>X 从 1-9 九个数字，用户用 $CmdArgX 最多能够处理9个参数。但我想这个对于绝大多数程序是足够的，没有什么程序会单独为9个以上的参数设置名称。</p>
+<p>回到这个示例，这个示例中，我们用将第一个参数用 QString src 映射，第二个参数用 QString dest 映射。ICmd会自动解析并为这两个参数赋值。如果参数少于2个，程序在运行时会报错。如果多于2个，其他的参数在此类中会被忽略，因为用户也没定义如何处理多余的参数。如果用户想限定参数只能是两个，可以考虑使用 $CmdArgs 接收数据，并在相应的 $CmdArgsPostHandle 函数中进行判断处理。</p>
+<p>下面是这个程序的一些运行结果：</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">help -?</label><label for="__tabbed_2_2">copy file</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-2-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-2-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-2-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-2-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-2-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-2-10">10</a></span>
+<span class="normal"><a href="#__codelineno-2-11">11</a></span>
+<span class="normal"><a href="#__codelineno-2-12">12</a></span>
+<span class="normal"><a href="#__codelineno-2-13">13</a></span>
+<span class="normal"><a href="#__codelineno-2-14">14</a></span>
+<span class="normal"><a href="#__codelineno-2-15">15</a></span>
+<span class="normal"><a href="#__codelineno-2-16">16</a></span>
+<span class="normal"><a href="#__codelineno-2-17">17</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>PS<span class="w"> </span>D:<span class="se">\t</span>est<span class="se">\c</span>md&gt;<span class="w"> </span>.<span class="se">\t</span>estCmd.exe<span class="w"> </span>copy<span class="w"> </span>-?
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a>_____<span class="w">  </span>_<span class="w">    </span>_<span class="w">        </span>_<span class="w">      </span>_____
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="p">|</span>_<span class="w">   </span>_<span class="o">||</span><span class="w"> </span><span class="p">|</span><span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">      </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">    </span>/<span class="w">  </span>__<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">  </span>___<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="p">|</span>__<span class="w">  </span><span class="p">|</span><span class="w"> </span>/<span class="w">  </span><span class="se">\/</span><span class="w">  </span>___<span class="w">   </span>_<span class="w"> </span>__<span class="w">  </span>___
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="p">|</span>/<span class="se">\|</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>/<span class="w"> </span>_<span class="w"> </span><span class="se">\|</span><span class="w"> </span><span class="s1">&#39;_ \ | |     / _ \ | &#39;</span>__<span class="p">|</span>/<span class="w"> </span>_<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7"></a>_<span class="p">|</span><span class="w"> </span><span class="p">|</span>_<span class="w"> </span><span class="se">\ </span><span class="w"> </span>/<span class="se">\ </span><span class="w"> </span>/<span class="p">|</span><span class="w">  </span>__/<span class="p">|</span><span class="w"> </span><span class="p">|</span>_<span class="o">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="se">\_</span>_/<span class="se">\|</span><span class="w"> </span><span class="o">(</span>_<span class="o">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="p">|</span><span class="w">  </span><span class="p">|</span><span class="w">  </span>__/
+<a id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="se">\_</span>__/<span class="w">  </span><span class="se">\/</span><span class="w">  </span><span class="se">\/</span><span class="w">  </span><span class="se">\_</span>__<span class="o">||</span>_.__/<span class="w">  </span><span class="se">\_</span>___/<span class="w"> </span><span class="se">\_</span>__/<span class="w"> </span><span class="p">|</span>_<span class="p">|</span><span class="w">   </span><span class="se">\_</span>__<span class="p">|</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9"></a>
+<a id="__codelineno-2-10" name="__codelineno-2-10"></a><span class="o">[</span>CMD<span class="o">]</span>:
+<a id="__codelineno-2-11" name="__codelineno-2-11"></a><span class="w">    </span>testCmd.exe<span class="w"> </span>copy
+<a id="__codelineno-2-12" name="__codelineno-2-12"></a><span class="o">[</span>Memo<span class="o">]</span>:
+<a id="__codelineno-2-13" name="__codelineno-2-13"></a><span class="w">    </span>copy<span class="w"> </span>file<span class="w"> </span><span class="nb">command</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14"></a><span class="o">[</span>Argx<span class="o">]</span>:
+<a id="__codelineno-2-15" name="__codelineno-2-15"></a><span class="w">    </span>Index<span class="w">  </span>Name<span class="w">  </span>TypeName<span class="w">  </span>Nullable<span class="w">  </span>Memo
+<a id="__codelineno-2-16" name="__codelineno-2-16"></a><span class="w">    </span><span class="m">1</span><span class="w">      </span>src<span class="w">   </span>QString<span class="w">   </span><span class="nb">false</span><span class="w">     </span>file<span class="w"> </span>which<span class="w"> </span>to<span class="w"> </span>be<span class="w"> </span>copied
+<a id="__codelineno-2-17" name="__codelineno-2-17"></a><span class="w">    </span><span class="m">2</span><span class="w">      </span>dest<span class="w">  </span>QString<span class="w">   </span><span class="nb">false</span><span class="w">     </span>path<span class="w"> </span>where<span class="w"> </span>accept<span class="w"> </span>a<span class="w"> </span>file<span class="w"> </span>copy<span class="w"> </span>to
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-3-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-3-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-3-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-3-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-3-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-3-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-3-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-3-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-3-10">10</a></span>
+<span class="normal"><a href="#__codelineno-3-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a>PS<span class="w"> </span>D:<span class="se">\t</span>est<span class="se">\c</span>md&gt;<span class="w"> </span>.<span class="se">\t</span>estCmd.exe<span class="w"> </span>copy<span class="w"> </span>--<span class="w"> </span>hello<span class="w"> </span>world
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a>
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a>_____<span class="w">  </span>_<span class="w">    </span>_<span class="w">        </span>_<span class="w">      </span>_____
+<a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="p">|</span>_<span class="w">   </span>_<span class="o">||</span><span class="w"> </span><span class="p">|</span><span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">      </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">    </span>/<span class="w">  </span>__<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">  </span>___<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="p">|</span>__<span class="w">  </span><span class="p">|</span><span class="w"> </span>/<span class="w">  </span><span class="se">\/</span><span class="w">  </span>___<span class="w">   </span>_<span class="w"> </span>__<span class="w">  </span>___
+<a id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="p">|</span>/<span class="se">\|</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>/<span class="w"> </span>_<span class="w"> </span><span class="se">\|</span><span class="w"> </span><span class="s1">&#39;_ \ | |     / _ \ | &#39;</span>__<span class="p">|</span>/<span class="w"> </span>_<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7"></a>_<span class="p">|</span><span class="w"> </span><span class="p">|</span>_<span class="w"> </span><span class="se">\ </span><span class="w"> </span>/<span class="se">\ </span><span class="w"> </span>/<span class="p">|</span><span class="w">  </span>__/<span class="p">|</span><span class="w"> </span><span class="p">|</span>_<span class="o">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="se">\_</span>_/<span class="se">\|</span><span class="w"> </span><span class="o">(</span>_<span class="o">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="p">|</span><span class="w">  </span><span class="p">|</span><span class="w">  </span>__/
+<a id="__codelineno-3-8" name="__codelineno-3-8"></a><span class="se">\_</span>__/<span class="w">  </span><span class="se">\/</span><span class="w">  </span><span class="se">\/</span><span class="w">  </span><span class="se">\_</span>__<span class="o">||</span>_.__/<span class="w">  </span><span class="se">\_</span>___/<span class="w"> </span><span class="se">\_</span>__/<span class="w"> </span><span class="p">|</span>_<span class="p">|</span><span class="w">   </span><span class="se">\_</span>__<span class="p">|</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9"></a>
+<a id="__codelineno-3-10" name="__codelineno-3-10"></a>src<span class="w"> </span>path<span class="w"> </span><span class="s2">&quot;hello&quot;</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11"></a>dest<span class="w"> </span>path<span class="w"> </span><span class="s2">&quot;world&quot;</span>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+<h2 id="cmdargx">$CmdArgX<a class="headerlink" href="#cmdargx" title="Permanent link">&para;</a></h2>
+<p>$CmdArgX 注解的作用是将 X 位置的参数映射到自己的变量中。</p>
+<p>$CmdArgX 是一类宏注解，用于定义参数的他的扩展形式有 $CmdArg1, $CmdArg2, $CmdArg3, $CmdArg4, $CmdArg5, $CmdArg6, $CmdArg7, $CmdArg8, $CmdArg9 九个。</p>
+<p>该宏注解有两个参数。第一个参数是类型参数，第二个参数是名称参数。</p>
+<p>其中参数类型有以下三类</p>
+<ul>
+<li>
+<p>bool 类型。</p>
+</li>
+<li>
+<p>数值类型，比如 short, int, long,long long 等和他们的 unsigned 形式，以及 double, float, 浮点类型。</p>
+</li>
+<li>
+<p>字符串类型，比如 QString, std::string。</p>
+</li>
+</ul>
+<p>如果一个参数被解析为 bool 类型，那么他对应的字符串必须是 truthy 和 falsy 的。如下是对 truthy 和 falsy 的定义：</p>
+<ul>
+<li>如果参数是  "true", "yes", "y", "on", "1", "enable"， 这些会被判断为 true</li>
+<li>如果参数是  "false", "no", "n", "off", "0", "disable",这些会被判断为 false</li>
+<li>如果除了这些值以外，其他的值 程序会报错。    </li>
+</ul>
+<p>如果类型被定义成数值类型， 在参数解析的时候，会尝试将参数解析为该类型。如果参数不能够被解析为数值类型，或者解析的数值类型超过当前类型的范围。那么程序会在执行的时候报错。</p>
+<p>任何参数类型都可以解析为字符串类型。</p>
+<p>注意 $CmdArgX 不同于 $CmdArgs, 不能使用复合类型， 比如 QStringList, QList\&lt;int&gt; 等这种类型。</p>
+<h2 id="cmdargxmemo">$CmdArgXMemo<a class="headerlink" href="#cmdargxmemo" title="Permanent link">&para;</a></h2>
+<p>$CmdArgXMemo 中只有一个参数，这个参数就是 注释的内容。注释内容需要使用双引号括起来。</p>
+<p>不同于  $CmdArgsMemo, 这里不需要参数的名称，原因就是 X 已经指定了具体的位置，所以这个参数就省略了。</p>
+<p>在上面的输出中，我们也看到了参数的具体的内容。</p>
+<h2 id="cmdargxnullable">$CmdArgXNullable<a class="headerlink" href="#cmdargxnullable" title="Permanent link">&para;</a></h2>
+<p>$CmdArgXNullable 指明该参数可以为空。如果没有这个修饰，那么这个参数则不能为空，如果缺失了 X 位置的参数，程序将会报错。</p>
+<p>注意： 不同于 $CmdArgsNullable 是一个宏函数， $CmdArgXNullable 直接是一个 宏，不带任何参数。</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:1"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">CopyCmd.h</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-4-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-4-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-4-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-4-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-4-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-4-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-4-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-4-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-4-10">10</a></span>
+<span class="normal"><a href="#__codelineno-4-11">11</a></span>
+<span class="normal"><a href="#__codelineno-4-12">12</a></span>
+<span class="normal"><a href="#__codelineno-4-13">13</a></span>
+<span class="normal"><a href="#__codelineno-4-14">14</a></span>
+<span class="normal"><a href="#__codelineno-4-15">15</a></span>
+<span class="normal"><a href="#__codelineno-4-16">16</a></span>
+<span class="normal"><a href="#__codelineno-4-17">17</a></span>
+<span class="normal"><a href="#__codelineno-4-18">18</a></span>
+<span class="normal"><a href="#__codelineno-4-19">19</a></span>
+<span class="normal"><a href="#__codelineno-4-20">20</a></span>
+<span class="normal"><a href="#__codelineno-4-21">21</a></span>
+<span class="normal"><a href="#__codelineno-4-22">22</a></span>
+<span class="normal"><a href="#__codelineno-4-23">23</a></span>
+<span class="normal"><a href="#__codelineno-4-24">24</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="cp">#pragma once</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a>
+<a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;cmd/ICmdInterface.h&quot;</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4"></a>
+<a id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="k">class</span><span class="w"> </span><span class="nc">CopyCmd</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">ICmdInterface</span><span class="o">&lt;</span><span class="n">CopyCmd</span><span class="o">&gt;</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="p">{</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="w">    </span><span class="n">Q_GADGET</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8"></a><span class="w">    </span><span class="nf">$AsCmd</span><span class="p">(</span><span class="o">/</span><span class="p">)</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9"></a><span class="k">public</span><span class="o">:</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10"></a><span class="w">    </span><span class="n">CopyCmd</span><span class="p">();</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11"></a>
+<a id="__codelineno-4-12" name="__codelineno-4-12"></a><span class="k">public</span><span class="o">:</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13"></a><span class="w">    </span><span class="n">$CmdArg1Memo</span><span class="p">(</span><span class="s">&quot;file which to be copied&quot;</span><span class="p">)</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14"></a><span class="w">    </span><span class="n">$CmdArg1</span><span class="p">(</span><span class="n">QString</span><span class="p">,</span><span class="w"> </span><span class="n">src</span><span class="p">)</span>
+<a id="__codelineno-4-15" name="__codelineno-4-15"></a>
+<a id="__codelineno-4-16" name="__codelineno-4-16"></a><span class="w">    </span><span class="n">$CmdArg2Nullable</span>
+<a id="__codelineno-4-17" name="__codelineno-4-17"></a><span class="w">    </span><span class="n">$CmdArg2Memo</span><span class="p">(</span><span class="s">&quot;path where accept a file copy to&quot;</span><span class="p">)</span>
+<a id="__codelineno-4-18" name="__codelineno-4-18"></a><span class="w">    </span><span class="n">$CmdArg2</span><span class="p">(</span><span class="n">QString</span><span class="p">,</span><span class="w"> </span><span class="n">dest</span><span class="p">)</span>
+<a id="__codelineno-4-19" name="__codelineno-4-19"></a>
+<a id="__codelineno-4-20" name="__codelineno-4-20"></a><span class="k">public</span><span class="o">:</span>
+<a id="__codelineno-4-21" name="__codelineno-4-21"></a><span class="w">    </span><span class="n">$CmdMappingMemo</span><span class="p">(</span><span class="n">copy</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;copy file command&quot;</span><span class="p">)</span>
+<a id="__codelineno-4-22" name="__codelineno-4-22"></a><span class="w">    </span><span class="n">$CmdMapping</span><span class="p">(</span><span class="n">copy</span><span class="p">)</span>
+<a id="__codelineno-4-23" name="__codelineno-4-23"></a><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">copy</span><span class="p">();</span>
+<a id="__codelineno-4-24" name="__codelineno-4-24"></a><span class="p">};</span>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+<p>所以在这里 dest 参数可以为空。但是用户在这里需要在 copy 函数中进行判断，如可以使用当前目录作为 dest的值。</p>
+<h2 id="cmdargxdeclare">$CmdArgXDeclare<a class="headerlink" href="#cmdargxdeclare" title="Permanent link">&para;</a></h2>
+<p>这个的目的和 $CmdArgsDeclare 一致， 如果 $CmdArgXNullable 被声明于一个类中，$CmdArgXDeclare 则可以用来声明该参数的默认值。</p>
+<p>如上面的代码，我们可以再次进行优化。</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:1"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">CopyCmd.h</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-5-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-5-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-5-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-5-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-5-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-5-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-5-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-5-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-5-10">10</a></span>
+<span class="normal"><a href="#__codelineno-5-11">11</a></span>
+<span class="normal"><a href="#__codelineno-5-12">12</a></span>
+<span class="normal"><a href="#__codelineno-5-13">13</a></span>
+<span class="normal"><a href="#__codelineno-5-14">14</a></span>
+<span class="normal"><a href="#__codelineno-5-15">15</a></span>
+<span class="normal"><a href="#__codelineno-5-16">16</a></span>
+<span class="normal"><a href="#__codelineno-5-17">17</a></span>
+<span class="normal"><a href="#__codelineno-5-18">18</a></span>
+<span class="normal"><a href="#__codelineno-5-19">19</a></span>
+<span class="normal"><a href="#__codelineno-5-20">20</a></span>
+<span class="normal"><a href="#__codelineno-5-21">21</a></span>
+<span class="normal"><a href="#__codelineno-5-22">22</a></span>
+<span class="normal"><a href="#__codelineno-5-23">23</a></span>
+<span class="normal"><a href="#__codelineno-5-24">24</a></span>
+<span class="normal"><a href="#__codelineno-5-25">25</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="cp">#pragma once</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2"></a>
+<a id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;cmd/ICmdInterface.h&quot;</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4"></a>
+<a id="__codelineno-5-5" name="__codelineno-5-5"></a><span class="k">class</span><span class="w"> </span><span class="nc">CopyCmd</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">ICmdInterface</span><span class="o">&lt;</span><span class="n">CopyCmd</span><span class="o">&gt;</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="p">{</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7"></a><span class="w">    </span><span class="n">Q_GADGET</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8"></a><span class="w">    </span><span class="nf">$AsCmd</span><span class="p">(</span><span class="o">/</span><span class="p">)</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9"></a><span class="k">public</span><span class="o">:</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10"></a><span class="w">    </span><span class="n">CopyCmd</span><span class="p">();</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11"></a>
+<a id="__codelineno-5-12" name="__codelineno-5-12"></a><span class="k">public</span><span class="o">:</span>
+<a id="__codelineno-5-13" name="__codelineno-5-13"></a><span class="w">    </span><span class="n">$CmdArg1Memo</span><span class="p">(</span><span class="s">&quot;file which to be copied&quot;</span><span class="p">)</span>
+<a id="__codelineno-5-14" name="__codelineno-5-14"></a><span class="w">    </span><span class="n">$CmdArg1</span><span class="p">(</span><span class="n">QString</span><span class="p">,</span><span class="w"> </span><span class="n">src</span><span class="p">)</span>
+<a id="__codelineno-5-15" name="__codelineno-5-15"></a>
+<a id="__codelineno-5-16" name="__codelineno-5-16"></a><span class="w">    </span><span class="n">$CmdArg2Nullable</span>
+<a id="__codelineno-5-17" name="__codelineno-5-17"></a><span class="w">    </span><span class="n">$CmdArg2Memo</span><span class="p">(</span><span class="s">&quot;path where accept a file copy to&quot;</span><span class="p">)</span>
+<a id="__codelineno-5-18" name="__codelineno-5-18"></a><span class="w">    </span><span class="n">$CmdArg2Declare</span><span class="p">(</span><span class="n">QString</span><span class="p">,</span><span class="w"> </span><span class="n">dest</span><span class="p">)</span>
+<a id="__codelineno-5-19" name="__codelineno-5-19"></a><span class="w">    </span><span class="n">QString</span><span class="w"> </span><span class="n">dest</span><span class="p">{</span><span class="n">QDir</span><span class="o">::</span><span class="n">currentPath</span><span class="p">()};</span>
+<a id="__codelineno-5-20" name="__codelineno-5-20"></a>
+<a id="__codelineno-5-21" name="__codelineno-5-21"></a><span class="k">public</span><span class="o">:</span>
+<a id="__codelineno-5-22" name="__codelineno-5-22"></a><span class="w">    </span><span class="n">$CmdMappingMemo</span><span class="p">(</span><span class="n">copy</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;copy file command&quot;</span><span class="p">)</span>
+<a id="__codelineno-5-23" name="__codelineno-5-23"></a><span class="w">    </span><span class="n">$CmdMapping</span><span class="p">(</span><span class="n">copy</span><span class="p">)</span>
+<a id="__codelineno-5-24" name="__codelineno-5-24"></a><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">copy</span><span class="p">();</span>
+<a id="__codelineno-5-25" name="__codelineno-5-25"></a><span class="p">};</span>
+</code></pre></div></td></tr></table></div>
+此时，如果我们再省略第二个参数， 那么 dest 的值就会是当前程序运行目录了。</p>
+</div>
+</div>
+</div>
+<h2 id="cmdargxprehandle">$CmdArgXPreHandle<a class="headerlink" href="#cmdargxprehandle" title="Permanent link">&para;</a></h2>
+<p>$CmdArgXPreHandle 是定义在设置参数之前运行的一个函数。</p>
+<p>他只有一个参数，这个参数就是他对应的函数名称。</p>
+<p>函数的要求是返回值必须是 void 类型，可以有一个参数，参数类型是 ICmdRequest&amp; 或  const ICmdRequest&amp;。</p>
+<p>函数必须紧跟在 $CmdArgXPreHandle 后面。</p>
+<h2 id="cmdargxposthandle">$CmdArgXPostHandle<a class="headerlink" href="#cmdargxposthandle" title="Permanent link">&para;</a></h2>
+<p>和 $CmdArgXPreHandle 类似， $CmdArgXPostHandle 定义在设置参数之后运行的一个函数。</p>
+<p>他的要求和 $CmdArgXPreHandle 一样。</p>
+<p>这里举一个例子，我们来验证以下 src 是否是一个文件。</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">CopyCmd.h</label><label for="__tabbed_5_2">CopyCmd.cpp</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-6-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-6-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-6-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-6-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-6-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-6-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-6-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-6-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-6-10">10</a></span>
+<span class="normal"><a href="#__codelineno-6-11">11</a></span>
+<span class="normal"><a href="#__codelineno-6-12">12</a></span>
+<span class="normal"><a href="#__codelineno-6-13">13</a></span>
+<span class="normal"><a href="#__codelineno-6-14">14</a></span>
+<span class="normal"><a href="#__codelineno-6-15">15</a></span>
+<span class="normal"><a href="#__codelineno-6-16">16</a></span>
+<span class="normal"><a href="#__codelineno-6-17">17</a></span>
+<span class="normal"><a href="#__codelineno-6-18">18</a></span>
+<span class="normal"><a href="#__codelineno-6-19">19</a></span>
+<span class="normal"><a href="#__codelineno-6-20">20</a></span>
+<span class="normal"><a href="#__codelineno-6-21">21</a></span>
+<span class="normal"><a href="#__codelineno-6-22">22</a></span>
+<span class="normal"><a href="#__codelineno-6-23">23</a></span>
+<span class="normal"><a href="#__codelineno-6-24">24</a></span>
+<span class="normal"><a href="#__codelineno-6-25">25</a></span>
+<span class="normal"><a href="#__codelineno-6-26">26</a></span>
+<span class="normal"><a href="#__codelineno-6-27">27</a></span>
+<span class="normal"><a href="#__codelineno-6-28">28</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="cp">#pragma once</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2"></a>
+<a id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;cmd/ICmdInterface.h&quot;</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4"></a>
+<a id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="k">class</span><span class="w"> </span><span class="nc">CopyCmd</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">ICmdInterface</span><span class="o">&lt;</span><span class="n">CopyCmd</span><span class="o">&gt;</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6"></a><span class="p">{</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7"></a><span class="w">    </span><span class="n">Q_GADGET</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8"></a><span class="w">    </span><span class="nf">$AsCmd</span><span class="p">(</span><span class="o">/</span><span class="p">)</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9"></a><span class="k">public</span><span class="o">:</span>
+<a id="__codelineno-6-10" name="__codelineno-6-10"></a><span class="w">    </span><span class="n">CopyCmd</span><span class="p">();</span>
+<a id="__codelineno-6-11" name="__codelineno-6-11"></a>
+<a id="__codelineno-6-12" name="__codelineno-6-12"></a><span class="k">public</span><span class="o">:</span>
+<a id="__codelineno-6-13" name="__codelineno-6-13"></a><span class="w">    </span><span class="n">$CmdArg1Memo</span><span class="p">(</span><span class="s">&quot;file which to be copied&quot;</span><span class="p">)</span>
+<a id="__codelineno-6-14" name="__codelineno-6-14"></a><span class="w">    </span><span class="n">$CmdArg1</span><span class="p">(</span><span class="n">QString</span><span class="p">,</span><span class="w"> </span><span class="n">src</span><span class="p">)</span>
+<a id="__codelineno-6-15" name="__codelineno-6-15"></a>
+<a id="__codelineno-6-16" name="__codelineno-6-16"></a><span class="w">    </span><span class="n">$CmdArg1PostHandle</span><span class="p">(</span><span class="n">srcValidate</span><span class="p">)</span>
+<a id="__codelineno-6-17" name="__codelineno-6-17"></a><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">srcValidate</span><span class="p">();</span>
+<a id="__codelineno-6-18" name="__codelineno-6-18"></a>
+<a id="__codelineno-6-19" name="__codelineno-6-19"></a><span class="w">    </span><span class="n">$CmdArg2Nullable</span>
+<a id="__codelineno-6-20" name="__codelineno-6-20"></a><span class="w">    </span><span class="n">$CmdArg2Memo</span><span class="p">(</span><span class="s">&quot;path where accept a file copy to&quot;</span><span class="p">)</span>
+<a id="__codelineno-6-21" name="__codelineno-6-21"></a><span class="w">    </span><span class="n">$CmdArg2Declare</span><span class="p">(</span><span class="n">QString</span><span class="p">,</span><span class="w"> </span><span class="n">dest</span><span class="p">)</span>
+<a id="__codelineno-6-22" name="__codelineno-6-22"></a><span class="w">    </span><span class="n">QString</span><span class="w"> </span><span class="n">dest</span><span class="p">{</span><span class="n">QDir</span><span class="o">::</span><span class="n">dirName</span><span class="p">()};</span>
+<a id="__codelineno-6-23" name="__codelineno-6-23"></a>
+<a id="__codelineno-6-24" name="__codelineno-6-24"></a><span class="k">public</span><span class="o">:</span>
+<a id="__codelineno-6-25" name="__codelineno-6-25"></a><span class="w">    </span><span class="n">$CmdMappingMemo</span><span class="p">(</span><span class="n">copy</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;copy file command&quot;</span><span class="p">)</span>
+<a id="__codelineno-6-26" name="__codelineno-6-26"></a><span class="w">    </span><span class="n">$CmdMapping</span><span class="p">(</span><span class="n">copy</span><span class="p">)</span>
+<a id="__codelineno-6-27" name="__codelineno-6-27"></a><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">copy</span><span class="p">();</span>
+<a id="__codelineno-6-28" name="__codelineno-6-28"></a><span class="p">};</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-7-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-7-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-7-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-7-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-7-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-7-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-7-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-7-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-7-10">10</a></span>
+<span class="normal"><a href="#__codelineno-7-11">11</a></span>
+<span class="normal"><a href="#__codelineno-7-12">12</a></span>
+<span class="normal"><a href="#__codelineno-7-13">13</a></span>
+<span class="normal"><a href="#__codelineno-7-14">14</a></span>
+<span class="normal"><a href="#__codelineno-7-15">15</a></span>
+<span class="normal"><a href="#__codelineno-7-16">16</a></span>
+<span class="normal"><a href="#__codelineno-7-17">17</a></span>
+<span class="normal"><a href="#__codelineno-7-18">18</a></span>
+<span class="normal"><a href="#__codelineno-7-19">19</a></span>
+<span class="normal"><a href="#__codelineno-7-20">20</a></span>
+<span class="normal"><a href="#__codelineno-7-21">21</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;CopyCmd.h&quot;</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2"></a>
+<a id="__codelineno-7-3" name="__codelineno-7-3"></a><span class="n">CopyCmd</span><span class="o">::</span><span class="n">CopyCmd</span><span class="p">()</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4"></a><span class="p">{</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5"></a>
+<a id="__codelineno-7-6" name="__codelineno-7-6"></a><span class="p">}</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7"></a>
+<a id="__codelineno-7-8" name="__codelineno-7-8"></a><span class="kt">void</span><span class="w"> </span><span class="n">CopyCmd</span><span class="o">::</span><span class="n">srcValidate</span><span class="p">()</span>
+<a id="__codelineno-7-9" name="__codelineno-7-9"></a><span class="p">{</span>
+<a id="__codelineno-7-10" name="__codelineno-7-10"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">QFileInfo</span><span class="p">(</span><span class="n">src</span><span class="p">).</span><span class="n">exists</span><span class="p">()){</span>
+<a id="__codelineno-7-11" name="__codelineno-7-11"></a><span class="w">        </span><span class="n">qDebug</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;src is not a file. src:&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">src</span><span class="p">;</span>
+<a id="__codelineno-7-12" name="__codelineno-7-12"></a><span class="w">        </span><span class="n">quick_exit</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<a id="__codelineno-7-13" name="__codelineno-7-13"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-7-14" name="__codelineno-7-14"></a><span class="p">}</span>
+<a id="__codelineno-7-15" name="__codelineno-7-15"></a>
+<a id="__codelineno-7-16" name="__codelineno-7-16"></a><span class="kt">void</span><span class="w"> </span><span class="n">CopyCmd</span><span class="o">::</span><span class="n">copy</span><span class="p">()</span>
+<a id="__codelineno-7-17" name="__codelineno-7-17"></a><span class="p">{</span>
+<a id="__codelineno-7-18" name="__codelineno-7-18"></a><span class="w">    </span><span class="n">qDebug</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;src path&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">src</span><span class="p">;</span>
+<a id="__codelineno-7-19" name="__codelineno-7-19"></a><span class="w">    </span><span class="n">qDebug</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;dest path&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">dest</span><span class="p">;</span>
+<a id="__codelineno-7-20" name="__codelineno-7-20"></a><span class="w">    </span><span class="n">quick_exit</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<a id="__codelineno-7-21" name="__codelineno-7-21"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+<p>在这个请求中，设置完 src 的值后，就会执行 srcValidate 函数，这个函数会检查 src 是否是一个文件。如果不是，程序会打印错误信息并退出， 程序不会再向下执行。</p>
 
 
 

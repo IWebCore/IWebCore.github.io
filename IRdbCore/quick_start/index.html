@@ -3082,24 +3082,29 @@
 <div class="tabbed-block">
 <blockquote>
 <p>注意这里我们添加了 <code>$EnableUnitTest(true)</code> 宏注解，用于开启单元测试。</p>
+<p>添加 <code>$RdbShowSql(true)</code> 用于开启 SQL 日志输出。</p>
 </blockquote>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-16-1">1</a></span>
-<span class="normal"><a href="#__codelineno-16-2">2</a></span>
-<span class="normal"><a href="#__codelineno-16-3">3</a></span>
-<span class="normal"><a href="#__codelineno-16-4">4</a></span>
-<span class="normal"><a href="#__codelineno-16-5">5</a></span>
-<span class="normal"><a href="#__codelineno-16-6">6</a></span>
-<span class="normal"><a href="#__codelineno-16-7">7</a></span>
-<span class="normal"><a href="#__codelineno-16-8">8</a></span>
-<span class="normal"><a href="#__codelineno-16-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;core/application/IApplication.h&quot;</span>
-<a id="__codelineno-16-2" name="__codelineno-16-2"></a>
-<a id="__codelineno-16-3" name="__codelineno-16-3"></a><span class="n">$EnableUnitTest</span><span class="p">(</span><span class="nb">true</span><span class="p">)</span>
-<a id="__codelineno-16-4" name="__codelineno-16-4"></a><span class="kt">int</span><span class="w"> </span><span class="n">main</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">argv</span><span class="p">[])</span>
-<a id="__codelineno-16-5" name="__codelineno-16-5"></a><span class="p">{</span>
-<a id="__codelineno-16-6" name="__codelineno-16-6"></a><span class="w">    </span><span class="n">IApplication</span><span class="w"> </span><span class="nf">app</span><span class="p">(</span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="n">argv</span><span class="p">);</span>
-<a id="__codelineno-16-7" name="__codelineno-16-7"></a>
-<a id="__codelineno-16-8" name="__codelineno-16-8"></a><span class="w">    </span><span class="n">app</span><span class="p">.</span><span class="n">run</span><span class="p">();</span>
-<a id="__codelineno-16-9" name="__codelineno-16-9"></a><span class="p">}</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-16-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-16-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-16-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-16-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-16-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-16-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-16-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-16-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-16-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-16-10">10</a></span>
+<span class="normal"><a href="#__codelineno-16-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;core/application/IApplication.h&quot;</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;rdb/IRdbAnnomacro.h&quot;</span>
+<a id="__codelineno-16-3" name="__codelineno-16-3"></a>
+<a id="__codelineno-16-4" name="__codelineno-16-4"></a><span class="n">$EnableUnitTest</span><span class="p">(</span><span class="nb">true</span><span class="p">)</span>
+<a id="__codelineno-16-5" name="__codelineno-16-5"></a><span class="n">$RdbShowSql</span><span class="p">(</span><span class="nb">true</span><span class="p">)</span>
+<a id="__codelineno-16-6" name="__codelineno-16-6"></a><span class="kt">int</span><span class="w"> </span><span class="n">main</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">argv</span><span class="p">[])</span>
+<a id="__codelineno-16-7" name="__codelineno-16-7"></a><span class="p">{</span>
+<a id="__codelineno-16-8" name="__codelineno-16-8"></a><span class="w">    </span><span class="n">IApplication</span><span class="w"> </span><span class="nf">app</span><span class="p">(</span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="n">argv</span><span class="p">);</span>
+<a id="__codelineno-16-9" name="__codelineno-16-9"></a>
+<a id="__codelineno-16-10" name="__codelineno-16-10"></a><span class="w">    </span><span class="n">app</span><span class="p">.</span><span class="n">run</span><span class="p">();</span>
+<a id="__codelineno-16-11" name="__codelineno-16-11"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
@@ -3121,7 +3126,31 @@
 <span class="normal"><a href="#__codelineno-17-16">16</a></span>
 <span class="normal"><a href="#__codelineno-17-17">17</a></span>
 <span class="normal"><a href="#__codelineno-17-18">18</a></span>
-<span class="normal"><a href="#__codelineno-17-19">19</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1"></a> _____  _    _        _      _____
+<span class="normal"><a href="#__codelineno-17-19">19</a></span>
+<span class="normal"><a href="#__codelineno-17-20">20</a></span>
+<span class="normal"><a href="#__codelineno-17-21">21</a></span>
+<span class="normal"><a href="#__codelineno-17-22">22</a></span>
+<span class="normal"><a href="#__codelineno-17-23">23</a></span>
+<span class="normal"><a href="#__codelineno-17-24">24</a></span>
+<span class="normal"><a href="#__codelineno-17-25">25</a></span>
+<span class="normal"><a href="#__codelineno-17-26">26</a></span>
+<span class="normal"><a href="#__codelineno-17-27">27</a></span>
+<span class="normal"><a href="#__codelineno-17-28">28</a></span>
+<span class="normal"><a href="#__codelineno-17-29">29</a></span>
+<span class="normal"><a href="#__codelineno-17-30">30</a></span>
+<span class="normal"><a href="#__codelineno-17-31">31</a></span>
+<span class="normal"><a href="#__codelineno-17-32">32</a></span>
+<span class="normal"><a href="#__codelineno-17-33">33</a></span>
+<span class="normal"><a href="#__codelineno-17-34">34</a></span>
+<span class="normal"><a href="#__codelineno-17-35">35</a></span>
+<span class="normal"><a href="#__codelineno-17-36">36</a></span>
+<span class="normal"><a href="#__codelineno-17-37">37</a></span>
+<span class="normal"><a href="#__codelineno-17-38">38</a></span>
+<span class="normal"><a href="#__codelineno-17-39">39</a></span>
+<span class="normal"><a href="#__codelineno-17-40">40</a></span>
+<span class="normal"><a href="#__codelineno-17-41">41</a></span>
+<span class="normal"><a href="#__codelineno-17-42">42</a></span>
+<span class="normal"><a href="#__codelineno-17-43">43</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1"></a> _____  _    _        _      _____
 <a id="__codelineno-17-2" name="__codelineno-17-2"></a>|_   _|| |  | |      | |    /  __ \
 <a id="__codelineno-17-3" name="__codelineno-17-3"></a> | |  | |  | |  ___ | |__  | /  \/  ___   _ __  ___
 <a id="__codelineno-17-4" name="__codelineno-17-4"></a> | |  | |/\| | / _ \| &#39;_ \ | |     / _ \ | &#39;__|/ _ \
@@ -3129,17 +3158,41 @@
 <a id="__codelineno-17-6" name="__codelineno-17-6"></a>\___/  \/  \/  \___||_.__/  \____/ \___/ |_|   \___|
 <a id="__codelineno-17-7" name="__codelineno-17-7"></a>
 <a id="__codelineno-17-8" name="__codelineno-17-8"></a>table created class StudentTable
-<a id="__codelineno-17-9" name="__codelineno-17-9"></a>StudentModel CREATE TABLE:  StudentTable
-<a id="__codelineno-17-10" name="__codelineno-17-10"></a>START UNIT TEST
-<a id="__codelineno-17-11" name="__codelineno-17-11"></a>********* Start testing of TestRdb *********
-<a id="__codelineno-17-12" name="__codelineno-17-12"></a>Config: Using QtTest library 5.14.2, Qt 5.14.2 (i386-little_endian-ilp32 shared (dynamic) debug build; by MSVC 2017)
-<a id="__codelineno-17-13" name="__codelineno-17-13"></a>PASS   : TestRdb::initTestCase()
-<a id="__codelineno-17-14" name="__codelineno-17-14"></a>PASS   : TestRdb::testInsert()
-<a id="__codelineno-17-15" name="__codelineno-17-15"></a>PASS   : TestRdb::testUpdate()
-<a id="__codelineno-17-16" name="__codelineno-17-16"></a>PASS   : TestRdb::testDelete()
-<a id="__codelineno-17-17" name="__codelineno-17-17"></a>PASS   : TestRdb::cleanupTestCase()
-<a id="__codelineno-17-18" name="__codelineno-17-18"></a>Totals: 5 passed, 0 failed, 0 skipped, 0 blacklisted, 26ms
-<a id="__codelineno-17-19" name="__codelineno-17-19"></a>********* Finished testing of TestRdb *********
+<a id="__codelineno-17-9" name="__codelineno-17-9"></a>Sqlite: CREATE TABLE IF NOT EXISTS &quot;StudentTable&quot; (&quot;id&quot; INTEGER PRIMARY KEY AUTOINCREMENT, &quot;name&quot; VARCHAR, &quot;age&quot; INTEGER)
+<a id="__codelineno-17-10" name="__codelineno-17-10"></a>StudentModel CREATE TABLE:  StudentTable
+<a id="__codelineno-17-11" name="__codelineno-17-11"></a>START UNIT TEST
+<a id="__codelineno-17-12" name="__codelineno-17-12"></a>********* Start testing of TestRdb *********
+<a id="__codelineno-17-13" name="__codelineno-17-13"></a>Config: Using QtTest library 5.14.2, Qt 5.14.2 (i386-little_endian-ilp32 shared (dynamic) debug build; by MSVC 2017)
+<a id="__codelineno-17-14" name="__codelineno-17-14"></a>PASS   : TestRdb::initTestCase()
+<a id="__codelineno-17-15" name="__codelineno-17-15"></a>QDEBUG : TestRdb::testInsert() Sqlite: SELECT count(1) FROM &quot;StudentTable&quot;
+<a id="__codelineno-17-16" name="__codelineno-17-16"></a>QDEBUG : TestRdb::testInsert() Sqlite: INSERT INTO &quot;StudentTable&quot; (name, age) VALUES (:name, :age)
+<a id="__codelineno-17-17" name="__codelineno-17-17"></a>QDEBUG : TestRdb::testInsert() bound:  &quot;:age&quot; -&gt; QVariant(int, 18)
+<a id="__codelineno-17-18" name="__codelineno-17-18"></a>QDEBUG : TestRdb::testInsert() bound:  &quot;:name&quot; -&gt; QVariant(std::string, &quot;yuekeyuan&quot;)
+<a id="__codelineno-17-19" name="__codelineno-17-19"></a>QDEBUG : TestRdb::testInsert() Sqlite: SELECT count(1) FROM &quot;StudentTable&quot;
+<a id="__codelineno-17-20" name="__codelineno-17-20"></a>QDEBUG : TestRdb::testInsert() Sqlite: INSERT INTO &quot;StudentTable&quot; (name, age) VALUES (:name, :age)
+<a id="__codelineno-17-21" name="__codelineno-17-21"></a>QDEBUG : TestRdb::testInsert() bound:  &quot;:age&quot; -&gt; QVariant(int, 3)
+<a id="__codelineno-17-22" name="__codelineno-17-22"></a>QDEBUG : TestRdb::testInsert() bound:  &quot;:name&quot; -&gt; QVariant(std::string, &quot;yueqichu&quot;)
+<a id="__codelineno-17-23" name="__codelineno-17-23"></a>QDEBUG : TestRdb::testInsert() Sqlite: SELECT count(1) FROM &quot;StudentTable&quot;
+<a id="__codelineno-17-24" name="__codelineno-17-24"></a>PASS   : TestRdb::testInsert()
+<a id="__codelineno-17-25" name="__codelineno-17-25"></a>QDEBUG : TestRdb::testUpdate() Sqlite: SELECT count(1) FROM &quot;StudentTable&quot;  WHERE name = :name_0
+<a id="__codelineno-17-26" name="__codelineno-17-26"></a>QDEBUG : TestRdb::testUpdate() bound:  &quot;:name_0&quot; -&gt; QVariant(QString, &quot;yuekeyuan&quot;)
+<a id="__codelineno-17-27" name="__codelineno-17-27"></a>QDEBUG : TestRdb::testUpdate() Sqlite: SELECT count(1) FROM &quot;StudentTable&quot;  WHERE name = :name_1
+<a id="__codelineno-17-28" name="__codelineno-17-28"></a>QDEBUG : TestRdb::testUpdate() bound:  &quot;:name_1&quot; -&gt; QVariant(QString, &quot;zhiyongfei&quot;)
+<a id="__codelineno-17-29" name="__codelineno-17-29"></a>QDEBUG : TestRdb::testUpdate() Sqlite: UPDATE &quot;StudentTable&quot; SET name= :name WHERE name = :name_2
+<a id="__codelineno-17-30" name="__codelineno-17-30"></a>QDEBUG : TestRdb::testUpdate() bound:  &quot;:name&quot; -&gt; QVariant(QString, &quot;zhiyongfei&quot;)
+<a id="__codelineno-17-31" name="__codelineno-17-31"></a>QDEBUG : TestRdb::testUpdate() bound:  &quot;:name_2&quot; -&gt; QVariant(QString, &quot;yuekeyuan&quot;)
+<a id="__codelineno-17-32" name="__codelineno-17-32"></a>QDEBUG : TestRdb::testUpdate() Sqlite: SELECT count(1) FROM &quot;StudentTable&quot;  WHERE name = :name_3
+<a id="__codelineno-17-33" name="__codelineno-17-33"></a>QDEBUG : TestRdb::testUpdate() bound:  &quot;:name_3&quot; -&gt; QVariant(QString, &quot;yuekeyuan&quot;)
+<a id="__codelineno-17-34" name="__codelineno-17-34"></a>QDEBUG : TestRdb::testUpdate() Sqlite: SELECT count(1) FROM &quot;StudentTable&quot;  WHERE name = :name_4
+<a id="__codelineno-17-35" name="__codelineno-17-35"></a>QDEBUG : TestRdb::testUpdate() bound:  &quot;:name_4&quot; -&gt; QVariant(QString, &quot;zhiyongfei&quot;)
+<a id="__codelineno-17-36" name="__codelineno-17-36"></a>PASS   : TestRdb::testUpdate()
+<a id="__codelineno-17-37" name="__codelineno-17-37"></a>QDEBUG : TestRdb::testDelete() Sqlite: DELETE FROM &quot;StudentTable&quot; WHERE age = :age_5
+<a id="__codelineno-17-38" name="__codelineno-17-38"></a>QDEBUG : TestRdb::testDelete() bound:  &quot;:age_5&quot; -&gt; QVariant(int, 18)
+<a id="__codelineno-17-39" name="__codelineno-17-39"></a>QDEBUG : TestRdb::testDelete() Sqlite: SELECT count(1) FROM &quot;StudentTable&quot;
+<a id="__codelineno-17-40" name="__codelineno-17-40"></a>PASS   : TestRdb::testDelete()
+<a id="__codelineno-17-41" name="__codelineno-17-41"></a>PASS   : TestRdb::cleanupTestCase()
+<a id="__codelineno-17-42" name="__codelineno-17-42"></a>Totals: 5 passed, 0 failed, 0 skipped, 0 blacklisted, 27ms
+<a id="__codelineno-17-43" name="__codelineno-17-43"></a>********* Finished testing of TestRdb *********
 </code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">

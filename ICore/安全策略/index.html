@@ -12,7 +12,7 @@
         <link rel="prev" href="../Test/">
       
       
-        <link rel="next" href="../IAbort/">
+        <link rel="next" href="../IResult/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -2044,6 +2044,52 @@
   
   
     <li class="md-nav__item">
+      <a href="../IResult/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    IResult*
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IException/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    IException*
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../IAbort/" class="md-nav__link">
         
   
@@ -2662,7 +2708,7 @@
 <li>抛出异常，让用户自行处理。</li>
 </ul>
 <p>其中第一种方法是运行最快速的，第三种方法是最便捷的。IResult 使用的是第三种方法。在 IWebCore中，我们大量使用 IResult 进行函数返回值的处理，比如对于数值的转换，对于 配置信息的请求等等。</p>
-<p>具体的内容可以参考文档 <a href="./IResult.md">IResult</a></p>
+<p>具体的内容可以参考文档 <a href="../IResult/">IResult</a></p>
 <h3 id="exception">异常（Exception)<a class="headerlink" href="#exception" title="Permanent link">&para;</a></h3>
 <p>c++ 异常在我看来绝对是一个能避免就避免的东西，我在意的不是他的运行速度（运行出问题了，花时间解决我是认的），而是他的的确确不好用，相对于 java 异常而言，就像一个小孩子，而java异常则是一个四平八稳，行事周到，但却臃肿的老人。</p>
 <p>不好用归不好用，但却没有不用他的意思，对于以下的两种场景，还是要用的，但是用的时候需要注意他的小脾气。这两种场景都是 额外变量或者 IResult 不好使的地方。</p>
@@ -2675,7 +2721,7 @@
 </ul>
 <p>比如数据库链接的变化，这个是网络，服务器等等一系列不知道哪里的问题，平时不用关心，但是出问题要解决的。我的做法是直接抛异常，在最顶层进行拦截处理。</p>
 <p>此外，还有一些异常，需要用户自己判断，比如 零除异常，空指针异常等错误型异常，这些在java 中只会崩溃线程却在c++中崩溃程序的异常，需要用户自己提前判断，预防性编程，手动处理。</p>
-<p>IWebCore中的异常可以参考 <a href="./IException.md">IException</a></p>
+<p>IWebCore中的异常可以参考 <a href="../IException/">IException</a></p>
 <h3 id="_3">安全编码实践<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <h4 id="raii">RAII<a class="headerlink" href="#raii" title="Permanent link">&para;</a></h4>
 <p>在IWebCore中，尽量避免通过 new 初始化一个对象，通过delete 删除一个对象，除非迫不得已。IWebCore的实践中，也很少用 new 生成对象，而是通过严谨有序的代码结构，来完成一个个的对象初始化。</p>

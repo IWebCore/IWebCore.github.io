@@ -2180,6 +2180,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../features/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Why IMake
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../packageIntegration/" class="md-nav__link">
         
   
@@ -2394,6 +2417,48 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      最后
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="最后">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      为什么还要一个新的包管理系统？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      包依赖如何解决？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      包冲突怎么解决？
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2463,6 +2528,48 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      最后
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="最后">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      为什么还要一个新的包管理系统？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      包依赖如何解决？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      包冲突怎么解决？
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2500,6 +2607,36 @@
 <p>其次就是一些代码量较少，可以跨平台编译的库。这些库一方面是打成包比较简单，没有复杂的各种依赖，也没有复杂的编译条件，直接放源码就能编译。另外一方面，由于代码量较少，这些库和我们的项目一起编译也不会对编译时间造成太大的影响。</p>
 <p>还有一个优点就是，如果直接以源码的形式参与编译，可以让编译器有更充分的空间进行优化，也可以相对于动态链接库使用，减少更多的库。</p>
 <p>但是如果用户想使用 opencv, vtk， openssl 这样的大型库，IMakeCore 就不能够直接提供。之前用户怎样使用这些库，之后还是如何使用，还是在 cmake 项目中， find_package, 在 qmake 项目中，编写各种的 pri 依赖。</p>
+<h2 id="_3">最后<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>在我面试找工作的过程中，有一些面试官提了一些问题，我觉得挺有意义的，这里记录一下。</p>
+<h3 id="_4">为什么还要一个新的包管理系统？<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>IMakeCore 不是一个像 cmake, qmake这样集项目管理，项目构建于一体的工具，而只是一个包管理工具，但是他可以集成在 cmake 和 qmake 之上，在未来还可以支持任何如 xmake 这样的管理构建系统。所以在任何一个qmake/cmake项目中都可以集成 IMakeCore 包管理系统,来引入相关的包。这样的话就实现了<code>跨项目的包管理</code>。</p>
+</li>
+<li>
+<p>IMakeCore 是基于源代码的包管理系统。目前c++包管理系统更常见的作法是将代码编译为二进制的形式再集成到项目中。IMakeCore则是直接管理源代码，将包的源代码和项目一起编译。直接管理源代码，不用预先编译，可以直接使用，可以跨平台编译。在目前诸如go/rust/python 等都是源码分发。在c++中这个问题更加的明显，由于C++ ABI不兼容，导致不同编译器编译出来的二进制文件不兼容，所以源码分相对而言是最好的选择。当然这个也不是没有代价的，就是在重新全量编译程序的时候会增加编译时间。而这一点则实现了<code>跨平台的包管理</code>。</p>
+</li>
+</ul>
+<p>综合前面两个原因，IMakeCore 是一个跨项目跨平台的包管理系统。</p>
+<h3 id="_5">包依赖如何解决？<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>由于c++包管理的长期缺失，c++的每个包/库都相对十分独立。c++现有的库不像 node 库一样有很深的依赖，他们基本上不依赖其他的额外的库。一般这些包都会依赖 std 库进行开发，而不会过多的依赖其他的库。所以我们在目前的包中，基本上不存在依赖的可能，如果真的有依赖也是很简单的依赖关系。这个是c++包的一个很有意思的特点。</p>
+</li>
+<li>
+<p>用户可以在包的定义中使用 dependencies 字段来指定依赖的包，IMakeCore 会自动检测这些包是否存在，如果不存在就会报错。</p>
+</li>
+<li>
+<p>如果真的有特殊的包依赖，用户页可以自己封装依赖到的包，进行管理即可。这里鼓励用户上传到 IPubCore 网站分享给大家使用。</p>
+</li>
+</ul>
+<h3 id="_6">包冲突怎么解决？<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p>这个确实是一个很麻烦的事情。包冲突有可以分为两个问题。</p>
+<ul>
+<li>第一种情况是一个包和另外一个包中的内容一致导致了冲突。这里内容一致的意思比如他们的头文件的相对路径一致了，在引用头文件的时候不知道该怎么区分他们。他们的定义的内容一致了。比如同一个名称的数据或者函数在不同的包中都会被定义，那么程序在编译的链接阶段就会报错。</li>
+<li>针对于类的问题，如果真发生这种冲突的问题了，用户可能真的需要自己解决。用户需要将这些包编译为动态库或者静态库再选择导出具体的</li>
+</ul>
 <p>一切就是这么简单！</p>
 
 

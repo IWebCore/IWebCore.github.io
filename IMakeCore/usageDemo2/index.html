@@ -9,28 +9,24 @@
       
       
       
-        <link rel="prev" href="../../middleware/overview/">
-      
-      
-        <link rel="next" href="../../advance/https/">
       
       
         
       
       
-      <link rel="icon" href="../../../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
     
     
       
-        <title>IHttpMime - IWebCore</title>
+        <title>使用示例2: IHttp静态文件服务 - IWebCore</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -49,7 +45,7 @@
       
     
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -74,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#mime" class="md-skip">
+        <a href="#2-ihttp" class="md-skip">
           跳转至
         </a>
       
@@ -88,7 +84,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="../../.." title="IWebCore" class="md-header__button md-logo" aria-label="IWebCore" data-md-component="logo">
+    <a href="../.." title="IWebCore" class="md-header__button md-logo" aria-label="IWebCore" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -108,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              IHttpMime
+              使用示例2: IHttp静态文件服务
             
           </span>
         </div>
@@ -207,7 +203,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../.." class="md-tabs__link">
+      <a href="../.." class="md-tabs__link">
         
   
   
@@ -224,13 +220,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../quickstart/" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../IHttpCore/quickstart/" class="md-tabs__link">
           
   
   
@@ -250,7 +244,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../ICmd/overview/" class="md-tabs__link">
+        <a href="../../ICmd/overview/" class="md-tabs__link">
           
   
   
@@ -270,7 +264,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../IRdbCore/quick_start/" class="md-tabs__link">
+        <a href="../../IRdbCore/quick_start/" class="md-tabs__link">
           
   
   
@@ -290,7 +284,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../ICore/IApplication/" class="md-tabs__link">
+        <a href="../../ICore/IApplication/" class="md-tabs__link">
           
   
   
@@ -310,7 +304,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../IMakeCore/quick_start/" class="md-tabs__link">
+        <a href="../quick_start/" class="md-tabs__link">
           
   
   
@@ -344,7 +338,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="IWebCore" class="md-nav__button md-logo" aria-label="IWebCore" data-md-component="logo">
+    <a href="../.." title="IWebCore" class="md-nav__button md-logo" aria-label="IWebCore" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -362,7 +356,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -386,29 +380,24 @@
       
   
   
-    
   
   
-  
     
     
     
     
       
-        
-        
-      
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
             
   
   
@@ -426,7 +415,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -444,7 +433,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../quickstart/" class="md-nav__link">
+      <a href="../../IHttpCore/quickstart/" class="md-nav__link">
         
   
   
@@ -522,7 +511,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../controller/Controller%E5%AE%9A%E4%B9%89/" class="md-nav__link">
+      <a href="../../IHttpCore/controller/Controller%E5%AE%9A%E4%B9%89/" class="md-nav__link">
         
   
   
@@ -550,7 +539,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../controller/IHttpCore%20%E8%B7%AF%E7%94%B1/" class="md-nav__link">
+      <a href="../../IHttpCore/controller/IHttpCore%20%E8%B7%AF%E7%94%B1/" class="md-nav__link">
         
   
   
@@ -578,7 +567,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../controller/IHttpCore%E8%B7%AF%E7%94%B1%E8%BF%94%E5%9B%9E%E7%B1%BB%E5%9E%8B%20%E5%9F%BA%E7%A1%80%E7%B1%BB%E5%9E%8B/" class="md-nav__link">
+      <a href="../../IHttpCore/controller/IHttpCore%E8%B7%AF%E7%94%B1%E8%BF%94%E5%9B%9E%E7%B1%BB%E5%9E%8B%20%E5%9F%BA%E7%A1%80%E7%B1%BB%E5%9E%8B/" class="md-nav__link">
         
   
   
@@ -606,7 +595,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../controller/IHttpCore%E8%B7%AF%E7%94%B1%E8%BF%94%E5%9B%9E%E7%B1%BB%E5%9E%8B%20Response%E7%B1%BB%E5%9E%8B/" class="md-nav__link">
+      <a href="../../IHttpCore/controller/IHttpCore%E8%B7%AF%E7%94%B1%E8%BF%94%E5%9B%9E%E7%B1%BB%E5%9E%8B%20Response%E7%B1%BB%E5%9E%8B/" class="md-nav__link">
         
   
   
@@ -634,7 +623,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../controller/%E5%8F%82%E6%95%B0%E8%BE%93%E5%85%A5/" class="md-nav__link">
+      <a href="../../IHttpCore/controller/%E5%8F%82%E6%95%B0%E8%BE%93%E5%85%A5/" class="md-nav__link">
         
   
   
@@ -720,7 +709,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../components/headers/" class="md-nav__link">
+      <a href="../../IHttpCore/components/headers/" class="md-nav__link">
         
   
   
@@ -748,7 +737,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../components/cookie/" class="md-nav__link">
+      <a href="../../IHttpCore/components/cookie/" class="md-nav__link">
         
   
   
@@ -776,7 +765,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../components/session/" class="md-nav__link">
+      <a href="../../IHttpCore/components/session/" class="md-nav__link">
         
   
   
@@ -804,7 +793,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../components/json/" class="md-nav__link">
+      <a href="../../IHttpCore/components/json/" class="md-nav__link">
         
   
   
@@ -832,7 +821,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../components/formdata/" class="md-nav__link">
+      <a href="../../IHttpCore/components/formdata/" class="md-nav__link">
         
   
   
@@ -860,7 +849,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../components/multipart/" class="md-nav__link">
+      <a href="../../IHttpCore/components/multipart/" class="md-nav__link">
         
   
   
@@ -888,7 +877,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../components/request/" class="md-nav__link">
+      <a href="../../IHttpCore/components/request/" class="md-nav__link">
         
   
   
@@ -916,7 +905,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../components/response/" class="md-nav__link">
+      <a href="../../IHttpCore/components/response/" class="md-nav__link">
         
   
   
@@ -1002,7 +991,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../middleware/overview/" class="md-nav__link">
+      <a href="../../IHttpCore/middleware/overview/" class="md-nav__link">
         
   
   
@@ -1035,8 +1024,6 @@
                 
   
   
-    
-  
   
   
     
@@ -1047,11 +1034,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
         
           
           <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
@@ -1072,7 +1059,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_5">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1087,35 +1074,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    IHttpMime
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../IHttpCore/biscuit/IHttpMime/" class="md-nav__link">
         
   
   
@@ -1131,85 +1093,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#mime" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Mime 字段
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        字段转换
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#suffixmime" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        SuffixMime
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="SuffixMime">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#suffix-mime" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        预定义的suffix-mime
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#suffix-mime_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        用户自定义 suffix-mime 映射
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1280,7 +1163,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advance/https/" class="md-nav__link">
+      <a href="../../IHttpCore/advance/https/" class="md-nav__link">
         
   
   
@@ -1308,7 +1191,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advance/INody/" class="md-nav__link">
+      <a href="../../IHttpCore/advance/INody/" class="md-nav__link">
         
   
   
@@ -1336,7 +1219,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advance/invalid%20handler/" class="md-nav__link">
+      <a href="../../IHttpCore/advance/invalid%20handler/" class="md-nav__link">
         
   
   
@@ -1364,7 +1247,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advance/IHttpAssets/" class="md-nav__link">
+      <a href="../../IHttpCore/advance/IHttpAssets/" class="md-nav__link">
         
   
   
@@ -1392,7 +1275,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advance/IHttpCors/" class="md-nav__link">
+      <a href="../../IHttpCore/advance/IHttpCors/" class="md-nav__link">
         
   
   
@@ -1420,7 +1303,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advance/IHttp.compress/" class="md-nav__link">
+      <a href="../../IHttpCore/advance/IHttp.compress/" class="md-nav__link">
         
   
   
@@ -1448,7 +1331,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../notice/" class="md-nav__link">
+      <a href="../../IHttpCore/notice/" class="md-nav__link">
         
   
   
@@ -1476,7 +1359,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advance/linuxCompile/" class="md-nav__link">
+      <a href="../../IHttpCore/advance/linuxCompile/" class="md-nav__link">
         
   
   
@@ -1569,7 +1452,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ICmd/overview/" class="md-nav__link">
+      <a href="../../ICmd/overview/" class="md-nav__link">
         
   
   
@@ -1597,7 +1480,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ICmd/install/" class="md-nav__link">
+      <a href="../../ICmd/install/" class="md-nav__link">
         
   
   
@@ -1625,7 +1508,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ICmd/cmdrules/" class="md-nav__link">
+      <a href="../../ICmd/cmdrules/" class="md-nav__link">
         
   
   
@@ -1653,7 +1536,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ICmd/cmdAction/" class="md-nav__link">
+      <a href="../../ICmd/cmdAction/" class="md-nav__link">
         
   
   
@@ -1681,7 +1564,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ICmd/cmdArgs/" class="md-nav__link">
+      <a href="../../ICmd/cmdArgs/" class="md-nav__link">
         
   
   
@@ -1709,7 +1592,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ICmd/cmdArgx/" class="md-nav__link">
+      <a href="../../ICmd/cmdArgx/" class="md-nav__link">
         
   
   
@@ -1737,7 +1620,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ICmd/cmdOption/" class="md-nav__link">
+      <a href="../../ICmd/cmdOption/" class="md-nav__link">
         
   
   
@@ -1765,7 +1648,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ICmd/cmdOptionValue/" class="md-nav__link">
+      <a href="../../ICmd/cmdOptionValue/" class="md-nav__link">
         
   
   
@@ -1793,7 +1676,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ICmd/api/" class="md-nav__link">
+      <a href="../../ICmd/api/" class="md-nav__link">
         
   
   
@@ -1878,7 +1761,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../IRdbCore/quick_start/" class="md-nav__link">
+      <a href="../../IRdbCore/quick_start/" class="md-nav__link">
         
   
   
@@ -1906,7 +1789,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../IRdbCore/overview/" class="md-nav__link">
+      <a href="../../IRdbCore/overview/" class="md-nav__link">
         
   
   
@@ -1934,7 +1817,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../IRdbCore/database/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="md-nav__link">
+      <a href="../../IRdbCore/database/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="md-nav__link">
         
   
   
@@ -1962,7 +1845,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../IRdbCore/entity/Table/" class="md-nav__link">
+      <a href="../../IRdbCore/entity/Table/" class="md-nav__link">
         
   
   
@@ -1990,7 +1873,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../IRdbCore/entity/View/" class="md-nav__link">
+      <a href="../../IRdbCore/entity/View/" class="md-nav__link">
         
   
   
@@ -2018,7 +1901,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../IRdbCore/model/Table%20Model/" class="md-nav__link">
+      <a href="../../IRdbCore/model/Table%20Model/" class="md-nav__link">
         
   
   
@@ -2046,7 +1929,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../IRdbCore/model/View%20Model/" class="md-nav__link">
+      <a href="../../IRdbCore/model/View%20Model/" class="md-nav__link">
         
   
   
@@ -2131,7 +2014,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ICore/IApplication/" class="md-nav__link">
+      <a href="../../ICore/IApplication/" class="md-nav__link">
         
   
   
@@ -2159,7 +2042,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ICore/Config/" class="md-nav__link">
+      <a href="../../ICore/Config/" class="md-nav__link">
         
   
   
@@ -2187,7 +2070,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ICore/Bean/" class="md-nav__link">
+      <a href="../../ICore/Bean/" class="md-nav__link">
         
   
   
@@ -2215,7 +2098,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ICore/Task/" class="md-nav__link">
+      <a href="../../ICore/Task/" class="md-nav__link">
         
   
   
@@ -2243,7 +2126,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ICore/Test/" class="md-nav__link">
+      <a href="../../ICore/Test/" class="md-nav__link">
         
   
   
@@ -2321,7 +2204,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ICore/%E5%AE%89%E5%85%A8%E7%AD%96%E7%95%A5/" class="md-nav__link">
+      <a href="../../ICore/%E5%AE%89%E5%85%A8%E7%AD%96%E7%95%A5/" class="md-nav__link">
         
   
   
@@ -2349,7 +2232,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ICore/IResult/" class="md-nav__link">
+      <a href="../../ICore/IResult/" class="md-nav__link">
         
   
   
@@ -2377,7 +2260,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ICore/IException/" class="md-nav__link">
+      <a href="../../ICore/IException/" class="md-nav__link">
         
   
   
@@ -2405,7 +2288,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ICore/IAbort/" class="md-nav__link">
+      <a href="../../ICore/IAbort/" class="md-nav__link">
         
   
   
@@ -2433,7 +2316,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ICore/Abort-FailFast/" class="md-nav__link">
+      <a href="../../ICore/Abort-FailFast/" class="md-nav__link">
         
   
   
@@ -2519,7 +2402,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ICore/%E8%87%AA%E5%AE%9A%E4%B9%89%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%201/" class="md-nav__link">
+      <a href="../../ICore/%E8%87%AA%E5%AE%9A%E4%B9%89%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%201/" class="md-nav__link">
         
   
   
@@ -2547,7 +2430,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ICore/%E8%87%AA%E5%AE%9A%E4%B9%89%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%202/" class="md-nav__link">
+      <a href="../../ICore/%E8%87%AA%E5%AE%9A%E4%B9%89%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%202/" class="md-nav__link">
         
   
   
@@ -2575,7 +2458,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ICore/util/IPacakgeUtil/" class="md-nav__link">
+      <a href="../../ICore/util/IPacakgeUtil/" class="md-nav__link">
         
   
   
@@ -2603,7 +2486,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ICore/architecture/" class="md-nav__link">
+      <a href="../../ICore/architecture/" class="md-nav__link">
         
   
   
@@ -2696,7 +2579,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../IMakeCore/quick_start/" class="md-nav__link">
+      <a href="../quick_start/" class="md-nav__link">
         
   
   
@@ -2724,7 +2607,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../IMakeCore/install/" class="md-nav__link">
+      <a href="../install/" class="md-nav__link">
         
   
   
@@ -2752,7 +2635,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../IMakeCore/usageDemo/" class="md-nav__link">
+      <a href="../usageDemo/" class="md-nav__link">
         
   
   
@@ -2780,7 +2663,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../IMakeCore/packageIntegration/" class="md-nav__link">
+      <a href="../packageIntegration/" class="md-nav__link">
         
   
   
@@ -2808,7 +2691,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../IMakeCore/packages_json/" class="md-nav__link">
+      <a href="../packages_json/" class="md-nav__link">
         
   
   
@@ -2836,7 +2719,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../IMakeCore/configs_json/" class="md-nav__link">
+      <a href="../configs_json/" class="md-nav__link">
         
   
   
@@ -2864,7 +2747,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../IMakeCore/definePackage/" class="md-nav__link">
+      <a href="../definePackage/" class="md-nav__link">
         
   
   
@@ -2892,7 +2775,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../IMakeCore/ipc/" class="md-nav__link">
+      <a href="../ipc/" class="md-nav__link">
         
   
   
@@ -2920,7 +2803,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../IMakeCore/ipubcore/" class="md-nav__link">
+      <a href="../ipubcore/" class="md-nav__link">
         
   
   
@@ -2948,7 +2831,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../IMakeCore/wandering/" class="md-nav__link">
+      <a href="../wandering/" class="md-nav__link">
         
   
   
@@ -2993,75 +2876,8 @@
   
   
   
+    
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#mime" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Mime 字段
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        字段转换
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#suffixmime" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        SuffixMime
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="SuffixMime">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#suffix-mime" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        预定义的suffix-mime
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#suffix-mime_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        用户自定义 suffix-mime 映射
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
   
 </nav>
                   </div>
@@ -3078,778 +2894,10 @@
 
 
 
-  <h1>IHttpMime</h1>
-
-<p>#  IHttpMime</p>
-<h2 id="mime">Mime 字段<a class="headerlink" href="#mime" title="Permanent link">&para;</a></h2>
-<p>在 IHttpCore 中，框架将一部分常用的 mime 类型定义成enum 字段。用户可以直接使用 字段的名称来代替mime 字符串。如下是预定义的字段和类型以及mime 的对应内容。</p>
-<table>
-<thead>
-<tr>
-<th><strong><em>字段</em></strong></th>
-<th><strong><em>MIME 类型</em></strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>TEXT_PLAIN</td>
-<td>text/plain</td>
-</tr>
-<tr>
-<td>TEXT_PLAIN_UTF8</td>
-<td>text/plain; charset=UTF-8</td>
-</tr>
-<tr>
-<td>TEXT_HTML</td>
-<td>text/html</td>
-</tr>
-<tr>
-<td>TEXT_HTML_UTF8</td>
-<td>text/html; charset=UTF-8</td>
-</tr>
-<tr>
-<td>TEXT_CALENDAR</td>
-<td>text/calendar</td>
-</tr>
-<tr>
-<td>TEXT_CSS</td>
-<td>text/css</td>
-</tr>
-<tr>
-<td>TEXT_DIRECTORY</td>
-<td>text/directory</td>
-</tr>
-<tr>
-<td>TEXT_ENRICHED</td>
-<td>text/enriched</td>
-</tr>
-<tr>
-<td>TEXT_PARITYFIC</td>
-<td>text/parityfec</td>
-</tr>
-<tr>
-<td>TEXT_RICHTEXT</td>
-<td>text/richtext</td>
-</tr>
-<tr>
-<td>TEXT_RTF</td>
-<td>text/rtf</td>
-</tr>
-<tr>
-<td>TEXT_SGML</td>
-<td>text/sgml</td>
-</tr>
-<tr>
-<td>TEXT_T140</td>
-<td>text/t140</td>
-</tr>
-<tr>
-<td>TEXT_URI_LIST</td>
-<td>text/uri-list</td>
-</tr>
-<tr>
-<td>TEXT_VND_CURL</td>
-<td>text/vnd.curl</td>
-</tr>
-<tr>
-<td>TEXT_XML</td>
-<td>text/xml</td>
-</tr>
-<tr>
-<td>IMAGE_MICROSOFT_ICO</td>
-<td>image/vnd.microsoft.icon</td>
-</tr>
-<tr>
-<td>IMAGE_JPEG</td>
-<td>image/jpeg</td>
-</tr>
-<tr>
-<td>IMAGE_PNG</td>
-<td>image/png</td>
-</tr>
-<tr>
-<td>IMAGE_TIFF</td>
-<td>image/tiff</td>
-</tr>
-<tr>
-<td>IMAGE_SVG_XML</td>
-<td>image/svg+xml</td>
-</tr>
-<tr>
-<td>IMAGE_BMP</td>
-<td>image/bmp</td>
-</tr>
-<tr>
-<td>IMAGE_CGM</td>
-<td>image/cgm</td>
-</tr>
-<tr>
-<td>IMAGE_G3FAX</td>
-<td>image/g3fax</td>
-</tr>
-<tr>
-<td>IMAGE_GIF</td>
-<td>image/gif</td>
-</tr>
-<tr>
-<td>IMAGE_IEF</td>
-<td>image/ief</td>
-</tr>
-<tr>
-<td>IMAGE_WEBP</td>
-<td>image/webp</td>
-</tr>
-<tr>
-<td>IMAGE_X_ICON</td>
-<td>image/x-icon</td>
-</tr>
-<tr>
-<td>AUDIO_MIDI</td>
-<td>audio/midi</td>
-</tr>
-<tr>
-<td>AUDIO_MPEG</td>
-<td>audio/mpeg</td>
-</tr>
-<tr>
-<td>AUDIO_X_WAV</td>
-<td>audio/x-wav</td>
-</tr>
-<tr>
-<td>AV</td>
-<td>audio/x-wav</td>
-</tr>
-<tr>
-<td>AUDIO_X_AIFF</td>
-<td>audio/a-aiff</td>
-</tr>
-<tr>
-<td>AUDIO_WEBM</td>
-<td>audio/webm</td>
-</tr>
-<tr>
-<td>AUDIO_OGG</td>
-<td>audio/ogg</td>
-</tr>
-<tr>
-<td>AUDIO_WAV</td>
-<td>audio/wav</td>
-</tr>
-<tr>
-<td>AUDIO_3GPP</td>
-<td>audio/3gpp</td>
-</tr>
-<tr>
-<td>AUDIO_3GPP2</td>
-<td>audio/3gpp2</td>
-</tr>
-<tr>
-<td>AUDIO_AAC</td>
-<td>audio/aac</td>
-</tr>
-<tr>
-<td>AUDIO_AC3</td>
-<td>audio/ac3</td>
-</tr>
-<tr>
-<td>AUDIO_AMR</td>
-<td>audio/AMR</td>
-</tr>
-<tr>
-<td>AUDIO_AMR_WB</td>
-<td>audio/AMR-WB</td>
-</tr>
-<tr>
-<td>AUDIO_AMR_WB_PLUS</td>
-<td>audio/amr-wb+</td>
-</tr>
-<tr>
-<td>AUDIO_MP4</td>
-<td>audio/mp4</td>
-</tr>
-<tr>
-<td>AUDIO_MP3</td>
-<td>audio/mp3</td>
-</tr>
-<tr>
-<td>AUDIO_MP2</td>
-<td>audio/mp2</td>
-</tr>
-<tr>
-<td>AUDIO_BASIC</td>
-<td>audio/basic</td>
-</tr>
-<tr>
-<td>AUDIO_X_WMA</td>
-<td>audio/x-ms-wma</td>
-</tr>
-<tr>
-<td>VIDEO_FLV</td>
-<td>video/x-flv</td>
-</tr>
-<tr>
-<td>VIDEO_MPEG</td>
-<td>video/mpeg</td>
-</tr>
-<tr>
-<td>VIDEO_PARITYFEC</td>
-<td>video/parityfec</td>
-</tr>
-<tr>
-<td>VIDEO_QUICKTIME</td>
-<td>video/quicktime</td>
-</tr>
-<tr>
-<td>VIDEO_X_MSVIDEO</td>
-<td>video/x-msvideo</td>
-</tr>
-<tr>
-<td>VIDEO_MP4</td>
-<td>video/mp4</td>
-</tr>
-<tr>
-<td>VIDEO_X_FLV</td>
-<td>video/x-flv</td>
-</tr>
-<tr>
-<td>VIDEO_OGG</td>
-<td>video/ogg</td>
-</tr>
-<tr>
-<td>VIDEO_WEBM</td>
-<td>video/webm</td>
-</tr>
-<tr>
-<td>VIDEO_3GPP</td>
-<td>video/3gpp</td>
-</tr>
-<tr>
-<td>VIDEO_3GPP2</td>
-<td>video/3gpp2</td>
-</tr>
-<tr>
-<td>VIDEO_RAW</td>
-<td>video/raw</td>
-</tr>
-<tr>
-<td>VIDEO_X_WMV</td>
-<td>video/x-ms-wmv</td>
-</tr>
-<tr>
-<td>VIEDO_X_M4V</td>
-<td>video/x-m4v</td>
-</tr>
-<tr>
-<td>APPLICATION_MSWORD</td>
-<td>application/msword</td>
-</tr>
-<tr>
-<td>APPLICATION_RTF</td>
-<td>application/rtf</td>
-</tr>
-<tr>
-<td>APPLICATION_EXCEL</td>
-<td>application/vnd.ms-excel</td>
-</tr>
-<tr>
-<td>APPLICATION_JSON</td>
-<td>application/json</td>
-</tr>
-<tr>
-<td>APPLICATION_JSON_UTF8</td>
-<td>application/json; charset=UTF-8</td>
-</tr>
-<tr>
-<td>APPLICATION_POWER_POINT</td>
-<td>application/vnd.ms-powerpoint</td>
-</tr>
-<tr>
-<td>APPLICATION_JAVASCRIPT</td>
-<td>application/javascript</td>
-</tr>
-<tr>
-<td>APPLICATION_OPEN_DOCUMENT_TEXT</td>
-<td>application/vnd.oasis.opendocument.text</td>
-</tr>
-<tr>
-<td>APPLICATION_OPEN_DOCUMENT_SPREADSHEET</td>
-<td>application/vnd.oasis.opendocument.spreadsheet</td>
-</tr>
-<tr>
-<td>APPLICATION_SHOCKWAVE_FLASH</td>
-<td>application/x-shockwave-flash</td>
-</tr>
-<tr>
-<td>APPLICATION_RAR_COMPRESSED</td>
-<td>application/x-rar-compressed</td>
-</tr>
-<tr>
-<td>APPLICATION_MS_DOWNLOAD</td>
-<td>application/x-msdownload</td>
-</tr>
-<tr>
-<td>APPLICATION_CAB_COMPRESSED</td>
-<td>application/vnd.ms-cab-compressed</td>
-</tr>
-<tr>
-<td>APPLICATION_POSTSCRIPT</td>
-<td>application/postscript</td>
-</tr>
-<tr>
-<td>APPLICATION_WWW_FORM_URLENCODED</td>
-<td>application/x-www-form-urlencoded</td>
-</tr>
-<tr>
-<td>APPLICATION_FONT_WOFF</td>
-<td>application/x-font-woff</td>
-</tr>
-<tr>
-<td>APPLICATION_FONT_TTF</td>
-<td>application/octet-stream</td>
-</tr>
-<tr>
-<td>APPLICATION_OCTET_STREAM</td>
-<td>application/octet-stream</td>
-</tr>
-<tr>
-<td>APPLICATION_PDF</td>
-<td>application/pdf</td>
-</tr>
-<tr>
-<td>MULTIPART_ALTERNATIVE</td>
-<td>multipart/alternative</td>
-</tr>
-<tr>
-<td>MULTIPART_FORM_DATA</td>
-<td>multipart/form-data</td>
-</tr>
-<tr>
-<td>MULTIPART_BYTERANGES</td>
-<td>multipart/byteranges</td>
-</tr>
-<tr>
-<td>MULTIPART_DIGEST</td>
-<td>multipart/digest</td>
-</tr>
-<tr>
-<td>MULTIPART_ENCRYTED</td>
-<td>multipart/encrypted</td>
-</tr>
-<tr>
-<td>MULTIPART_HEADER_SET</td>
-<td>multipart/header-set</td>
-</tr>
-<tr>
-<td>MULTIPART_MIXED</td>
-<td>multipart/mixed</td>
-</tr>
-<tr>
-<td>MULTIPART_PARALLEL</td>
-<td>multipart/parallel</td>
-</tr>
-<tr>
-<td>MULTIPART_RELATED</td>
-<td>multipart/related</td>
-</tr>
-<tr>
-<td>MULTIPART_REPORT</td>
-<td>multipart/report</td>
-</tr>
-<tr>
-<td>MULTIPART_SIGNED</td>
-<td>multipart/signed</td>
-</tr>
-<tr>
-<td>MULTIPART_VOICE_MESSAGE</td>
-<td>multipart/vocie-message</td>
-</tr>
-<tr>
-<td>UNKNOWN</td>
-<td>UNKNOWN</td>
-</tr>
-</tbody>
-</table>
-<p>注意上面的 TEXT_PLAIN_UTF8， TEXT_HTML_UTF8， APPLICATION_JSON_UTF8 这三个字段，我们在 mime 类型的后面添加了对应的 charset 类型。这些字段一般用于返回给用户，明确指定用户的编码解析方式，便于用户解析。</p>
-<p>在字段的最后有一个 UNKNOWN 字段。 这个字段是框架添加的字段，用于标记代替使用。比如如果一个mime 类型在内容还没有确定的时候，可以标记 UNKNOWN字段，在中间会给该类型赋值。在最后判断当前的mime 类型是否是 UNKNOWN，如果是的话，则给一个默认值。</p>
-<h2 id="_1">字段转换<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>在实际的过程中，框架需要将字段和对应的字符串进行相互转换, 在 IHttpMime.h 文件中声明了如下的函数：</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
-<span class="normal"><a href="#__codelineno-0-2">2</a></span>
-<span class="normal"><a href="#__codelineno-0-3">3</a></span>
-<span class="normal"><a href="#__codelineno-0-4">4</a></span>
-<span class="normal"><a href="#__codelineno-0-5">5</a></span>
-<span class="normal"><a href="#__codelineno-0-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>namespace IHttpMimeUtil
-<a id="__codelineno-0-2" name="__codelineno-0-2"></a>{
-<a id="__codelineno-0-3" name="__codelineno-0-3"></a>    IStringView toString(IHttpMime);
-<a id="__codelineno-0-4" name="__codelineno-0-4"></a>    IHttpMime toMime(const QString&amp;);
-<a id="__codelineno-0-5" name="__codelineno-0-5"></a>    IHttpMime toMime(const IString&amp;);
-<a id="__codelineno-0-6" name="__codelineno-0-6"></a>}
-</code></pre></div></td></tr></table></div>
-<p>如上，用户可以使用 <code>IHttpMimeUtil::toString</code> 将一个 mime 字段转换成对弈的字符串视图 IStringView 。这里使用 IStringView可以更好的节省内存，减少字符串的拷贝。</p>
-<p>用户也可以使用 <code>IHttpMimeUtil::toMime</code> 将一个字符串转换成 IHttpMime 字段类型。如果在实际的转换过程中，字符串并没有匹配到任何一个Mime字段，则会返回 <code>IHttpMime::UNKNOWN</code> 字段。</p>
-<h2 id="suffixmime">SuffixMime<a class="headerlink" href="#suffixmime" title="Permanent link">&para;</a></h2>
-<p>IHttpMime 模块支持文件尾缀 到 mime 字符串的映射。这个映射的函数定义如下：</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
-<span class="normal"><a href="#__codelineno-1-2">2</a></span>
-<span class="normal"><a href="#__codelineno-1-3">3</a></span>
-<span class="normal"><a href="#__codelineno-1-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>namespace IHttpMimeUtil
-<a id="__codelineno-1-2" name="__codelineno-1-2"></a>{
-<a id="__codelineno-1-3" name="__codelineno-1-3"></a>    IStringView getSuffixMime(const IString&amp; suffix);
-<a id="__codelineno-1-4" name="__codelineno-1-4"></a>}
-</code></pre></div></td></tr></table></div>
-<p>通过 getSuffixMime 传入 suffix 来查找特定的mime字符串。</p>
-<h3 id="suffix-mime">预定义的suffix-mime<a class="headerlink" href="#suffix-mime" title="Permanent link">&para;</a></h3>
-<p>框架内部预定义了一部分的suffix 和 mime 的映射关系， 如下：</p>
-<table>
-<thead>
-<tr>
-<th><strong>‌文件后缀‌</strong></th>
-<th><strong>MIME类型‌</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>txt</td>
-<td>IHttpMime::TEXT_PLAIN_UTF8</td>
-</tr>
-<tr>
-<td>xhtml</td>
-<td>IHttpMime::TEXT_HTML_UTF8</td>
-</tr>
-<tr>
-<td>html</td>
-<td>IHttpMime::TEXT_HTML_UTF8</td>
-</tr>
-<tr>
-<td>htm</td>
-<td>IHttpMime::TEXT_HTML_UTF8</td>
-</tr>
-<tr>
-<td>css</td>
-<td>IHttpMime::TEXT_CSS</td>
-</tr>
-<tr>
-<td>xml</td>
-<td>IHttpMime::TEXT_XML</td>
-</tr>
-<tr>
-<td>xql</td>
-<td>IHttpMime::TEXT_XML</td>
-</tr>
-<tr>
-<td>xsd</td>
-<td>IHttpMime::TEXT_XML</td>
-</tr>
-<tr>
-<td>xslt</td>
-<td>IHttpMime::TEXT_XML</td>
-</tr>
-<tr>
-<td>cml</td>
-<td>IHttpMime::TEXT_XML</td>
-</tr>
-<tr>
-<td>dcd</td>
-<td>IHttpMime::TEXT_XML</td>
-</tr>
-<tr>
-<td>ent</td>
-<td>IHttpMime::TEXT_XML</td>
-</tr>
-<tr>
-<td>mtx</td>
-<td>IHttpMime::TEXT_XML</td>
-</tr>
-<tr>
-<td>rdf</td>
-<td>IHttpMime::TEXT_XML</td>
-</tr>
-<tr>
-<td>tsd</td>
-<td>IHttpMime::TEXT_XML</td>
-</tr>
-<tr>
-<td>wsdl</td>
-<td>IHttpMime::TEXT_XML</td>
-</tr>
-<tr>
-<td>xsl</td>
-<td>IHttpMime::TEXT_XML</td>
-</tr>
-<tr>
-<td>biz</td>
-<td>IHttpMime::TEXT_XML</td>
-</tr>
-<tr>
-<td>vxml</td>
-<td>IHttpMime::TEXT_XML</td>
-</tr>
-<tr>
-<td>vml</td>
-<td>IHttpMime::TEXT_XML</td>
-</tr>
-<tr>
-<td>tld</td>
-<td>IHttpMime::TEXT_XML</td>
-</tr>
-<tr>
-<td>math</td>
-<td>IHttpMime::TEXT_XML</td>
-</tr>
-<tr>
-<td>png</td>
-<td>IHttpMime::IMAGE_PNG</td>
-</tr>
-<tr>
-<td>jpg</td>
-<td>IHttpMime::IMAGE_JPEG</td>
-</tr>
-<tr>
-<td>jpeg</td>
-<td>IHttpMime::IMAGE_JPEG</td>
-</tr>
-<tr>
-<td>jpe</td>
-<td>IHttpMime::IMAGE_JPEG</td>
-</tr>
-<tr>
-<td>jfif</td>
-<td>IHttpMime::IMAGE_JPEG</td>
-</tr>
-<tr>
-<td>bmp</td>
-<td>IHttpMime::IMAGE_BMP</td>
-</tr>
-<tr>
-<td>cgm</td>
-<td>IHttpMime::IMAGE_CGM</td>
-</tr>
-<tr>
-<td>ief</td>
-<td>IHttpMime::IMAGE_IEF</td>
-</tr>
-<tr>
-<td>tif</td>
-<td>IHttpMime::IMAGE_TIFF</td>
-</tr>
-<tr>
-<td>tiff</td>
-<td>IHttpMime::IMAGE_TIFF</td>
-</tr>
-<tr>
-<td>webp</td>
-<td>IHttpMime::IMAGE_WEBP</td>
-</tr>
-<tr>
-<td>ico</td>
-<td>IHttpMime::IMAGE_X_ICON</td>
-</tr>
-<tr>
-<td>svg</td>
-<td>IHttpMime::IMAGE_SVG_XML</td>
-</tr>
-<tr>
-<td>gif</td>
-<td>IHttpMime::IMAGE_GIF</td>
-</tr>
-<tr>
-<td>mpga</td>
-<td>IHttpMime::AUDIO_MPEG</td>
-</tr>
-<tr>
-<td>aac</td>
-<td>IHttpMime::AUDIO_AAC</td>
-</tr>
-<tr>
-<td>ac3</td>
-<td>IHttpMime::AUDIO_AC3</td>
-</tr>
-<tr>
-<td>amr</td>
-<td>IHttpMime::AUDIO_AMR</td>
-</tr>
-<tr>
-<td>ogg</td>
-<td>IHttpMime::AUDIO_OGG</td>
-</tr>
-<tr>
-<td>wav</td>
-<td>IHttpMime::AUDIO_WAV</td>
-</tr>
-<tr>
-<td>3gpp</td>
-<td>IHttpMime::AUDIO_3GPP</td>
-</tr>
-<tr>
-<td>rmi</td>
-<td>IHttpMime::AUDIO_MIDI</td>
-</tr>
-<tr>
-<td>mid</td>
-<td>IHttpMime::AUDIO_MIDI</td>
-</tr>
-<tr>
-<td>midi</td>
-<td>IHttpMime::AUDIO_MIDI</td>
-</tr>
-<tr>
-<td>webm</td>
-<td>IHttpMime::AUDIO_WEBM</td>
-</tr>
-<tr>
-<td>3gp2</td>
-<td>IHttpMime::AUDIO_3GPP2</td>
-</tr>
-<tr>
-<td>aif</td>
-<td>IHttpMime::AUDIO_X_AIFF</td>
-</tr>
-<tr>
-<td>aiff</td>
-<td>IHttpMime::AUDIO_X_AIFF</td>
-</tr>
-<tr>
-<td>aifc</td>
-<td>IHttpMime::AUDIO_X_AIFF</td>
-</tr>
-<tr>
-<td>au</td>
-<td>IHttpMime::AUDIO_BASIC</td>
-</tr>
-<tr>
-<td>snd</td>
-<td>IHttpMime::AUDIO_BASIC</td>
-</tr>
-<tr>
-<td>wax</td>
-<td>IHttpMime::AUDIO_X_WAV</td>
-</tr>
-<tr>
-<td>mp3</td>
-<td>IHttpMime::AUDIO_MP3</td>
-</tr>
-<tr>
-<td>mp2</td>
-<td>IHttpMime::AUDIO_MP2</td>
-</tr>
-<tr>
-<td>wma</td>
-<td>IHttpMime::AUDIO_X_WMA</td>
-</tr>
-<tr>
-<td>flv</td>
-<td>IHttpMime::VIDEO_FLV</td>
-</tr>
-<tr>
-<td>mp4</td>
-<td>IHttpMime::VIDEO_MP4</td>
-</tr>
-<tr>
-<td>mpg</td>
-<td>IHttpMime::VIDEO_MPEG</td>
-</tr>
-<tr>
-<td>mp2v</td>
-<td>IHttpMime::VIDEO_MPEG</td>
-</tr>
-<tr>
-<td>mpeg</td>
-<td>IHttpMime::VIDEO_MPEG</td>
-</tr>
-<tr>
-<td>mps</td>
-<td>IHttpMime::VIDEO_MPEG</td>
-</tr>
-<tr>
-<td>avi</td>
-<td>IHttpMime::VIDEO_X_MSVIDEO</td>
-</tr>
-<tr>
-<td>3gp</td>
-<td>IHttpMime::VIDEO_3GPP</td>
-</tr>
-<tr>
-<td>m4v</td>
-<td>IHttpMime::VIEDO_X_M4V</td>
-</tr>
-<tr>
-<td>wmv</td>
-<td>IHttpMime::VIDEO_X_WMV</td>
-</tr>
-<tr>
-<td>webm</td>
-<td>IHttpMime::VIDEO_WEBM</td>
-</tr>
-<tr>
-<td>mov</td>
-<td>IHttpMime::VIDEO_QUICKTIME</td>
-</tr>
-<tr>
-<td>json</td>
-<td>IHttpMime::APPLICATION_JSON</td>
-</tr>
-<tr>
-<td>js</td>
-<td>IHttpMime::APPLICATION_JAVASCRIPT</td>
-</tr>
-<tr>
-<td>bin</td>
-<td>IHttpMime::APPLICATION_OCTET_STREAM</td>
-</tr>
-<tr>
-<td>exe</td>
-<td>IHttpMime::APPLICATION_OCTET_STREAM</td>
-</tr>
-<tr>
-<td>pdf</td>
-<td>IHttpMime::APPLICATION_PDF</td>
-</tr>
-</tbody>
-</table>
-<p>在上述的<code>getSuffixMime</code> 的查询中，如果suffix 在上面的表格中有定义，则会使用表个中的定义，如果没有定义，则会使用用户自定义的 mime 类型，如果用户没有自定义，则会放回 OCTET_STREAM 的字节流的信息。</p>
-<h3 id="suffix-mime_1">用户自定义 suffix-mime 映射<a class="headerlink" href="#suffix-mime_1" title="Permanent link">&para;</a></h3>
-<p>如果开发者使用了在上述预定义后缀之外的后缀，用户可以通过继承  <code>IHttpRegistMimeInterface</code> 类来扩展自己的 suffix 映射，下面举一个例子：</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-2-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-2-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-2-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-2-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-2-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-2-10">10</a></span>
-<span class="normal"><a href="#__codelineno-2-11">11</a></span>
-<span class="normal"><a href="#__codelineno-2-12">12</a></span>
-<span class="normal"><a href="#__codelineno-2-13">13</a></span>
-<span class="normal"><a href="#__codelineno-2-14">14</a></span>
-<span class="normal"><a href="#__codelineno-2-15">15</a></span>
-<span class="normal"><a href="#__codelineno-2-16">16</a></span>
-<span class="normal"><a href="#__codelineno-2-17">17</a></span>
-<span class="normal"><a href="#__codelineno-2-18">18</a></span>
-<span class="normal"><a href="#__codelineno-2-19">19</a></span>
-<span class="normal"><a href="#__codelineno-2-20">20</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="c1">// YkyMimeTask.h</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="cp">#pragma once</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3"></a>
-<a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;http/biscuits/IHttpRegistMimeInterface.h&quot;</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5"></a>
-<a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="k">class</span><span class="w"> </span><span class="nc">YkyMimeTask</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">IHttpRegistMimeInterface</span><span class="o">&lt;</span><span class="n">YkyMimeTask</span><span class="o">&gt;</span>
-<a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="p">{</span>
-<a id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="k">public</span><span class="o">:</span>
-<a id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="w">    </span><span class="n">YkyMimeTask</span><span class="p">()</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">default</span><span class="p">;</span>
-<a id="__codelineno-2-10" name="__codelineno-2-10"></a>
-<a id="__codelineno-2-11" name="__codelineno-2-11"></a><span class="k">public</span><span class="o">:</span>
-<a id="__codelineno-2-12" name="__codelineno-2-12"></a><span class="w">    </span><span class="k">virtual</span><span class="w"> </span><span class="n">QMap</span><span class="o">&lt;</span><span class="n">IString</span><span class="p">,</span><span class="w"> </span><span class="n">IString</span><span class="o">&gt;</span><span class="w"> </span><span class="n">mimes</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-2-13" name="__codelineno-2-13"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-2-14" name="__codelineno-2-14"></a><span class="w">            </span><span class="p">{</span><span class="s">&quot;yky&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;application/yky&quot;</span><span class="p">}</span>
-<a id="__codelineno-2-15" name="__codelineno-2-15"></a><span class="w">        </span><span class="p">};</span>
-<a id="__codelineno-2-16" name="__codelineno-2-16"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-2-17" name="__codelineno-2-17"></a><span class="p">};</span>
-<a id="__codelineno-2-18" name="__codelineno-2-18"></a>
-<a id="__codelineno-2-19" name="__codelineno-2-19"></a><span class="c1">// YkyMimeTask.cpp</span>
-<a id="__codelineno-2-20" name="__codelineno-2-20"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;YkyMimeTask.h&quot;</span>
-</code></pre></div></td></tr></table></div>
-<p>上述例子中将 yky 的后缀注册到系统中，yky 后缀映射到 <code>application/yky</code> 这个mime。</p>
+<h1 id="2-ihttp">使用示例2: IHttp静态文件服务<a class="headerlink" href="#2-ihttp" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>本篇文档描述如何使用 IHttp 的静态文件服务。</p>
+</blockquote>
 
 
 
@@ -3901,10 +2949,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.instant", "navigation.instant.preview", "navigation.tabs", "header.autohide", "content.tabs.link", "content.code.annotate", "content.tabs"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.instant.preview", "navigation.tabs", "header.autohide", "content.tabs.link", "content.code.annotate", "content.tabs"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>

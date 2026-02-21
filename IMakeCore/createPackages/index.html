@@ -9,6 +9,10 @@
       
       
       
+        <link rel="prev" href="../usageDemo3/">
+      
+      
+        <link rel="next" href="../packageIntegration/">
       
       
         
@@ -19,7 +23,7 @@
     
     
       
-        <title>IMakeCore 的设计 - IWebCore</title>
+        <title>用户自定义包（一） - IWebCore</title>
       
     
     
@@ -70,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#imakecore" class="md-skip">
+        <a href="#_1" class="md-skip">
           跳转至
         </a>
       
@@ -104,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              IMakeCore 的设计
+              用户自定义包（一）
             
           </span>
         </div>
@@ -300,10 +304,12 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
+      <li class="md-tabs__item md-tabs__item--active">
         <a href="../quick_start/" class="md-tabs__link">
           
   
@@ -2526,24 +2532,29 @@
       
   
   
+    
   
   
+  
     
     
     
     
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
         
           
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
             
   
   
@@ -2561,7 +2572,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             
@@ -2716,10 +2727,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../createPackages/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    用户自定义包（一）
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -2735,6 +2773,153 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        示例
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        最小配置
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="最小配置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#name" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        name
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#version" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        version
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        summary
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#autoscan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        autoScan
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#publisher" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        publisher
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#isglobal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        isGlobal
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#isglobal-publisher" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        同时省略 isGlobal 和 publisher
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        包的位置
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        说明
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2963,6 +3148,141 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        示例
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        最小配置
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="最小配置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#name" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        name
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#version" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        version
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        summary
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#autoscan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        autoScan
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#publisher" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        publisher
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#isglobal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        isGlobal
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#isglobal-publisher" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        同时省略 isGlobal 和 publisher
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        包的位置
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        说明
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2978,11 +3298,153 @@
 
 
 
-<h1 id="imakecore">IMakeCore 的设计<a class="headerlink" href="#imakecore" title="Permanent link">&para;</a></h1>
-<blockquote>
-<p>本篇文档描述 IMakeCore 的设计。</p>
-</blockquote>
-<p><img alt="image-20260213233346073" src="../assets/image-20260213233346073.png" /></p>
+<h1 id="_1">用户自定义包（一）<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p>在前面的文档中，我们使用了一系列内置的包，比如 nlohmann/json 的包， asio 的包，ICore， ITcp, IHttp 的包等等。今天我们讲述这些包是如何创建的，用户如果想打包一个包，它该如何操作。</p>
+<p>用户自定义包，可以用于第三方的库的封装，集成到自己的项目中去；也可以将自己的项目或者产品拆分出独立的包，进行代码复用。</p>
+<h2 id="_2">示例<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>在包管理中定义一个包可以非常简单，只需要一个 package.json 文件就可以定义一个包。</p>
+<p>举一个非常简单的例子项目中的 Version 包</p>
+<p>他的目录结构如下：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span>
+<span class="normal"><a href="#__codelineno-0-3">3</a></span>
+<span class="normal"><a href="#__codelineno-0-4">4</a></span>
+<span class="normal"><a href="#__codelineno-0-5">5</a></span>
+<span class="normal"><a href="#__codelineno-0-6">6</a></span>
+<span class="normal"><a href="#__codelineno-0-7">7</a></span>
+<span class="normal"><a href="#__codelineno-0-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>Version
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a>├── agpl-3.0.txt
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a>├── package.json
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a>├── packaging
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a>│   ├── Version.h
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a>│   ├── Version.cpp
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a>│   ├── VersionSpec.h
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a>│   └── VersionSpec.cpp      
+</code></pre></div></td></tr></table></div>
+<p>这个包中有<code>packaging</code>文件夹下面的代码，<code>agpl-3.0.txt</code> 的license许可声明,还有一个 <code>package.json</code> 的包描述文件</p>
+<p>其中 package.json 文件的内容如下：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-1-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-1-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-1-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-1-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-1-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-1-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-1-10">10</a></span>
+<span class="normal"><a href="#__codelineno-1-11">11</a></span>
+<span class="normal"><a href="#__codelineno-1-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="p">{</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;packaging&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="w">    </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="s2">&quot;1.0.0&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="w">    </span><span class="nt">&quot;summary&quot;</span><span class="p">:</span><span class="s2">&quot;python-packaging-like lib for c++, used for version management&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="w">    </span><span class="nt">&quot;license&quot;</span><span class="p">:</span><span class="s2">&quot;none&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="w">    </span><span class="nt">&quot;author&quot;</span><span class="p">:</span><span class="s2">&quot;deepseek&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="w">    </span><span class="nt">&quot;autoScan&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="w">    </span><span class="nt">&quot;keywords&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;packaging&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;lib&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;version&quot;</span><span class="p">],</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="w">    </span><span class="nt">&quot;changelog&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;default&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="w">    </span><span class="nt">&quot;publisher&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;yuekeyuan&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11"></a><span class="w">    </span><span class="nt">&quot;isGlobal&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>里面配置了 name, version, summary, license, author, autoScan, keywords, changelog，publisher 和isGlobal 等信息。</p>
+<p>这里作者是 deepseek,的原因是因为这个包是我用 deepseek 生成的，在此之上做了一些修改，实在不好意思用我的名字作为 author 配置项。</p>
+<p>这样一个包就配置好了。</p>
+<p>当然，如果用户准备丰富这个包，可以添加很多的字段在 package.json 文件中。也可以在目录中添加其他的文件，比如 README.md, CHANGELOG.md, 或者其他的文档,等等。</p>
+<h2 id="_3">最小配置<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>上面的 package.json文件中有很多的字段， 对于用户想简单的创建一个IMakeCore支持的包而言，在 packages.json 中的很多配置都不是必须的。这些不必须的字段是用于上传到服务器，给服务器解析，查找使用的。</p>
+<p>注意：这里的内容只是针对于不上传到服务器上的包而言的，如果要上传到服务器，所有的内容都是不可省略的，否则会上传失败，服务器在上传包的时候，会自动检查包中的配置是否符合要求。</p>
+<p>在接下来的内容中，我将给出一个最小的配置集合。以上面的 packaging 这个库而言，它可以缩略为如下的内容：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
+<span class="normal"><a href="#__codelineno-2-2">2</a></span>
+<span class="normal"><a href="#__codelineno-2-3">3</a></span>
+<span class="normal"><a href="#__codelineno-2-4">4</a></span>
+<span class="normal"><a href="#__codelineno-2-5">5</a></span>
+<span class="normal"><a href="#__codelineno-2-6">6</a></span>
+<span class="normal"><a href="#__codelineno-2-7">7</a></span>
+<span class="normal"><a href="#__codelineno-2-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="p">{</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;packaging&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="w">    </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="s2">&quot;1.0.0&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="w">    </span><span class="nt">&quot;summary&quot;</span><span class="p">:</span><span class="s2">&quot;python-packaging-like lib for c++, used for version management&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="w">    </span><span class="nt">&quot;autoScan&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="w">    </span><span class="nt">&quot;publisher&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;yuekeyuan&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="w">    </span><span class="nt">&quot;isGlobal&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>是的，就只是上面的 六个配置内容即可。</p>
+<p>如果用户还是觉得这个配置过于复杂，可以继续精简如下：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
+<span class="normal"><a href="#__codelineno-3-2">2</a></span>
+<span class="normal"><a href="#__codelineno-3-3">3</a></span>
+<span class="normal"><a href="#__codelineno-3-4">4</a></span>
+<span class="normal"><a href="#__codelineno-3-5">5</a></span>
+<span class="normal"><a href="#__codelineno-3-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="p">{</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;packaging&quot;</span><span class="p">,</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="w">    </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="s2">&quot;1.0.0&quot;</span><span class="p">,</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="w">    </span><span class="nt">&quot;summary&quot;</span><span class="p">:</span><span class="s2">&quot;python-packaging-like lib for c++, used for version management&quot;</span><span class="p">,</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="w">    </span><span class="nt">&quot;autoScan&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>这个时候 publisher 和 isGlobal 字段同样也被精简下来了。</p>
+<p>下面我们就描述一下这些字段的意义。</p>
+<h3 id="name">name<a class="headerlink" href="#name" title="Permanent link">&para;</a></h3>
+<p>name 表示包的名称。用户可以定义自己喜欢的名称。</p>
+<p>名称的构成必须是 <code>英文大小写字符</code>，<code>数字</code>， <code>中划线-</code>，<code>下划线_</code> 和 <code>点.</code> 组成。其中第一个字符必须是英文字母。</p>
+<p>这里建议用户以<code>自己的名称</code> <code>.</code> <code>功能名</code> 来作为一个包名。  </p>
+<h3 id="version">version<a class="headerlink" href="#version" title="Permanent link">&para;</a></h3>
+<p>包的版本号。</p>
+<p>这里版本号的格式必须是 <code>major</code> <code>.</code> <code>minor</code> . <code>patch</code> 的形式来书写。不可以为 <code>*</code> ， <code>x</code> 或者其他以外的任何格式。</p>
+<p>major, minor和patch, 分别是主版本号，次版本号，和补丁号，它们必须是数字。</p>
+<p>目前版本不支持 <code>beta</code>, <code>alpha</code>, <code>pre</code> 等一系列额外信息的版本。</p>
+<h3 id="summary">summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h3>
+<p>软件简单简短的一句话描述。这个用于告知用户这个包是干什么的。需要这个配置的原因是在 <code>ipc packages</code> 这个命令中，会列举这个库的简要说明。而这个简要说明的内容就是 summary 的内容。</p>
+<h3 id="autoscan">autoScan<a class="headerlink" href="#autoscan" title="Permanent link">&para;</a></h3>
+<p>autoScan 字段表示IMakeCore自动扫描整个包，将包中的文件添加到项目和编译中去。</p>
+<p>autoScan 字段是bool 类型的字段。该字段和如何处理包中的文件，如何将 cpp, h, ui, res 宏定义的内容和项目关联起来有关。在后面的内容会详细介绍文件处理模块。在这篇文档中，用户需要将autoScan字段配置为 true, 表示启用自动扫描模式来加载包中的内容。在之后的文档中会描述如果 autoScan 为 false 的情况该如何处置。</p>
+<h3 id="publisher">publisher<a class="headerlink" href="#publisher" title="Permanent link">&para;</a></h3>
+<p>publisher 字段表示上传者的字段。这个字段是上传用户自己的名称，也就是在 IPubCore 中注册的名称。</p>
+<p>如果用户省略该字段，则该字段的默认值是用户在 IMake 中配置的名称，用户可以在命令行中使用 <code>ipc user</code> 来查看自己的用户名称，使用 <code>ipc user set</code> 命令来设置用户名称。<code>ipc user</code> 默认的内容是  <code>default</code>。所以如果省略了这个字段，那么这个发布者就是 default.</p>
+<h3 id="isglobal">isGlobal<a class="headerlink" href="#isglobal" title="Permanent link">&para;</a></h3>
+<p>这个字段表示这个包是否是一个公共包。公共包就是在引用这个包的时候可以省略 publisher 字段的包。</p>
+<p>举一个例子，我们在引用 <code>ICore</code> 这个包，可以直接使用如下的形式导入包。</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="nt">&quot;ICore&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1.0.0&quot;</span>
+</code></pre></div></td></tr></table></div>
+<p>其实还有一种形式，就是把包名称写完全。一个包名称包含 <code>publisher</code> 和 <code>name</code> 这两个字段, 他们中间以 斜线 <code>/</code> 进行分割，如下所示：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="nt">&quot;yuekeyuan/ICore&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1.0.0&quot;</span>
+</code></pre></div></td></tr></table></div>
+<p>因为 ICore 这个包的 <code>isGlobal</code> 为 <code>true</code> 所以我们可以省略 <code>yuekeyuan</code> 这个publisher 字段和斜线，直接使用 <code>ICore</code> 这个名称。</p>
+<p>这么做有什么好处呢？这个是因为一个包名称， 比如 abc, 这个名称， zhangsan 能够写这个包，lisi 也能写这个包，那么就需要通过 publisher 来区分引用的是谁的包，<code>zhangsan/abc</code> 和 <code>lisi/abc</code>就是两个不同的包。如果zhangsan的包 声明了 <code>isGlobal</code> 为 <code>true</code>, 那么 <code>abc</code> 引用的就是zhangsan的包，此时在同一个 环境下就不能有lisi 的包isGlobal 也为 true 的情形，如果存在，则会报错。</p>
+<p>在包名称添加前缀的目的就是大家都可以创建和上传 同名的包，而不担心包名冲突的问题。如果在之后的事件里面，有的包做的比较好，那么这个包就可以成为 公共包，给大家使用，这个时候包 publisher 的名称就可以直接省略。</p>
+<h3 id="isglobal-publisher">同时省略 isGlobal 和 publisher<a class="headerlink" href="#isglobal-publisher" title="Permanent link">&para;</a></h3>
+<p>在上述的精简配置中，我们同时省略了 isGlobal 和 publisher 这两个字段。此时我们默认这个包是 isGlobal 为 true 的公共包，并且可以省略 publisher 的名称直接引用这个包。</p>
+<p>这个对于一个不会上传到服务器的本地包而言，是再适合不过了。用户可以直接使用 名称来导入这个包。在这篇文档中，我们只说明如何简单自定义一个包，不会涉及到上传服务器的内容，所以用户可以放心的省略这两个字段。</p>
+<p>如果上传到服务器，还是需要认真写好每一个字段。</p>
+<h2 id="_4">包的位置<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>用户自定义的包可以放到任何一个 libstore的文件夹下面, 如下调用 <code>ipc libstores</code> 命令，就会输出所有的可用的libstores.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-6-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-6-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-6-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-6-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-6-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-6-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-6-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-6-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-6-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a>C:\Users\Yue&gt;ipc libstores
+<a id="__codelineno-6-2" name="__codelineno-6-2"></a>
+<a id="__codelineno-6-3" name="__codelineno-6-3"></a> _____  _    _        _      _____
+<a id="__codelineno-6-4" name="__codelineno-6-4"></a>|_   _|| |  | |      | |    /  __ \
+<a id="__codelineno-6-5" name="__codelineno-6-5"></a>  | |  | |  | |  ___ | |__  | /  \/  ___   _ __  ___
+<a id="__codelineno-6-6" name="__codelineno-6-6"></a>  | |  | |/\| | / _ \| &#39;_ \ | |     / _ \ | &#39;__|/ _ \
+<a id="__codelineno-6-7" name="__codelineno-6-7"></a> _| |_ \  /\  /|  __/| |_) || \__/\| (_) || |  |  __/
+<a id="__codelineno-6-8" name="__codelineno-6-8"></a> \___/  \/  \/  \___||_.__/  \____/ \___/ |_|   \___|
+<a id="__codelineno-6-9" name="__codelineno-6-9"></a>
+<a id="__codelineno-6-10" name="__codelineno-6-10"></a>C:/Users/Yue/IMakeCore/.lib
+</code></pre></div></td></tr></table></div>
+<p>上述的 libstore 是全局 libstore, 用户也可以配置自己的libstore 文件夹位置，来放置所需要的包的位置，可以通过 <code>ipc libstores add</code> 命令来添加额外的包。</p>
+<p>注意放置在 libstore 文件夹下面的内容必须是一个包含 package.json 的文件夹，不能将 package.json 直接放置在 libstore 文件夹下面。</p>
+<h2 id="_5">说明<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p>在上面的教程中，我们描述了一个最简单的包是什么样子的。此外还有很多的内容没有做说明。</p>
 
 
 

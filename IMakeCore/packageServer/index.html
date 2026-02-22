@@ -9,6 +9,10 @@
       
       
       
+        <link rel="prev" href="../libstores/">
+      
+      
+        <link rel="next" href="../packageIntegration/">
       
       
         
@@ -19,7 +23,7 @@
     
     
       
-        <title>IMakeCore 的设计 - IWebCore</title>
+        <title>IPubCore 包服务器 - IWebCore</title>
       
     
     
@@ -70,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#imakecore" class="md-skip">
+        <a href="#ipubcore" class="md-skip">
           跳转至
         </a>
       
@@ -104,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              IMakeCore 的设计
+              IPubCore 包服务器
             
           </span>
         </div>
@@ -300,10 +304,12 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
+      <li class="md-tabs__item md-tabs__item--active">
         <a href="../quick_start/" class="md-tabs__link">
           
   
@@ -2526,24 +2532,29 @@
       
   
   
+    
   
   
+  
     
     
     
     
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
         
           
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
             
   
   
@@ -2561,7 +2572,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             
@@ -2772,10 +2783,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../packageServer/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IPubCore 包服务器
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -2791,6 +2829,165 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        题外话
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ipubcore_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IPubCore网站
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="IPubCore网站">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        查找和使用包
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        注册和登录
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        如何发布包
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="如何发布包">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        邮箱验证
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        打包
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        发布包
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ipc-ipubcore" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ipc 与 IPubCore
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ipc 与 IPubCore">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        搜索
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        安装包
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2991,6 +3188,153 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        题外话
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ipubcore_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IPubCore网站
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="IPubCore网站">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        查找和使用包
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        注册和登录
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        如何发布包
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="如何发布包">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        邮箱验证
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        打包
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        发布包
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ipc-ipubcore" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ipc 与 IPubCore
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ipc 与 IPubCore">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        搜索
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        安装包
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -3006,11 +3350,147 @@
 
 
 
-<h1 id="imakecore">IMakeCore 的设计<a class="headerlink" href="#imakecore" title="Permanent link">&para;</a></h1>
+<h1 id="ipubcore">IPubCore 包服务器<a class="headerlink" href="#ipubcore" title="Permanent link">&para;</a></h1>
 <blockquote>
-<p>本篇文档描述 IMakeCore 的设计。</p>
+<p>本文档描述 IPubCore 的使用方法。</p>
 </blockquote>
-<p><img alt="image-20260213233346073" src="../assets/image-20260213233346073.png" /></p>
+<h2 id="_1">题外话<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>IWebCore整个框架的设计目标是对标于 Spring 的整个平台。IMakeCore 则是对标于 maven/gradle 这样的包管理工具的。所以除了 MakeCore 的内置包之外，用户也应该能够从远端自动下载包到本地，和项目一起编译运行。</p>
+<p>所以在IWebCore的开发过程中，同样也编写了一个包管理的服务器，和IMakeCore的本地服务一同工作，用户可以配置 包管理服务器上的包，IMakeCore会自动下载这些包，并将包集成到项目中去。</p>
+<p>这个地址之前是 <a href="https://pub.iwebcore.org">https://pub.iwebcore.org</a>，有一个正儿八经的域名，并且 https 也已经做好了。前期由于自己的事情太多，也没管的上这块的内容，先是 https 失效，后面是服务器续费不起，换了国内一年99块的服务器，国内的服务器不能绑定 .org / .io 这样的域名，之前的com 域名也被抢注，所以现在这个网站在裸奔了。用户可以直接使用 ip (115.191.52.106) 来访问 IPubCore网站。</p>
+<p>另外，运营一个内容性质的网站不是把网站挂上去就行了，还需要考虑到用户上传的内容的合法性。这个需要消耗大量的精力，我也没有这个精力做这一个事情，所以用户可以注册，但是注册之后并不能上传自己的包，如果想上传包的话，请和我联系。</p>
+<p>以下是正文：</p>
+<h2 id="ipubcore_1">IPubCore网站<a class="headerlink" href="#ipubcore_1" title="Permanent link">&para;</a></h2>
+<p>IPubCore 网站是 IMakeCore 用于查找和下载包的网站，地址是 <a href="http://115.191.52.106/">IPubCore</a> ，<a href="http://115.191.52.106/">http://115.191.52.106/</a>。</p>
+<p>IPubCore 是由 IWebCore 中 IHttpCore 框架编写的后端，react 编写的前端，这里推荐用户使用 IHttpCore 来编写自己的 http 服务器。</p>
+<p>用户可以在这个网站上搜索各类的包，搜索到的包可以将包名和版本写到 packages.json 文件中去。IMakeCore 会自动下载该包，并集成该版本的包。</p>
+<p>IPubCore 网站界面如下所示：</p>
+<p><img alt="image-20250713162242016" src="../assets/image-20250713162242016.png" /></p>
+<h3 id="_2">查找和使用包<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>用户在 <a href="http://115.191.52.106/search.html">搜索页面</a> 输入关键字进行搜索。搜索到的包点击进去就可查看相关的详细信息。</p>
+<h3 id="_3">注册和登录<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>用户通过网站顶部右上角的 <a href="http://115.191.52.106/login.html">登录</a> / <a href="http://115.191.52.106/register.html">注册</a> 按钮进行用户的注册和登录。</p>
+<h3 id="_4">如何发布包<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<h4 id="_5">邮箱验证<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
+<p>发布一个包需要进行邮箱验证。</p>
+<p>由于网站建设的原因，用户默认不能上传包，需要联系管理员进行申请。管理员会审核用户的申请，并给予相应的权限。
+联系管理员 请使用注册的 email 地址 发送邮件到 <a href="mailto:yuekeyuan001@gmail.com">管理员邮箱</a> 进行确认。</p>
+<p>用户发送邮件的时候，需要注明如下内容：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>I want to publish a package, so I send this email.
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a>我发送这封邮件，我想发布一些包。
+</code></pre></div></td></tr></table></div>
+<p>这里实在抱歉，等我挤出时间了，我一定吧这个给搞好（这个功能缺失很小，但是我现在一方面搞整个系统，一方面也在找工作，时间很紧张）。</p>
+<h4 id="_6">打包<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
+<p>目前用户需要手动打包，在之后打包和上传的功能可以由 ipc 工具完成。</p>
+<p>用户将能够加载到项目的独立包，直接使用 zip 工具打包成为 .zip 包即可。注意在打包的时候， package.json 文件必须在 zip 文件的根目录中，不能嵌套目录。</p>
+<p>关于如何定义一个包，请参考<a href="../definePackage/">定义包</a> 的文档。</p>
+<h4 id="_7">发布包<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h4>
+<p>用户在登录之后，可以在右上角点击用户名，在弹出菜单中点击 <code>My Package</code> 按钮，跳转到 <a href="[Package Management](http://115.191.52.106/packagemanage.html)">包管理</a> 页面。在页面中，点击上传包，跳转到 <a href="[上传包 - IPubCore](http://115.191.52.106/packageupload.html)">包上传</a> 页面，将打包好的包 拖拽进去，上传即可。</p>
+<p>用户在发布包之前必须验证邮箱。</p>
+<p>在上传的过程中，会对包的信息进行验证，如果验证不通过，请按照反馈信息进行修改。</p>
+<h2 id="ipc-ipubcore">ipc 与 IPubCore<a class="headerlink" href="#ipc-ipubcore" title="Permanent link">&para;</a></h2>
+<p>用户可以在 ipc 工具中操作 IPubCore 中的内容</p>
+<h3 id="_8">搜索<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<p><code>ipc search</code> 命令可以搜索网络上的包, 如下内容是 搜索 json 相关的包。</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-1-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-1-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-1-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-1-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-1-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-1-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-1-10">10</a></span>
+<span class="normal"><a href="#__codelineno-1-11">11</a></span>
+<span class="normal"><a href="#__codelineno-1-12">12</a></span>
+<span class="normal"><a href="#__codelineno-1-13">13</a></span>
+<span class="normal"><a href="#__codelineno-1-14">14</a></span>
+<span class="normal"><a href="#__codelineno-1-15">15</a></span>
+<span class="normal"><a href="#__codelineno-1-16">16</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>C:\Users\Yue&gt;ipc search -- json
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a> _____  _    _        _      _____
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a>|_   _|| |  | |      | |    /  __ \
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a>  | |  | |  | |  ___ | |__  | /  \/  ___   _ __  ___
+<a id="__codelineno-1-6" name="__codelineno-1-6"></a>  | |  | |/\| | / _ \| &#39;_ \ | |     / _ \ | &#39;__|/ _ \
+<a id="__codelineno-1-7" name="__codelineno-1-7"></a> _| |_ \  /\  /|  __/| |_) || \__/\| (_) || |  |  __/
+<a id="__codelineno-1-8" name="__codelineno-1-8"></a> \___/  \/  \/  \___||_.__/  \____/ \___/ |_|   \___|
+<a id="__codelineno-1-9" name="__codelineno-1-9"></a>
+<a id="__codelineno-1-10" name="__codelineno-1-10"></a>Name                       LatestVersion   Summary
+<a id="__codelineno-1-11" name="__codelineno-1-11"></a>yuekeyuan/json_struct      1.0.1           json_struct is a single header only C++ library for parsing JSON directly to C++ structs and vice versa
+<a id="__codelineno-1-12" name="__codelineno-1-12"></a>yuekeyuan/jsoncpp          1.9.6           A C++ library for interacting with JSON data
+<a id="__codelineno-1-13" name="__codelineno-1-13"></a>(yuekeyuan)/nlohmann.json  3.12.0          json library for C++
+<a id="__codelineno-1-14" name="__codelineno-1-14"></a>yuekeyuan/rapidjson        1.0.4           A fast JSON parser/generator for C++ with both SAX/DOM style API
+<a id="__codelineno-1-15" name="__codelineno-1-15"></a>yuekeyuan/simdjson         3.13.1          Parsing gigabytes of JSON per second : used by Facebook/Meta Velox, the Node.js runtime, ClickHouse, WatermelonDB, Apache Doris, Milvus, StarRocks
+<a id="__codelineno-1-16" name="__codelineno-1-16"></a>yuekeyuan/yyjson           0.11.1          The fastest JSON library in C
+</code></pre></div></td></tr></table></div>
+<h3 id="_9">安装包<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<p>如果用户想要安装远程包，一般只需要将想要的包写在 程序 <code>packages.json</code> 文件中即可，此外用户也可以通过 <code>ipc package install</code> 命令安装包。<code>ipc package install</code> 的使用方法如下：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-2-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-2-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-2-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-2-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-2-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-2-10">10</a></span>
+<span class="normal"><a href="#__codelineno-2-11">11</a></span>
+<span class="normal"><a href="#__codelineno-2-12">12</a></span>
+<span class="normal"><a href="#__codelineno-2-13">13</a></span>
+<span class="normal"><a href="#__codelineno-2-14">14</a></span>
+<span class="normal"><a href="#__codelineno-2-15">15</a></span>
+<span class="normal"><a href="#__codelineno-2-16">16</a></span>
+<span class="normal"><a href="#__codelineno-2-17">17</a></span>
+<span class="normal"><a href="#__codelineno-2-18">18</a></span>
+<span class="normal"><a href="#__codelineno-2-19">19</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>C:\Users\Yue&gt;ipc package install
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a> _____  _    _        _      _____
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a>|_   _|| |  | |      | |    /  __ \
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a>  | |  | |  | |  ___ | |__  | /  \/  ___   _ __  ___
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a>  | |  | |/\| | / _ \| &#39;_ \ | |     / _ \ | &#39;__|/ _ \
+<a id="__codelineno-2-7" name="__codelineno-2-7"></a> _| |_ \  /\  /|  __/| |_) || \__/\| (_) || |  |  __/
+<a id="__codelineno-2-8" name="__codelineno-2-8"></a> \___/  \/  \/  \___||_.__/  \____/ \___/ |_|   \___|
+<a id="__codelineno-2-9" name="__codelineno-2-9"></a>
+<a id="__codelineno-2-10" name="__codelineno-2-10"></a>ERROR OCCURED: args list too short for argx to retrive data. arg count less than 1 [Cmd Path]: package install [Cmd Arg Type]: ArgX [ArgX Name]: packageName [ArgX Index]: 1
+<a id="__codelineno-2-11" name="__codelineno-2-11"></a>
+<a id="__codelineno-2-12" name="__codelineno-2-12"></a>[CMD]:
+<a id="__codelineno-2-13" name="__codelineno-2-13"></a>    ipc package install
+<a id="__codelineno-2-14" name="__codelineno-2-14"></a>[Memo]:
+<a id="__codelineno-2-15" name="__codelineno-2-15"></a>    install package from remote to system
+<a id="__codelineno-2-16" name="__codelineno-2-16"></a>[Argx]:
+<a id="__codelineno-2-17" name="__codelineno-2-17"></a>    Index  Name         TypeName  Nullable  Memo
+<a id="__codelineno-2-18" name="__codelineno-2-18"></a>    1      packageName  QString   false     to be installed package name
+<a id="__codelineno-2-19" name="__codelineno-2-19"></a>    2      version      QString   true      to be installed package version
+</code></pre></div></td></tr></table></div>
+<p>它可以传入两个参数，一个是包名，另外一个是版本，版本可以省略，省略则请求最新的版本。所以用户如可想要安装  上面搜索到的 <code>yuekeyuan/yyjson</code> 这个包，可以使用如下的命令进行安装：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-3-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-3-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-3-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-3-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-3-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-3-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-3-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-3-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-3-10">10</a></span>
+<span class="normal"><a href="#__codelineno-3-11">11</a></span>
+<span class="normal"><a href="#__codelineno-3-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a>C:\Users\Yue&gt;ipc package install -- yuekeyuan/yyjson
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a>
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a> _____  _    _        _      _____
+<a id="__codelineno-3-4" name="__codelineno-3-4"></a>|_   _|| |  | |      | |    /  __ \
+<a id="__codelineno-3-5" name="__codelineno-3-5"></a>  | |  | |  | |  ___ | |__  | /  \/  ___   _ __  ___
+<a id="__codelineno-3-6" name="__codelineno-3-6"></a>  | |  | |/\| | / _ \| &#39;_ \ | |     / _ \ | &#39;__|/ _ \
+<a id="__codelineno-3-7" name="__codelineno-3-7"></a> _| |_ \  /\  /|  __/| |_) || \__/\| (_) || |  |  __/
+<a id="__codelineno-3-8" name="__codelineno-3-8"></a> \___/  \/  \/  \___||_.__/  \____/ \___/ |_|   \___|
+<a id="__codelineno-3-9" name="__codelineno-3-9"></a>
+<a id="__codelineno-3-10" name="__codelineno-3-10"></a>download from server:  http://115.191.52.106
+<a id="__codelineno-3-11" name="__codelineno-3-11"></a>QIODevice::write (QFile, &quot;C:\Users\Yue\IMakeCore\.cache\yuekeyuan\yyjson@0.11.1.zip&quot;): device not open
+<a id="__codelineno-3-12" name="__codelineno-3-12"></a>package installed. Name: yuekeyuan@yyjson Version: 0.11.1
+</code></pre></div></td></tr></table></div>
+<p>此时，<code>yuekeyuan@yyjson</code> 这个包就安装好了。</p>
 
 
 
